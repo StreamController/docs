@@ -1,0 +1,115 @@
+site_name: StreamController
+nav:
+  - Home: index.md
+  - Plugin Development:
+    - Introduction: plugin_dev/intro.md
+    - Create Your Own:
+      - Getting Started: plugin_dev/getting_started.md
+      - 1. The Idea: plugin_dev/idea.md
+      - 2. Setting Up Your Environment: plugin_dev/setup.md
+      - 3. The Plugin Template:
+        - Overview: plugin_dev/plugin_template/overview.md
+        - main.py: plugin_dev/plugin_template/main.md
+        - manifest.json: plugin_dev/plugin_template/manifest.md
+        - attribution.json: plugin_dev/plugin_template/attribution.md
+        - BackendAction.py: plugin_dev/plugin_template/BackendAction.md
+      - 4. Modify The Template: plugin_dev/modify_template.md
+      - 5. Submitting: plugin_dev/submit.md
+  
+theme:
+  name: material
+  logo: assets/logo.png
+  custom_dir: overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  icon:
+    repo: fontawesome/brands/github-alt
+  palette:
+    # Toggle for light and dark mode
+    # Dark
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch To Light Mode
+    # Light
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch To Dark Mode
+    
+repo_url: https://github.com/Core447/StreamController
+repo_name: Core447/StreamController
+    
+
+extra:
+  version:
+    provider: mike
+
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tasklist:
+      custom_checkbox: true
