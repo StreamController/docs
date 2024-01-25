@@ -1,6 +1,6 @@
 The plugin template is the base of all plugins containing their basic structure.
 
-<!-- ![PluginTemplateFiles](.../assets/PluginTemplateFiles.png) -->
+![PluginTemplateFiles](../../assets/PluginTemplateFiles.png)
 
 # Important files
 The most important files are:
