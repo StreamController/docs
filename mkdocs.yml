@@ -10,9 +10,9 @@ nav:
       - 3. The Plugin Template:
         - Overview: plugin_dev/plugin_template/overview.md
         - main.py: plugin_dev/plugin_template/main_py.md
+        - BackendAction.py: plugin_dev/plugin_template/BackendAction_pyg.md
         - manifest.json: plugin_dev/plugin_template/manifest_json.md
         - attribution.json: plugin_dev/plugin_template/attribution_json.md
-        - BackendAction.py: plugin_dev/plugin_template/BackendAction_pyg.md
       - 4. Modify The Template: plugin_dev/modify_template.md
       - 5. Submitting: plugin_dev/submit.md
   
@@ -67,8 +67,8 @@ theme:
         icon: material/brightness-7
         name: Switch To Dark Mode
     
-repo_url: https://github.com/Core447/StreamController
-repo_name: Core447/StreamController
+repo_url: https://github.com/Core447/StreamController-docs
+repo_name: Core447/StreamController-docs
     
 
 extra:
@@ -114,3 +114,7 @@ markdown_extensions:
           class: mermaid
   - pymdownx.tasklist:
       custom_checkbox: true
+
+plugins:
+  - snippet:
+      base_path: docs

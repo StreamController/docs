@@ -1,4 +1,5 @@
-The plugin template is the base of all plugins containing their basic structure.
+The plugin template is the base of all plugins containing their basic structure.  
+[Download](https://github.com/Core447/PluginTemplate)
 
 ![PluginTemplateFiles](../../assets/PluginTemplateFiles.png)
 
