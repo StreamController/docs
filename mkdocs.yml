@@ -24,6 +24,8 @@ nav:
         - Overview:  plugin_dev/modify_template/overview.md
         - Add A Simple Action: plugin_dev/modify_template/add_simple_action.md
       - 6. Submitting: plugin_dev/submit.md
+  - Blog:
+    - blog/index.md
   
 theme:
   name: material
@@ -127,3 +129,5 @@ markdown_extensions:
 plugins:
   - snippet:
       base_path: docs
+  - blog:
+      match_path: blog/posts/.* 
