@@ -17,6 +17,7 @@ nav:
         - BackendAction.py: plugin_dev/plugin_template/BackendAction_py.md
         - backend.py: plugin_dev/plugin_template/backend_py.md
         - __install__.py: plugin_dev/plugin_template/__install___py.md
+        - requirements.txt: plugin_dev/plugin_template/requirements_txt.md
         - manifest.json: plugin_dev/plugin_template/manifest_json.md
         - attribution.json: plugin_dev/plugin_template/attribution_json.md
       - 5. Modify The Template:
