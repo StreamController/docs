@@ -24,7 +24,7 @@ Therefore you can use them to test and develop plugins without any real [StreamD
 2. Go to Developer Settings
 3. Increase the number of FakeDecks (max 3)
 !!! bug
-    If you increase your number from decks from 0 to n without any physical decks connected, you'll have to restart the app for the changes to take full effect.  
-    This will be addressed in future versions but is not a priority right now.
+    If you increase your number of decks from 0 to n without any physical decks connected, you'll need to restart the application for the changes to take full effect.  
+    This will be addressed in future versions, but is not a priority at this time.
 
 ![FakeDecks](../assets//FakeDecks.png)
