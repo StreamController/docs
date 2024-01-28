@@ -6,7 +6,7 @@ The plugin template is the base of all plugins containing their basic structure.
 # Important files
 The most important files are:
 
-- [`main.py`](./plugin_template/main.md)
-- [`manifest.json`](./plugin_template/manifest.md)
-- [`attribution.json`](./plugin_template/attribution.md)
-- [`BackendAction.py`](./plugin_template/BackendAction.md)
+- [`main.py`](main_py.md)
+- [`manifest.json`](manifest_json.md)
+- [`attribution.json`](attribution_json.md)
+- [`BackendAction.py`](BackendAction_py.md)
