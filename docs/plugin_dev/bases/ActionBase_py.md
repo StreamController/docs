@@ -234,9 +234,10 @@ If you want to learn more by going throught the code see [this](https://github.c
 
     |Argument|Default|Description|Type|
     |---|---|---|---|
-    |signal|None|The signal to connect to|Signal|
+    |signal|None|The signal to connect to|[Signal](../advanced_concepts/signals.md)|
     |callback|None|A callback method|callable|
 
     **Description**:  
-    This method allows you to connect to signals allowing you to adapt to important changes made through the ui. For example if you are working with page names you might want to connect to the [page rename] signal to get notified when that happens and change the internal references accordingly.
+    This method allows you to connect to [signals](../advanced_concepts/signals.md) allowing you to adapt to important changes made through the ui. For example if you are working with page names you might want to connect to the [page rename signal](../advanced_concepts/signals.md#pagerename) to get notified when that happens and change the internal references accordingly.  
+    On how to use signals see [How to use signals](../advanced_concepts/signals.md#how-to-use-signals).
 

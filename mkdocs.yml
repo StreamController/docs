@@ -26,6 +26,9 @@ nav:
         - Add A Backend Action: plugin_dev/modify_template/add_backend_action.md
         - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
       - 6. Submitting: plugin_dev/submit.md
+    - Advanced Concepts:
+        - Signals: plugin_dev/advanced_concepts/signals.md
+        - Deck Controller: plugin_dev/advanced_concepts/deck_controller.md
   - Blog:
     - blog/index.md
   

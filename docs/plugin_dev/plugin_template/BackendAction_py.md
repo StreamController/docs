@@ -84,6 +84,6 @@ If you want to learn more about the available events see [ActionBase]().
 ```python
 self.set_bottom_label(self.backend.get_number())
 ```
-`self.set_bottom_label()` will change the bottom label on the key. To learn more about the available methods see [ActionBase]().
+`self.set_bottom_label()` will change the bottom label on the key. To learn more about the available methods see [ActionBase](../bases/ActionBase_py.md).
 
 `self.backend.get_number()` calls `get_number()` on the launched [backend](backend_py.md).
