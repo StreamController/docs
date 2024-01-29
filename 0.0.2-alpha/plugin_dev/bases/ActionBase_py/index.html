@@ -733,45 +733,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_config_rowsself-listadwpreferencesrow" class="md-nav__link">
+  <a href="#get_config_rows" class="md-nav__link">
     <span class="md-ellipsis">
-      get_config_rows(self) -&gt; list[Adw.PreferencesRow]
+      get_config_rows
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_custom_config_areaself-gtkwidget" class="md-nav__link">
+  <a href="#get_custom_config_area" class="md-nav__link">
     <span class="md-ellipsis">
-      get_custom_config_area(self) -&gt; Gtk.Widget
+      get_custom_config_area
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_settingsself-dict" class="md-nav__link">
+  <a href="#set_settings" class="md-nav__link">
     <span class="md-ellipsis">
-      get_settings(self) -&gt; dict
+      set_settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set_settingsself-settings-dict" class="md-nav__link">
+  <a href="#get_settings" class="md-nav__link">
     <span class="md-ellipsis">
-      set_settings(self, settings: dict)
+      get_settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#connectself-signalsignal-none-callback-callable-none" class="md-nav__link">
+  <a href="#connect" class="md-nav__link">
     <span class="md-ellipsis">
-      connect(self, signal:Signal = None, callback: callable = None)
+      connect
     </span>
   </a>
   
@@ -1625,45 +1625,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_config_rowsself-listadwpreferencesrow" class="md-nav__link">
+  <a href="#get_config_rows" class="md-nav__link">
     <span class="md-ellipsis">
-      get_config_rows(self) -&gt; list[Adw.PreferencesRow]
+      get_config_rows
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_custom_config_areaself-gtkwidget" class="md-nav__link">
+  <a href="#get_custom_config_area" class="md-nav__link">
     <span class="md-ellipsis">
-      get_custom_config_area(self) -&gt; Gtk.Widget
+      get_custom_config_area
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_settingsself-dict" class="md-nav__link">
+  <a href="#set_settings" class="md-nav__link">
     <span class="md-ellipsis">
-      get_settings(self) -&gt; dict
+      set_settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set_settingsself-settings-dict" class="md-nav__link">
+  <a href="#get_settings" class="md-nav__link">
     <span class="md-ellipsis">
-      set_settings(self, settings: dict)
+      get_settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#connectself-signalsignal-none-callback-callable-none" class="md-nav__link">
+  <a href="#connect" class="md-nav__link">
     <span class="md-ellipsis">
-      connect(self, signal:Signal = None, callback: callable = None)
+      connect
     </span>
   </a>
   
@@ -2223,11 +2223,106 @@ This method has the same outcome as <a href="#set_label"><code>set_label</code><
 This method has the same outcome as <a href="#set_label"><code>set_label</code></a> with <code>position = "bottom"</code>.</p>
 </dd>
 </dl>
-<h3 id="get_config_rowsself-listadwpreferencesrow"><code>get_config_rows(self) -&gt; list[Adw.PreferencesRow]</code><a class="headerlink" href="#get_config_rowsself-listadwpreferencesrow" title="Permanent link">&para;</a></h3>
-<h3 id="get_custom_config_areaself-gtkwidget"><code>get_custom_config_area(self) -&gt; Gtk.Widget</code><a class="headerlink" href="#get_custom_config_areaself-gtkwidget" title="Permanent link">&para;</a></h3>
-<h3 id="get_settingsself-dict"><code>get_settings(self) -&gt; dict</code><a class="headerlink" href="#get_settingsself-dict" title="Permanent link">&para;</a></h3>
-<h3 id="set_settingsself-settings-dict"><code>set_settings(self, settings: dict)</code><a class="headerlink" href="#set_settingsself-settings-dict" title="Permanent link">&para;</a></h3>
-<h3 id="connectself-signalsignal-none-callback-callable-none"><code>connect(self, signal:Signal = None, callback: callable = None)</code><a class="headerlink" href="#connectself-signalsignal-none-callback-callable-none" title="Permanent link">&para;</a></h3>
+<h3 id="get_config_rows"><code>get_config_rows</code><a class="headerlink" href="#get_config_rows" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This method can be overritten by your action to show configuration rows in the ui.
+<figure markdown>
+<img align="left" alt="Example" loading="lazy" src="../../../assets/ConfigRows.png" width="300" />
+<figcaption>Example from the <a href="https://github.com/Core447/OSPlugin">OS Plugin</a></figcaption>
+</figure></p>
+<p><strong>Returns</strong>:<br />
+A list of <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PreferencesRow.html">Adw.PreferencesRow</a> objects.</p>
+</dd>
+</dl>
+<h3 id="get_custom_config_area"><code>get_custom_config_area</code><a class="headerlink" href="#get_custom_config_area" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This method can be overritten by your action to show a custom area in the ui. By allowing all <a href="https://docs.gtk.org/gtk4/class.Widget.html">Gtk.Widgets</a> you are able to customize the config area completely to your needs.</p>
+<p><strong>Returns</strong>:<br />
+Any <a href="https://docs.gtk.org/gtk4/class.Widget.html">Gtk.Widget</a></p>
+</dd>
+</dl>
+<h3 id="set_settings"><code>set_settings</code><a class="headerlink" href="#set_settings" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings</td>
+<td>A dictionary with your settings</td>
+<td>dict</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong>:<br />
+This method allows you to store settings for your actions. The typical usage is to store the user settings made in the <a href="#get_custom_config_area"><code>custom config area</code></a>. You then use <a href="#get_settings"><code>get_settings</code></a> to retrieve them.</p>
+<p>The dict gets directly written into the page json and will be kept if the page gets exported or duplicated. This looks like this:
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dev_core447_MediaPlugin::Info&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="hll"><span class="w">                </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="hll"><span class="w">                    </span><span class="nt">&quot;show_thumbnail&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="hll"><span class="w">                    </span><span class="nt">&quot;show_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="hll"><span class="w">                    </span><span class="nt">&quot;seperator_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span></span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p">]</span>
+</span></code></pre></div></p>
+</dd>
+</dl>
+<h3 id="get_settings"><code>get_settings</code><a class="headerlink" href="#get_settings" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This method returns a dictionary with all your set settings for this action.
+For more see <a href="#set_settings"><code>set_settings</code></a>.</p>
+<p><strong>Returns</strong>:<br />
+A dictionary with your settings</p>
+</dd>
+</dl>
+<h3 id="connect"><code>connect</code><a class="headerlink" href="#connect" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Default</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal</td>
+<td>None</td>
+<td>The signal to connect to</td>
+<td>Signal</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>None</td>
+<td>A callback method</td>
+<td>callable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong>:<br />
+This method allows you to connect to signals allowing you to adapt to important changes made through the ui. For example if you are working with page names you might want to connect to the [page rename] signal to get notified when that happens and change the internal references accordingly.</p>
+</dd>
+</dl>
 
 
 
