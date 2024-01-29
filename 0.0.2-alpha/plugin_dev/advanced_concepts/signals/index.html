@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../../submit/">
       
-        <link rel="next" href="plugin_dev/intro/">
+      
+        <link rel="next" href="../../../blog/">
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>StreamController</title>
+        <title>Signals - StreamController</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-streamcontroller" class="md-skip">
+        <a href="#available-signals" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +87,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="../."> 
+  <a href="../../../.."> 
 
 
     <strong>Click here to go to latest.</strong>
@@ -102,9 +104,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="StreamController" class="md-header__button md-logo" aria-label="StreamController" data-md-component="logo">
+    <a href="../../.." title="StreamController" class="md-header__button md-logo" aria-label="StreamController" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Signals
             
           </span>
         </div>
@@ -189,11 +191,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -208,11 +208,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="plugin_dev/intro/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../intro/" class="md-tabs__link">
           
   
     
@@ -232,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
     
@@ -267,9 +269,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="StreamController" class="md-nav__button md-logo" aria-label="StreamController" data-md-component="logo">
+    <a href="../../.." title="StreamController" class="md-nav__button md-logo" aria-label="StreamController" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     StreamController
@@ -293,19 +295,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -314,7 +307,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -323,8 +315,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -341,12 +335,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -360,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin Development
@@ -374,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/getting_started/" class="md-nav__link">
+      <a href="../../getting_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -472,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/idea/" class="md-nav__link">
+      <a href="../../idea/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/setup/" class="md-nav__link">
+      <a href="../../setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -559,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/bases/ActionBase_py/" class="md-nav__link">
+      <a href="../../bases/ActionBase_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -580,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/bases/BackendBase_py/" class="md-nav__link">
+      <a href="../../bases/BackendBase_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/bases/PluginBase_py/" class="md-nav__link">
+      <a href="../../bases/PluginBase_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/overview/" class="md-nav__link">
+      <a href="../../plugin_template/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/main_py/" class="md-nav__link">
+      <a href="../../plugin_template/main_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/BackendAction_py/" class="md-nav__link">
+      <a href="../../plugin_template/BackendAction_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/backend_py/" class="md-nav__link">
+      <a href="../../plugin_template/backend_py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/__install___py/" class="md-nav__link">
+      <a href="../../plugin_template/__install___py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/requirements_txt/" class="md-nav__link">
+      <a href="../../plugin_template/requirements_txt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -811,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/manifest_json/" class="md-nav__link">
+      <a href="../../plugin_template/manifest_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/plugin_template/attribution_json/" class="md-nav__link">
+      <a href="../../plugin_template/attribution_json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -908,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/modify_template/overview/" class="md-nav__link">
+      <a href="../../modify_template/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/modify_template/add_simple_action/" class="md-nav__link">
+      <a href="../../modify_template/add_simple_action/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -950,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/modify_template/add_backend_action.md" class="md-nav__link">
+      <a href="../../modify_template/add_backend_action.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/modify_template/add_backend_to_plugin.md" class="md-nav__link">
+      <a href="../../modify_template/add_backend_to_plugin.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1000,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/submit/" class="md-nav__link">
+      <a href="../../submit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1026,8 +1020,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1042,12 +1038,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
@@ -1061,7 +1057,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Advanced Concepts
@@ -1072,10 +1068,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="plugin_dev/advanced_concepts/signals/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Signals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1084,6 +1098,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available signals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagerename" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageRename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagedelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageDelete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pageadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageAdd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChangePage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugininstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      PluginInstall
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not enough?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1096,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugin_dev/advanced_concepts/deck_controller.md" class="md-nav__link">
+      <a href="../deck_controller.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1159,7 +1269,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="blog/" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1238,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2024/" class="md-nav__link">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1313,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/info/" class="md-nav__link">
+      <a href="../../../blog/category/info/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1359,8 +1469,92 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available signals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagerename" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageRename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagedelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageDelete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pageadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageAdd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChangePage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugininstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      PluginInstall
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not enough?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1375,7 +1569,7 @@
                   
 
   
-    <a href="https://github.com/Core447/StreamController-docs/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/Core447/StreamController-docs/edit/main/docs/plugin_dev/advanced_concepts/signals.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1384,42 +1578,170 @@
     
       
     
-    <a href="https://github.com/Core447/StreamController-docs/raw/main/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Core447/StreamController-docs/raw/main/docs/plugin_dev/advanced_concepts/signals.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="welcome-to-streamcontroller">Welcome to StreamController<a class="headerlink" href="#welcome-to-streamcontroller" title="Permanent link">&para;</a></h1>
-<p>Thank you for your interest in this app, it is a lot of work developing it.</p>
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<h2 id="github">GitHub:<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
-<p>This is currently the only way to install StreamController, because it is still in heavy development.
-    1. Clone StreamController from <a href="https://github.com/Core447/StreamController">GitHub</a> by typing:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Core447/StreamController
-</span></code></pre></div>
-    2. Enter the <code>StreamController</code> directory:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>StreamController
-</span></code></pre></div>
-    3. Create a <a href="https://docs.python.org/3/library/venv.html">virtual environment</a>:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span></code></pre></div>
-    4. Activate the virtual environment:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-    5. Install <a href="https://pypi.org/project/pip/">pip</a> requirements:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span></code></pre></div>
-    6. Launch the app:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>main.py
-</span></code></pre></div></p>
-<ul>
-<li>
-<h4 id="flathub">Flathub:<a class="headerlink" href="#flathub" title="Permanent link">&para;</a></h4>
-<p><strong>Coming soon !!!</strong></p>
-</li>
-</ul>
+  <h1>Signals</h1>
+
+<p>Signals are called when special actions are performed in the ui, allowing the plugin to respond to these actions. For example, should your plugin have some kind of page selection in the <a href="../../bases/ActionBase_py/#get_config_rows">config area</a> your plugin needs to get informed if a page gets renamed. That's exactly what signals are for.</p>
+<h2 id="available-signals">Available signals<a class="headerlink" href="#available-signals" title="Permanent link">&para;</a></h2>
+<h3 id="pagerename"><code>PageRename</code><a class="headerlink" href="#pagerename" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This signal is called whenever a page gets renamed in the <code>Page Manager</code>.</p>
+<p><strong>Callback arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>old_path</td>
+<td>The old path of the page.</td>
+<td>str</td>
+</tr>
+<tr>
+<td>new_path</td>
+<td>The new path of the page.</td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h3 id="pagedelete"><code>PageDelete</code><a class="headerlink" href="#pagedelete" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This signal is called whenever a page gets deleted in the <code>Page Manager</code>.</p>
+<p><strong>Callback arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>The path of removed the page.</td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h3 id="pageadd"><code>PageAdd</code><a class="headerlink" href="#pageadd" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This signal is called whenever a page gets added in the <code>Page Manager</code>.</p>
+<p><strong>Callback arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>The path of the added page.</td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h3 id="changepage"><code>ChangePage</code><a class="headerlink" href="#changepage" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This signal is called whenever a page gets changed in the <code>Page Manager</code>.</p>
+<p><strong>Callback arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controller</td>
+<td>The controller of deck where the page was changed.</td>
+<td><a href="deck_controller.md">DeckController</a></td>
+</tr>
+<tr>
+<td>old_path</td>
+<td>The old path of the page.</td>
+<td>str</td>
+</tr>
+<tr>
+<td>new_path</td>
+<td>The new path of the page.</td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h3 id="plugininstall"><code>PluginInstall</code><a class="headerlink" href="#plugininstall" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
+<p><strong>Description</strong>:<br />
+This signal is called whenever a new plugin gets installed.</p>
+<p><strong>Callback arguments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The id of the plugin e.g. <code>dev_core447_OSPlugin</code></td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h2 id="how-to-use-signals">How to use signals<a class="headerlink" href="#how-to-use-signals" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Obviously the following code has to be added to the action you want to connect to a signal.</p>
+</div>
+<ol>
+<li>Import the signals module
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager</span> <span class="kn">import</span> <span class="n">Signals</span>
+</span></code></pre></div></li>
+<li>Connect to the signal<br />
+This is done by the <a href="../../bases/ActionBase_py/#connect"><code>connect</code></a> method of the <a href="../../bases/ActionBase_py/"><code>ActionBase</code></a>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">signal</span><span class="o">=</span><span class="n">Signals</span><span class="o">.</span><span class="n">PageRename</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">on_page_rename</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li>Done !!<br />
+Now every time a page gets renamed the <code>on_page_rename</code> method will be called.</li>
+</ol>
+<h2 id="not-enough">Not enough?<a class="headerlink" href="#not-enough" title="Permanent link">&para;</a></h2>
+<p>Should you need a signal that is currently not availble feel free to open a <a href="https://github.com/Core447/StreamController/issues">issue</a> or work on an own <a href="https://github.com/Core447/StreamController/pulls">pull request</a>.</p>
 
 
 
@@ -1454,15 +1776,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../../submit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Submitting">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6. Submitting
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="plugin_dev/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="../../../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Blog
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1496,10 +1834,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
