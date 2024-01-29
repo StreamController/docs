@@ -177,13 +177,66 @@ If you want to learn more by going throught the code see [this](https://github.c
     **Description**:  
     This method has the same outcome as [`set_label`](#set_label) with `position = "bottom"`.
     
-### `get_config_rows(self) -> list[Adw.PreferencesRow]`
+### `get_config_rows`
+: **Description**:  
+    This method can be overritten by your action to show configuration rows in the ui.
+    <figure markdown>
+    ![Example](../../assets/ConfigRows.png){width="300" align=left loading=lazy}
+    <figcaption>Example from the [OS Plugin](https://github.com/Core447/OSPlugin)</figcaption>
+    </figure>
 
-### `get_custom_config_area(self) -> Gtk.Widget`
+    **Returns**:  
+    A list of [Adw.PreferencesRow](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PreferencesRow.html) objects.
 
-### `get_settings(self) -> dict`
+### `get_custom_config_area`
+: **Description**:  
+    This method can be overritten by your action to show a custom area in the ui. By allowing all [Gtk.Widgets](https://docs.gtk.org/gtk4/class.Widget.html) you are able to customize the config area completely to your needs.
 
-### `set_settings(self, settings: dict)`
+    **Returns**:  
+    Any [Gtk.Widget](https://docs.gtk.org/gtk4/class.Widget.html)
 
-### `connect(self, signal:Signal = None, callback: callable = None)`
+### `set_settings`
+: **Arguments**:
+    
+    |Argument|Description|Type|
+    |---|---|---|
+    |settings|A dictionary with your settings|dict|
+
+    **Description**:  
+    This method allows you to store settings for your actions. The typical usage is to store the user settings made in the [`custom config area`](#get_custom_config_area). You then use [`get_settings`](#get_settings) to retrieve them.
+
+    The dict gets directly written into the page json and will be kept if the page gets exported or duplicated. This looks like this:
+    ```json hl_lines="4-8"
+    "actions": [
+                {
+                    "name": "dev_core447_MediaPlugin::Info",
+                    "settings": {
+                        "show_thumbnail": true,
+                        "show_label": true,
+                        "seperator_text": ""
+                    }
+                }
+            ]
+    ```
+
+
+### `get_settings`
+: **Description**:  
+    This method returns a dictionary with all your set settings for this action.
+    For more see [`set_settings`](#set_settings).
+
+    **Returns**:  
+    A dictionary with your settings
+
+
+### `connect`
+: **Arguments**:
+
+    |Argument|Default|Description|Type|
+    |---|---|---|---|
+    |signal|None|The signal to connect to|Signal|
+    |callback|None|A callback method|callable|
+
+    **Description**:  
+    This method allows you to connect to signals allowing you to adapt to important changes made through the ui. For example if you are working with page names you might want to connect to the [page rename] signal to get notified when that happens and change the internal references accordingly.
 
