@@ -1,1 +1,1 @@
-Some actions need acces to third party python libraries. This requires a action with a backend.
+The [BackendBase]() is the base class for the backends of all actions. While you don't always need to use a backend for your action, you have to use one if you want to use third party libraries for advanced features.
