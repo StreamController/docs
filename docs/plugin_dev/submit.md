@@ -2,7 +2,7 @@ If you finished developing your plugin, you can submit it to the StreamControlle
 
 ### 1. Test your plugin
 Test your plugin for any issues.
-Also read the [Page Caching](plugin_dev/advanced_concepts/PageCaching.md) section and check if your plugin works correctly if the user changes pages.
+Also read the [Page Caching](advanced_concepts/PageCaching.md) section and check if your plugin works correctly if the user changes pages.
 
 ### 2. Verify requirements
 Verify that all front-end/normal requirements of your plugin are found in `requirements.txt`.
