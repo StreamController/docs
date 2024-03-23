@@ -67,21 +67,20 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt
   palette:
-    # Toggle for light and dark mode
-    # Dark
-    - media: "(prefers-color-scheme: light)"
-      scheme: slate
-      primary: deep purple
-      toggle:
-        icon: material/brightness-4
-        name: Switch To Light Mode
-    # Light
-    - media: "(prefers-color-scheme: dark)"
-      scheme: default
-      primary: deep purple
-      toggle:
-        icon: material/brightness-7
-        name: Switch To Dark Mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: deep purple
+    accent: lime
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: lime
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
     
 repo_url: https://github.com/Core447/StreamController-docs
 repo_name: Core447/StreamController-docs
