@@ -41,7 +41,7 @@ Signals are called when special actions are performed in the ui, allowing the pl
 
     |Name|Description|Type|
     |---|---|---|
-    |controller|The controller of deck where the page was changed.|[DeckController](deck_controller.md)|
+    |controller|The controller of deck where the page was changed.|[DeckController](DeckController.md)|
     |old_path|The old path of the page.|str|
     |new_path|The new path of the page.|str|
 

@@ -32,8 +32,8 @@ class SimpleAction(ActionBase):
 ```
 
 1. Import the [ActionBase](../bases/ActionBase_py.md) class
-2. Import the [DeckController](../advanced_concepts/DeckController_py.md) class - just used for typing
-3. Import the [Page](../advanced_concepts/Page_py.md) class - just used for typing
+2. Import the [DeckController](../advanced_concepts/DeckController.md) class - just used for typing
+3. Import the Page class - just used for typing
 4. Import the [PluginBase](../bases/PluginBase_py.md) class - just used for typing
 5. Set the [GTK](https://www.gtk.org) version to [4.0](https://docs.gtk.org/gtk4/)
 6. Set the [Adw](https://www.gtk.org) version to [1](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/)
