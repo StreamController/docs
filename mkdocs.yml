@@ -14,21 +14,23 @@ nav:
       - 4. The Plugin Template:
         - Overview: plugin_dev/plugin_template/overview.md
         - main.py: plugin_dev/plugin_template/main_py.md
-        - BackendAction.py: plugin_dev/plugin_template/BackendAction_py.md
-        - backend.py: plugin_dev/plugin_template/backend_py.md
-        - __install__.py: plugin_dev/plugin_template/__install___py.md
-        - requirements.txt: plugin_dev/plugin_template/requirements_txt.md
+        - SimpleAction.py: plugin_dev/plugin_template/SimpleAction_py.md
+        # - BackendAction.py: plugin_dev/plugin_template/BackendAction_py.md
+        # - backend.py: plugin_dev/plugin_template/backend_py.md
+        # - __install__.py: plugin_dev/plugin_template/__install___py.md
+        # - requirements.txt: plugin_dev/plugin_template/requirements_txt.md
         - manifest.json: plugin_dev/plugin_template/manifest_json.md
         - attribution.json: plugin_dev/plugin_template/attribution_json.md
       - 5. Modify The Template:
         - Overview:  plugin_dev/modify_template/overview.md
-        - Add A Simple Action: plugin_dev/modify_template/add_simple_action.md
-        - Add A Backend Action: plugin_dev/modify_template/add_backend_action.md
-        - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
+        - Add A Counter Action: plugin_dev/modify_template/AddCounter.md
+        # - Add A Backend Action: plugin_dev/modify_template/add_backend_action.md
+        # - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
       - 6. Submitting: plugin_dev/submit.md
     - Advanced Concepts:
-        - Signals: plugin_dev/advanced_concepts/signals.md
-        - Deck Controller: plugin_dev/advanced_concepts/deck_controller.md
+        - DeckController: plugin_dev/advanced_concepts/DeckController.md
+        - Page Caching: plugin_dev/advanced_concepts/PageCaching.md
+        - Signals: plugin_dev/advanced_concepts/Signals.md
   - Blog:
     - blog/index.md
   
@@ -70,14 +72,14 @@ theme:
   - media: "(prefers-color-scheme: light)"
     scheme: default
     primary: deep purple
-    accent: lime
+    accent: indigo
     toggle:
       icon: material/weather-sunny
       name: Switch to dark mode
   - media: "(prefers-color-scheme: dark)"
     scheme: slate
     primary: black
-    accent: lime
+    accent: indigo
     toggle:
       icon: material/weather-night
       name: Switch to light mode

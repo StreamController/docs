@@ -8,23 +8,30 @@ Understanding that no single application can cater to the unique needs and prefe
 
 StreamController is complemented by a suite of official plugins designed to enhance your experience:
 
-- [OBS Plugin](https://github.com/Core447/OBSPlugin) to control [OBS](https://obsproject.com/)
-- [Media Plugin](https://github.com/Core447/MediaPlugin) to control playing audio and video content
-- [Deck Plugin](https://github.com/Core447/DeckPlugin) to control your [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) on a new level
-- [OS Plugin](https://github.com/Core447/OSPlugin) to control your OS
+- [Clocks](https://github.com/StreamController/Clocks) - Adds a beautiful analog and digital clock
+- [Counter](https://github.com/StreamController/Counter) - Helps you keep track of numbers
+- [Deck Plugin](https://github.com/StreamController/DeckPlugin) - Controls your [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) on a new level
+- [Media Plugin](https://github.com/StreamController/MediaPlugin) - Controls and monitor playing audio and video content
+- [OBS Plugin](https://github.com/StreamController/OBSPlugin) - Controls [OBS](https://obsproject.com/)
+- [OS Plugin](https://github.com/StreamController/OSPlugin) - Controls your OS
+- [PrusaLinkStatus](https://github.com/StreamController/PrusaLinkStatus) - Shows the status of [Prusa Link](https://help.prusa3d.com/de/category/prusa-connect-prusalink_1636)
+- [Requests](https://github.com/StreamController/Requests) - Sends HTTP requests
+- [Speedtest](https://github.com/StreamController/Speedtest) - Tests your internet speed
+- [VolumeMixer](https://github.com/StreamController/VolumeMixer) - Controls the volume of individual apps
+- [Weather](https://github.com/StreamController/Weather) - Shows the current weather
+
 
 ## No [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck)?
 No problem, just use a FakeDeck!
 
-FakeDecks are emulated original [StreamDecks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) for testing purposes.  
-Therefore you can use them to test and develop plugins without any real [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck).
+FakeDecks are emulated original [StreamDecks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) for testing purposes, allowing you to test and develop plugins without any physical [StreamDecks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck).
 
 ### Enable FakeDecks
 1. Open Settings
 2. Go to Developer Settings
 3. Increase the number of FakeDecks (max 3)
-!!! bug
-    If you increase your number of decks from 0 to n without any physical decks connected, you'll need to restart the application for the changes to take full effect.  
-    This will be addressed in future versions, but is not a priority at this time.
 
 ![FakeDecks](../assets//FakeDecks.png)
+
+## Need Help?
+Feel free to contact me via [Mail](mailto:core447@proton.me) or [Discord (coming)]().

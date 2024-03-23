@@ -60,7 +60,7 @@ Signals are called when special actions are performed in the ui, allowing the pl
     Obviously the following code has to be added to the action you want to connect to a signal.
 1. Import the signals module
 ```python
-from src.backend.PluginManager import Signals
+from src.Signals import Signals
 ```
 2. Connect to the signal  
 This is done by the [`connect`](../bases/ActionBase_py.md#connect) method of the [`ActionBase`](../bases/ActionBase_py.md):
