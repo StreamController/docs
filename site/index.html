@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="plugin_dev/intro/">
+        <link rel="next" href="installation/">
       
       
       <link rel="icon" href="assets/logo.png">
@@ -18,7 +18,7 @@
     
     
       
-        <title>StreamController</title>
+        <title>Home - StreamController</title>
       
     
     
@@ -51,7 +51,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -70,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-streamcontroller" class="md-skip">
+        <a href="#streamcontroller-the-linux-app-for-the-elgato-stream-deck" class="md-skip">
           Skip to content
         </a>
       
@@ -192,16 +201,19 @@
     
   
   
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="." class="md-tabs__link">
+          
   
     
   
   Home
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -297,23 +309,81 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+    
+    
+    
+    
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
         
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="." class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
     Home
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -798,6 +868,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -861,6 +935,48 @@
   
   <span class="md-ellipsis">
     Add A Counter Action
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_dev/modify_template/add_requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin_dev/modify_template/add_a_backend_action/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add A Backend Action
   </span>
   
 
@@ -1270,6 +1386,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gallery
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1299,35 +1441,41 @@
   
 
 
-<h1 id="welcome-to-streamcontroller">Welcome to StreamController<a class="headerlink" href="#welcome-to-streamcontroller" title="Permanent link">&para;</a></h1>
-<p>Thank you for your interest in this app, it is a lot of work developing it.</p>
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<h2 id="github">GitHub:<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
-<p>This is currently the only way to install StreamController, because it is still in heavy development.
-    1. Clone StreamController from <a href="https://github.com/Core447/StreamController">GitHub</a> by typing:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Core447/StreamController
-</span></code></pre></div>
-    2. Enter the <code>StreamController</code> directory:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>StreamController
-</span></code></pre></div>
-    3. Create a <a href="https://docs.python.org/3/library/venv.html">virtual environment</a>:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span></code></pre></div>
-    4. Activate the virtual environment:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-    5. Install <a href="https://pypi.org/project/pip/">pip</a> requirements:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span></code></pre></div>
-    6. Launch the app:
-        <div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>main.py
-</span></code></pre></div></p>
+<h1 id="streamcontroller-the-linux-app-for-the-elgato-stream-deck">StreamController - The Linux app for the Elgato Stream Deck<a class="headerlink" href="#streamcontroller-the-linux-app-for-the-elgato-stream-deck" title="Permanent link">&para;</a></h1>
+<figure>
+  <a class="glightbox" href="assets/screenshots/StreamController_5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot" loading="lazy" src="assets/screenshots/StreamController_5.png" /></a>
+  <figcaption>Background image by <a href="https://www.artstation.com/kvacm">kvacm</a></figcaption>
+</figure>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<h4 id="flathub">Flathub:<a class="headerlink" href="#flathub" title="Permanent link">&para;</a></h4>
-<p><strong>Coming soon !!!</strong></p>
-</li>
+<li>Plugin support</li>
+<li>Icon pack support</li>
+<li>Wallpaper pack support</li>
+<li>Multi deck support</li>
+<li>Background images &amp; videos</li>
+<li>Nice GTK4 interface</li>
+<li>Active maintenance</li>
 </ul>
+<h2 id="gallery">Gallery<a class="headerlink" href="#gallery" title="Permanent link">&para;</a></h2>
+<div style="display: flex;">
+  <a class="glightbox" href="assets/screenshots/StreamController_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_1.png" loading="lazy"></a>
+  <a class="glightbox" href="assets/screenshots/StreamController_6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_6.png" loading="lazy"></a>
+</div>
+<div style="display: flex;">
+  <a class="glightbox" href="assets/screenshots/StreamController_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_3.png" loading="lazy"></a>
+  <a class="glightbox" href="assets/screenshots/StreamController_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_4.png" loading="lazy"></a>
+</div>
+<div style="display: flex;">
+  <a class="glightbox" href="assets/screenshots/StreamController_5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_5.png" loading="lazy"></a>
+  <a class="glightbox" href="assets/screenshots/StreamController_8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_8.png" loading="lazy"></a>
+</div>
+<div style="display: flex;">
+  <a class="glightbox" href="assets/screenshots/StreamController_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_2.png" loading="lazy"></a>
+  <a class="glightbox" href="assets/screenshots/StreamController_7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="assets/screenshots/StreamController_7.png" loading="lazy"></a>
+</div>
+<div style="text-align: center;">
+  Background images by <a href="https://www.artstation.com/kvacm">kvacm</a>
+</div>
 
 
 
@@ -1364,13 +1512,13 @@
         
         
           
-          <a href="plugin_dev/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Installation
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1410,5 +1558,5 @@
       <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -10,7 +10,7 @@ StreamController is complemented by a suite of official plugins designed to enha
 
 - [Clocks](https://github.com/StreamController/Clocks) - Adds a beautiful analog and digital clock
 - [Counter](https://github.com/StreamController/Counter) - Helps you keep track of numbers
-- [Deck Plugin](https://github.com/StreamController/DeckPlugin) - Controls your [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) on a new level
+- [Deck Plugin](https://github.com/StreamController/DeckPlugin) - Controls your [Stream Deck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) on a new level
 - [Media Plugin](https://github.com/StreamController/MediaPlugin) - Controls and monitor playing audio and video content
 - [OBS Plugin](https://github.com/StreamController/OBSPlugin) - Controls [OBS](https://obsproject.com/)
 - [OS Plugin](https://github.com/StreamController/OSPlugin) - Controls your OS
@@ -21,10 +21,10 @@ StreamController is complemented by a suite of official plugins designed to enha
 - [Weather](https://github.com/StreamController/Weather) - Shows the current weather
 
 
-## No [StreamDeck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck)?
+## No [Stream Deck](https://www.elgato.com/uk/en/s/welcome-to-stream-deck)?
 No problem, just use a FakeDeck!
 
-FakeDecks are emulated original [StreamDecks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) for testing purposes, allowing you to test and develop plugins without any physical [StreamDecks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck).
+FakeDecks are emulated original [Stream Decks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck) for testing purposes, allowing you to test and develop plugins without any physical [Stream Decks](https://www.elgato.com/uk/en/s/welcome-to-stream-deck).
 
 ### Enable FakeDecks
 1. Open Settings
