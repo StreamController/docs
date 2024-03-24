@@ -56,8 +56,6 @@ Signals are called when special actions are performed in the ui, allowing the pl
     |id|The id of the plugin e.g. `dev_core447_OSPlugin`|str
 
 ## How to use signals
-!!! info
-    Obviously the following code has to be added to the action you want to connect to a signal.
 1. Import the signals module
 ```python
 from src.Signals import Signals
@@ -69,7 +67,6 @@ self.connect(signal=Signals.PageRename, callback=self.on_page_rename)
 ```
 3. Done !!  
 Now every time a page gets renamed the `on_page_rename` method will be called.
-
 
 ## Not enough?
 Should you need a signal that is currently not availble feel free to open a [issue](https://github.com/Core447/StreamController/issues) or work on an own [pull request](https://github.com/Core447/StreamController/pulls).

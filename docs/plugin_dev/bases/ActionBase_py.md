@@ -270,6 +270,8 @@ If you want to learn more by going throught the code click [here](https://github
 : **Description**:
 
     Launches a local backend. See [BackendBase](../bases/BackendBase_py.md).
+    !!! warning
+        The methods waits until the backend is registered.
 
 : **Arguments**:
 

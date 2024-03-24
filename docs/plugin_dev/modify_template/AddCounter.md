@@ -1,12 +1,12 @@
 ### 1. Add a new directory
 Every action should be located in it's dedicated subdirectory of `actions`.
 ```shell
-mkdir /path_to_plugin//actions/counter
+mkdir /path_to_plugin/actions/counter
 ```
 This will create a new folder `counter` in the `actions` directory. Feel free to change the name or path as long as it's in the plugin's dir.
 ### 2. Create a new file for the action
 ```shell
-touch /path_to_plugin//actions/counter/counter.py
+touch /path_to_plugin/actions/counter/counter.py
 ```
 This creates an empty file `counter.py` in the new folder.
 In the next steps we'll add the content to the file.
@@ -160,6 +160,30 @@ class Counter(ActionBase):
 ```
 #### 4. Show the initial counter on load up:
 ```python title="counter.py (partial)"  hl_lines="9-10"
+class Counter(ActionBase):
+    def __init__(self, action_id: str, action_name: str,
+                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
+        super().__init__(action_id=action_id, action_name=action_name,
+            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+
+        self.counter: int = 0
+
+    def on_ready(self):
+        self.set_center_label(str(self.counter))
+
+    def on_key_down(self):
+        self.counter += 1
+        self.set_center_label(str(self.counter))
+```
+#### 5. The result
+The final `counter.py` looks like this:
+```python title="counter.py"
+# Import StreamController modules
+from src.backend.PluginManager.ActionBase import ActionBase
+from src.backend.DeckManagement.DeckController import DeckController
+from src.backend.PageManagement.Page import Page
+from src.backend.PluginManager.PluginBase import PluginBase
+
 class Counter(ActionBase):
     def __init__(self, action_id: str, action_name: str,
                  deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):

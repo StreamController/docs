@@ -1,34 +1,37 @@
-# Welcome to StreamController
-Thank you for your interest in this app, it is a lot of work developing it.
+# StreamController - The Linux app for the Elgato Stream Deck
 
-# Installation
-##GitHub:
-This is currently the only way to install StreamController, because it is still in heavy development.
-    1. Clone StreamController from [GitHub](https://github.com/Core447/StreamController) by typing:
-        ```sh
-        git clone https://github.com/Core447/StreamController
-        ```
-    2. Enter the `StreamController` directory:
-        ```sh
-        cd StreamController
-        ```
-    3. Create a [virtual environment](https://docs.python.org/3/library/venv.html):
-        ```sh
-        python -m venv .venv
-        ```
-    4. Activate the virtual environment:
-        ```sh
-        source .venv/bin/activate
-        ```
-    5. Install [pip](https://pypi.org/project/pip/) requirements:
-        ```sh
-        pip install -r requirements.txt
-        ```
-    6. Launch the app:
-        ```sh
-        python3 main.py
-        ```
-    
-- ####Flathub:
+<figure markdown="span">
+  ![Screenshot](assets/screenshots/StreamController_5.png){loading=lazy}
+  <figcaption>Background image by <a href="https://www.artstation.com/kvacm">kvacm</a></figcaption>
+</figure>
 
-    **Coming soon !!!**
+## Features
+- Plugin support
+- Icon pack support
+- Wallpaper pack support
+- Multi deck support
+- Background images & videos
+- Nice GTK4 interface
+- Active maintenance
+
+## Gallery
+
+<div style="display: flex;">
+  <img src="assets/screenshots/StreamController_1.png" loading="lazy">
+  <img src="assets/screenshots/StreamController_6.png" loading="lazy">
+</div>
+<div style="display: flex;">
+  <img src="assets/screenshots/StreamController_3.png" loading="lazy">
+  <img src="assets/screenshots/StreamController_4.png" loading="lazy">
+</div>
+<div style="display: flex;">
+  <img src="assets/screenshots/StreamController_5.png" loading="lazy">
+  <img src="assets/screenshots/StreamController_8.png" loading="lazy">
+</div>
+<div style="display: flex;">
+  <img src="assets/screenshots/StreamController_2.png" loading="lazy">
+  <img src="assets/screenshots/StreamController_7.png" loading="lazy">
+</div>
+<div style="text-align: center;">
+  Background images by <a href="https://www.artstation.com/kvacm">kvacm</a>
+</div>

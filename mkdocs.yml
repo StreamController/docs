@@ -1,6 +1,8 @@
 site_name: StreamController
 nav:
-  - Home: index.md
+  - Home: 
+    - Home: index.md
+    - Installation: installation.md
   - Plugin Development:
     - Introduction: plugin_dev/intro.md
     - Create Your Own:
@@ -24,7 +26,8 @@ nav:
       - 5. Modify The Template:
         - Overview:  plugin_dev/modify_template/overview.md
         - Add A Counter Action: plugin_dev/modify_template/AddCounter.md
-        # - Add A Backend Action: plugin_dev/modify_template/add_backend_action.md
+        - Add Requirements: plugin_dev/modify_template/add_requirements.md
+        - Add A Backend Action: plugin_dev/modify_template/add_a_backend_action.md
         # - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
       - 6. Submitting: plugin_dev/submit.md
     - Advanced Concepts:
@@ -138,3 +141,4 @@ plugins:
       base_path: docs
   - blog:
       match_path: blog/posts/.* 
+  - glightbox
