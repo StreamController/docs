@@ -27,4 +27,8 @@
         ```
     
 ##Flatpak
-: **Coming soon !!!**
+: **Coming soon !!!**  
+Test it via:
+```sh
+curl -sSL https://raw.githubusercontent.com/StreamController/StreamController/dev/flatpak/install.sh | bash
+```
