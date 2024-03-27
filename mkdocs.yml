@@ -48,7 +48,7 @@ nav:
 theme:
   name: material
   logo: assets/logo.png
-  favicon: assets/logo.png
+  favicon: assets/logo_small.png
   custom_dir: overrides
   features:
     - announce.dismiss
