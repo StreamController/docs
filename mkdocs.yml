@@ -28,7 +28,13 @@ nav:
         - Add A Counter Action: plugin_dev/modify_template/AddCounter.md
         - Add Requirements: plugin_dev/modify_template/add_requirements.md
         - Add A Backend Action: plugin_dev/modify_template/add_a_backend_action.md
+        - Add A Plugin Backend: plugin_dev/modify_template/add_a_plugin_backend.md
+        - Add Config Options:
+          - Intro To Gtk: plugin_dev/modify_template/config/gtk_intro.md
+          - Stubs: plugin_dev/modify_template/config/stubs.md
+          - Add Config Rows: plugin_dev/modify_template/config/add_config_rows.md
         # - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
+        - Localization: plugin_dev/modify_template/localization.md
       - 6. Submitting: plugin_dev/submit.md
     - Advanced Concepts:
         - DeckController: plugin_dev/advanced_concepts/DeckController.md
@@ -36,6 +42,8 @@ nav:
         - Signals: plugin_dev/advanced_concepts/Signals.md
   - Blog:
     - blog/index.md
+  - Privacy:
+    - privacy/index.md
   
 theme:
   name: material
@@ -95,6 +103,13 @@ edit_uri: edit/main/docs
 extra:
   version:
     provider: mike
+  social: 
+    - icon: fontawesome/brands/github
+      name: Core447
+      link: https://github.com/Core447
+
+copyright: Copyright &copy; 2024 Core447
+
 
 
 # Extensions
@@ -139,6 +154,7 @@ markdown_extensions:
 plugins:
   - snippet:
       base_path: docs
-  - blog:
+  - blog
+  - rss:
       match_path: blog/posts/.* 
   - glightbox

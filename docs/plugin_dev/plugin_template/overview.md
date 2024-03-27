@@ -9,5 +9,4 @@ The most important files are:
 - [`main.py`](main_py.md)
 - [`manifest.json`](manifest_json.md)
 - [`attribution.json`](attribution_json.md)
-- [`BackendAction.py`](BackendAction_py.md)
 - [`SimpleAction.py`](SimpleAction_py.md)

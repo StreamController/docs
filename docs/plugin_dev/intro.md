@@ -34,4 +34,4 @@ FakeDecks are emulated original [Stream Decks](https://www.elgato.com/uk/en/s/we
 ![FakeDecks](../assets//FakeDecks.png)
 
 ## Need Help?
-Feel free to contact me via [Mail](mailto:core447@proton.me) or [Discord (coming)]().
+Feel free to contact me via [Mail](mailto:core447@proton.me) or [Discord](https://discord.gg/MSyHM8TN3u).

@@ -55,12 +55,15 @@ nano globals.py
 ```sh
 cd data/plugins
 ```
-## 7. Clone the PluginTemplate from [GitHub](https://github.com/Core447/PluginTemplate) by typing:
-    
+## 7. Create a plugin repository by using the [Plugin Template](https://github.com/Core447/PluginTemplate):
+
+Head over to [GitHub](https://github.com/Core447/PluginTemplate) and click on the green `Use this template` button. Follow the instructions.
+
+The next step is to clone the newly created repository:
 ```sh
-git clone https://github.com/Core447/PluginTemplate
+git clone https://github.com/username/plugin-template
 ```
-This will create a new directory called `PluginTemplate` in the plugins directory with a bunch of files. But no worry, I will explain each of them in the next section.
+This will create a new directory called `plugin-template` in the plugins directory with a bunch of files. But no worry, I will explain each of them in the next section.
 
 ## 8. Rename the `PluginTemplate` directory:
 

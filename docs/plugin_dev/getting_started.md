@@ -6,7 +6,7 @@ And the best of it is that there are just four major steps to get started with d
 
 1. Come up with an idea
 2. Download StreamController's source code
-3. Fork the [plugin template](https://github.com/Core447/PluginTemplate)
+3. Copy the [plugin template](https://github.com/Core447/PluginTemplate)
 ![PluginTemplageGit](../assets/PluginTemplateGit.png)
 4. Modify the template
 5. Submit your plugin to the [Store](https://github.com/Core447/StreamController-Store)

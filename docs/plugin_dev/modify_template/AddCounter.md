@@ -104,6 +104,8 @@ class PluginTemplate(PluginBase):
             app_version = "1.1.1-alpha"
         )
 ```
+!!! note
+    The `action_id` must be unique and in the following format: {reverse-domain with underscores}::{action_name}
 ### 5. Do something!!!
 What is the point of an action that does nothing? None at all. But we're going to change that now.  
 Let's change the action to cound the presses and show the number on the key.  

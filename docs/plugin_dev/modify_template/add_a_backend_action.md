@@ -1,9 +1,7 @@
 If you need to use many large libraries, you have to add a backend to your action.
 
-## [Pyro5](https://pyro5.readthedocs.io/en/latest/)
-The backend of all actions is running in a completely separate [python](https://pypi.org/) process. This means no normal communication between the backend and the actual action is possible. Here comes [Pyro5](https://pyro5.readthedocs.io/en/latest/) into play. It creates a communication channel between the action and the backend over the local network. If you want to know more about Pyro5, you can read [it's documentation](https://pyro5.readthedocs.io/en/latest/).
-!!! info "Variables"
-    Due to safety reasons [Pyro5](https://pyro5.readthedocs.io/en/latest/) disallows the direct access of variables of the backend from the frontend and vice versa. For this reason you have to use [getters and setters](https://medium.com/@pijpijani/understanding-property-in-python-getters-and-setters-b65b0eee62f9).
+## [Rpyc](https://rpyc.readthedocs.io/en/latest/)
+The backend of all actions is running in a completely separate [python](https://pypi.org/) process. This means no normal communication between the backend and the actual action is possible. Here comes [rpyc](https://rpyc.readthedocs.io/en/latest/) into play. It creates a communication channel between the action and the backend over the local network. If you want to know more about [rpyc](https://rpyc.readthedocs.io/en/latest/), you can read [it's documentation](https://rpyc.readthedocs.io/en/latest/).
 
 ## Add a backend to your action
 In this example we'll go over how to add a basic backend to our [CounterAction](AddCounter.md).
@@ -28,37 +26,23 @@ Now let's add the actual backend to the `backend.py` file.
 ```python title="backend.py"
 from streamcontroller_plugin_tools import BackendBase #(1)!
 
-import threading
-import Pyro5.api
-
-@Pyro5.api.expose #(2)
 class Backend(BackendBase):
     def __init__(self):
         super().__init__()
 
-backend = Backend() #(3)
-
-for t in threading.enumerate(): #(4)
-    if t.daemon:
-        t.join()
+backend = Backend() #(2)!
 ```
 
 1. Import the [BackendBase](../bases/BackendBase_py.md)
-2. Expose the class to Pyro5 [learn more](https://pyro5.readthedocs.io/en/latest/servercode.html#exposing-classes-and-methods-without-changing-existing-source-code)
-3. Create an instance of the class
-4. Join all running threads
+2. Create an instance of the class
 
-The backend will automatically connect to your action. This is possible because [launch_backend](../bases/ActionBase_py.md#launch_backend) starts `backend.py` with the Pyro id as an argument.
+The backend will automatically connect to your action. This is possible because [launch_backend](../bases/ActionBase_py.md#launch_backend) starts `backend.py` with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port as an argument.
 
 ### 4. Add counter methods to the backend
 Now we can add methods to retrive the current number and increment it.
-```python title="backend.py" hl_lines="11-17"
+```python title="backend.py" hl_lines="7-13"
 from streamcontroller_plugin_tools import BackendBase
 
-import threading
-import Pyro5.api
-
-@Pyro5.api.expose
 class Backend(BackendBase):
     def __init__(self):
         super().__init__()
@@ -72,10 +56,6 @@ class Backend(BackendBase):
         self.counter += 1
 
 backend = Backend()
-
-for t in threading.enumerate():
-    if t.daemon:
-        t.join()
 ```
 
 ### 5. Remove old counter code from [Counter](AddCounter.md)
@@ -102,7 +82,7 @@ class Counter(ActionBase):
 ```
 
 ### 6. Launch the backend from the action
-The next step is to launch the backend from the action. To do this, we will use the [launch_backend](../bases/ActionBase_py.md#launch_backend) method of the [ActionBase](../bases/ActionBase_py.md). This method will start the backend with the Pyro id of the action as an argument.
+The next step is to launch the backend from the action. To do this, we will use the [launch_backend](../bases/ActionBase_py.md#launch_backend) method of the [ActionBase](../bases/ActionBase_py.md). This method will start the backend with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port of the action as an argument.
 ```python title="counter.py" hl_lines="7 15-16"
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
@@ -211,7 +191,7 @@ class Counter(ActionBase):
 
 1. Import [loguru](https://loguru.readthedocs.io/en/stable/) - the logger of StreamController
 
-This code show communication errors between the frontend and the backend on the deck.  
+This code shows communication errors between the frontend and the backend on the deck.  
 If you still have `open_in_terminal` set to `True`, you can easily test the code by closing the terminal window. This will lead to an error on the next key press.
 !!! note "Try/Catch"
     If you use try/except to catch such errors, it is important to log the errors in some sort to allow easy debugging.
