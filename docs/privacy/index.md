@@ -10,3 +10,6 @@ Please refer to the official privacy policies of [Github](https://github.com/git
 You can contact me via:
 
 - [core447@proton.me](mailto:core447@proton.me)
+
+# Cookies
+<a href="#__consent">Change cookie settings</a>
