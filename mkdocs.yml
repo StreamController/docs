@@ -155,6 +155,4 @@ plugins:
   - snippet:
       base_path: docs
   - blog
-  - rss:
-      match_path: blog/posts/.* 
   - glightbox
