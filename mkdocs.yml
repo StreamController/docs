@@ -35,7 +35,10 @@ nav:
           - Add Config Rows: plugin_dev/modify_template/config/add_config_rows.md
         # - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
         - Localization: plugin_dev/modify_template/localization.md
-      - 6. Submitting: plugin_dev/submit.md
+      - 6. Submitting:
+        - Manifest: plugin_dev/submitting/manifest.md
+        - Attribution: plugin_dev/submitting/attribution.md
+        - Submitting: plugin_dev/submitting/submitting.md
     - Advanced Concepts:
         - DeckController: plugin_dev/advanced_concepts/DeckController.md
         - Page Caching: plugin_dev/advanced_concepts/PageCaching.md

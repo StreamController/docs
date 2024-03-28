@@ -7,10 +7,6 @@ Also read the [Page Caching](advanced_concepts/PageCaching.md) section and check
 ### 2. Verify requirements
 Verify that all front-end/normal requirements of your plugin are found in `requirements.txt`.
 
-### 3. Verify the manifest
-
-### 3. Verify the `attributions.json` file
-
 ### 3. Add your plugin to [GitHub](https://github.com)
 In order to submit you plugin you have to publish your local repository to [GitHub](https://github.com).
 If you have never used [GitHub](https://github.com) before, you can follow [this](https://docs.github.com/en/get-started/start-your-journey) tutorial.
