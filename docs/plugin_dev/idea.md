@@ -14,8 +14,8 @@ If you really struggle to find an idea, here's my list of plugins I would really
 - [ ] Discord integration
 - [ ] Emoji board
 - [ ] [Gnome Calendar](https://wiki.gnome.org/Apps/Calendar) integration
-- [ ] [Gnome Window Control](https://gnome.org) (move windows on [Gnome](https://gnome.org))
-- [ ] Simulate mouse movement and clicks
+- [x] [Gnome Window Control](https://gnome.org) (move windows on [Gnome](https://gnome.org))
+- [x] Simulate mouse movement and clicks
 - [x] Speedtest
 - [x] Weather
 
