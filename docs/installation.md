@@ -1,3 +1,7 @@
+##Flatpak
+
+: <a href='https://flathub.org/apps/details/com.core447.StreamController'><img width='200px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
 ##GitHub
 : This is currently the only way to install StreamController, because it is still in heavy development.
 
@@ -25,10 +29,3 @@
         ```sh
         python3 main.py
         ```
-    
-##Flatpak
-: **Coming soon !!!**  
-Test it via:
-```sh
-curl -sSL https://raw.githubusercontent.com/StreamController/StreamController/dev/flatpak/install.sh | bash
-```
