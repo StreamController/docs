@@ -25,6 +25,15 @@
         ```sh
         pip install -r requirements.txt
         ```
+
+        !!! note
+
+            Arch Linux (and possibly other distros) may need to install the following system packages using the distribution specific package manager:    
+            ```
+            xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
+            ```
+        
+
     6. Launch the app:
         ```sh
         python3 main.py
