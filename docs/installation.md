@@ -47,4 +47,4 @@
     sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules
     ```
 
-    Then reload the rules with `udevadm trigger` or restart your system. 
+    Then reload the rules with `sudo udevadm trigger` or restart your system. 
