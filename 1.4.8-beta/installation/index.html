@@ -1942,7 +1942,7 @@
 <p>For most cases, this should not be necessary, but there are some known cases where devices are not detected due to older versions of udev or missing rules. If, for some reason, your Stream Deck is not detected, please add <a href="https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules">this</a> udev rules to your system with the following command:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules
 </span></code></pre></div>
-<p>Then reload the rules with <code>udevadm trigger</code> or restart your system. </p>
+<p>Then reload the rules with <code>sudo udevadm trigger</code> or restart your system. </p>
 </dd>
 </dl>
 
