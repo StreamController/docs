@@ -38,3 +38,13 @@
         ```sh
         python3 main.py
         ```
+
+##udev
+
+: For most cases, this should not be necessary, but there are some known cases where devices are not detected due to older versions of udev or missing rules. If, for some reason, your Stream Deck is not detected, please add [this](https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules) udev rules to your system with the following command:
+
+    ```
+    sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules
+    ```
+
+    Then reload the rules with `udevadm trigger` or restart your system. 
