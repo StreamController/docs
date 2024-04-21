@@ -3,6 +3,7 @@ nav:
   - Home: 
     - Home: index.md
     - Installation: installation.md
+    - Common Problems: common_problems.md
   - Plugin Development:
     - Introduction: plugin_dev/intro.md
     - Create Your Own:
@@ -165,6 +166,7 @@ markdown_extensions:
           class: mermaid
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.details
 
 plugins:
   - snippet:
