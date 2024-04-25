@@ -14,13 +14,13 @@
     ```bash
     python -m venv .venv
     ```
-2. Install requirements via pip
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. Activate venv
+2. Activate venv
     ```bash
     source .venv/bin/activate
+    ```
+3. Install requirements via pip
+    ```bash
+    pip install -r requirements.txt
     ```
 4. Serve docs locally
     ```bash

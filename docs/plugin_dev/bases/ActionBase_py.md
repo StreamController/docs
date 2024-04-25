@@ -125,7 +125,7 @@ If you want to learn more by going throught the code click [here](https://github
     |color|[255, 255, 255, 255]|The color of the background|list[int]|
     |update|True|Whether to update the key|bool|
 
-### `show_error`:
+### `show_error`
 : **Arguments**:
 
     |Argument|Default|Description|Type|
@@ -289,3 +289,9 @@ If you want to learn more by going throught the code click [here](https://github
 : **Description**:
     Returns `True` if this action is a multi action.  
     If `True` all images operations should be disabled.
+
+## Available Constants
+### `HAS_CONFIGURATION`
+: **Description**:
+    Can be set to `True` or `False` to make an Action open the Configuration Page after it got added to a button
+: **Default**: `False` 
