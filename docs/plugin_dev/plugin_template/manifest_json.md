@@ -8,11 +8,12 @@ Per default the file looks like this:
   "thumbnail": "",
   "id": "",
   "name": "", 
-  "app-version": ""
+  "app-version": "",
+  "author": ""
 }
 ```
 
-As you can see there are five keys you can set.
+As you can see there are six keys you can set.
 Those fields are mandatory and need to be included in every Plugin
 
 
@@ -23,6 +24,7 @@ Those fields are mandatory and need to be included in every Plugin
 |id| The unique id of your plugin in [reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). Because Python has problems if the name contains dots, you must replace them with underscores. |
 |name| The name of your plugin. This will only be shown in the store.                                                                                                                                                             |
 |app-version| The current app version the Plugin uses|
+|author| The creator of the Plugin|
 
 
 The next 4 keys are optional and dont need to be included in the manifest. Adding them to the manifest would look like this:
