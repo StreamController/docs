@@ -69,7 +69,7 @@ If you want to learn more by going throught the code click [here](https://github
     |---|---|---|---|
     |path|None|The path of the stylesheet to add.|str|
 
-### `register_page
+### `register_page`
 : **Description**:
 
     Adds a page to StreamController.
