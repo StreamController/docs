@@ -9,11 +9,12 @@ Per default the file looks like this:
   "id": "",
   "name": "", 
   "app-version": "",
-  "author": ""
+  "author": "",
+  "github": ""
 }
 ```
 
-As you can see there are six keys you can set.
+As you can see there are seven keys you can set.
 Those fields are mandatory and need to be included in every Plugin
 
 
@@ -25,6 +26,7 @@ Those fields are mandatory and need to be included in every Plugin
 |name| The name of your plugin. This will only be shown in the store.                                                                                                                                                             |
 |app-version| The current app version the Plugin uses|
 |author| The creator of the Plugin|
+|github| The link to the Plugin repository|
 
 
 The next 4 keys are optional and dont need to be included in the manifest. Adding them to the manifest would look like this:
