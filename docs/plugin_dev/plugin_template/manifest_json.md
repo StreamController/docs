@@ -52,7 +52,7 @@ The next 4 keys are optional and dont need to be included in the manifest. Addin
 |tags| Can be used to Filter for Plugins|
 |minimum-app-version| Specifies a minimum app version the User needs to be running on for the Plugin to function correctly|
 
-The last two keys are optional and dont need to be in the manifest, they are used for backwards compatibility but are not needed with 2.0.0
+The last two keys are optional and dont need to be in the manifest, they are used for backwards compatibility but are not needed with 1.5.0
 
 ```json title="manifest.json"
 {
@@ -63,5 +63,5 @@ The last two keys are optional and dont need to be in the manifest, they are use
 
 |Name| Description                                                                                                                                                                                                                |
 |---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|description| Used for the description in the store, Deprecated since 2.0.0|
-|short-description| Used for the description in the preview, Deprecated since 2.0.0|
+|description| Used for the description in the store, Deprecated since 1.5.0|
+|short-description| Used for the description in the preview, Deprecated since 1.5.0|
