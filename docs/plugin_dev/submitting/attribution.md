@@ -1,4 +1,4 @@
-All plugins must have a `manifest.json` file in the root directory. It contains information for the store, such as the license and copyright.
+All plugins must have a `attribution.json` file in the root directory. It contains information for the store, such as the license and copyright.
 
 ```json
 {
