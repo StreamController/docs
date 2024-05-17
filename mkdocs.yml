@@ -40,6 +40,7 @@ nav:
         - Manifest: plugin_dev/submitting/manifest.md
         - Attribution: plugin_dev/submitting/attribution.md
         - Submitting: plugin_dev/submitting/submitting.md
+        - Terms and Conditions: plugin_dev/submitting/terms.md
     - Advanced Concepts:
         - DeckController: plugin_dev/advanced_concepts/DeckController.md
         - Page Caching: plugin_dev/advanced_concepts/PageCaching.md
