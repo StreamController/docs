@@ -4,6 +4,7 @@ nav:
     - Home: index.md
     - Installation: installation.md
     - Common Problems: common_problems.md
+    - FAQ: faq.md
   - Plugin Development:
     - Introduction: plugin_dev/intro.md
     - Create Your Own:
