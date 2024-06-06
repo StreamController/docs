@@ -2,6 +2,9 @@
 When you're system uses an older version of udev you might have to manually add some udev rules to your system.
 
 ??? info "Solution"
+    ## 1. Conflicting apps
+    Make sure that no other app is accessing your decks (check the autostart as well).
+    ## 2. Missing udev rules
     1. Run: `sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules`
     2. Restart your system: `reboot`
 
