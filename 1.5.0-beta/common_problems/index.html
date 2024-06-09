@@ -12,7 +12,7 @@
         <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../plugin_dev/intro/">
+        <link rel="next" href="../faq/">
       
       
       <link rel="icon" href="../assets/logo_small.png">
@@ -386,6 +386,8 @@
       
         
       
+        
+      
     
     
     
@@ -508,6 +510,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-conflicting-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conflicting apps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-missing-udev-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Missing udev rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-app-stops-if-main-window-gets-closed-widgets-freeze" class="md-nav__link">
     <span class="md-ellipsis">
       2. App stops if main window gets closed / Widgets freeze
@@ -520,6 +540,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1883,6 +1924,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-conflicting-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conflicting apps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-missing-udev-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Missing udev rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-app-stops-if-main-window-gets-closed-widgets-freeze" class="md-nav__link">
     <span class="md-ellipsis">
       2. App stops if main window gets closed / Widgets freeze
@@ -1928,6 +1987,9 @@
 <p>When you're system uses an older version of udev you might have to manually add some udev rules to your system.</p>
 <details class="info">
 <summary>Solution</summary>
+<h2 id="1-conflicting-apps">1. Conflicting apps<a class="headerlink" href="#1-conflicting-apps" title="Permanent link">&para;</a></h2>
+<p>Make sure that no other app is accessing your decks (check the autostart as well).</p>
+<h2 id="2-missing-udev-rules">2. Missing udev rules<a class="headerlink" href="#2-missing-udev-rules" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Run: <code>sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules</code></li>
 <li>Restart your system: <code>reboot</code></li>
@@ -1996,13 +2058,13 @@
         
         
           
-          <a href="../plugin_dev/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                FAQ
               </div>
             </div>
             <div class="md-footer__button md-icon">
