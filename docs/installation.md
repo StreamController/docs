@@ -1,3 +1,5 @@
+# Installation
+
 ##Flatpak
 
 : <a href='https://flathub.org/apps/details/com.core447.StreamController'><img width='200px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
@@ -27,7 +29,7 @@
 
     !!! note
 
-        Arch Linux (and possibly other distros) may need to install the following system packages using the distribution specific package manager:    
+        On Arch Linux (and possibly other distros) you may need to install the following system packages using the distribution specific package manager:
         ```
         xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
         ```
@@ -38,12 +40,7 @@
     python3 main.py
     ```
 
-##udev
+---
 
-: For most cases, this should not be necessary, but there are some known cases where devices are not detected due to older versions of udev or missing rules. If, for some reason, your Stream Deck is not detected, please add [this](https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules) udev rules to your system with the following command:
-
-    ```
-    sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules
-    ```
-
-    Then reload the rules with `sudo udevadm trigger` or restart your system. 
+# Help
+If you encounter any problems, please go through [Common Problems](common_problems.md). You can also open an issue on the [StreamController GitHub repository](https://github.com/Core447/StreamController) or on the [Discord](https://discord.gg/MSyHM8TN3u).
