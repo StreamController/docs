@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flatpak" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -444,6 +444,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -472,6 +474,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -492,15 +496,6 @@
   <a href="#github" class="md-nav__link">
     <span class="md-ellipsis">
       GitHub
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#udev" class="md-nav__link">
-    <span class="md-ellipsis">
-      udev
     </span>
   </a>
   
@@ -1898,6 +1893,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1918,15 +1915,6 @@
   <a href="#github" class="md-nav__link">
     <span class="md-ellipsis">
       GitHub
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#udev" class="md-nav__link">
-    <span class="md-ellipsis">
-      udev
     </span>
   </a>
   
@@ -1963,8 +1951,7 @@
   
 
 
-  <h1>Installation</h1>
-
+<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <h2 id="flatpak">Flatpak<a class="headerlink" href="#flatpak" title="Permanent link">&para;</a></h2>
 <dl>
 <dd><a href="https://flathub.org/apps/details/com.core447.StreamController"><img width="200px" alt="Download on Flathub" src="../assets/external/flathub.org/assets/badges/flathub-badge-en.png"></a></dd>
@@ -1989,26 +1976,26 @@
 </span></code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Arch Linux (and possibly other distros) may need to install the following system packages using the distribution specific package manager:  <br />
+<p>On Arch Linux (and possibly other distros) you may need to install the following system packages using the distribution specific package manager:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
 </span></code></pre></div></p>
 </div>
 </li>
 <li>
+<p>Optional: Switch branches</p>
+<p>If you want to try out a specific branch, you can change the branch using:
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch&gt;
+</span></code></pre></div></p>
+</li>
+<li>
 <p>Launch the app:
-    <div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>main.py
+    <div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>main.py
 </span></code></pre></div></p>
 </li>
 </ol>
-<h2 id="udev">udev<a class="headerlink" href="#udev" title="Permanent link">&para;</a></h2>
-<dl>
-<dd>
-<p>For most cases, this should not be necessary, but there are some known cases where devices are not detected due to older versions of udev or missing rules. If, for some reason, your Stream Deck is not detected, please add <a href="https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules">this</a> udev rules to your system with the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo wget https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -O /etc/udev/rules.d/60-streamdeck.rules
-</span></code></pre></div>
-<p>Then reload the rules with <code>sudo udevadm trigger</code> or restart your system. </p>
-</dd>
-</dl>
+<hr />
+<h1 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h1>
+<p>If you encounter any problems, please go through <a href="../common_problems/">Common Problems</a>. You can also open an issue on the <a href="https://github.com/Core447/StreamController">StreamController GitHub repository</a> or on the <a href="https://discord.gg/MSyHM8TN3u">Discord</a>.</p>
 
 
 
