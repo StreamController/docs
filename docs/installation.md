@@ -34,8 +34,14 @@
         xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
         ```
     
+6. Optional: Switch branches
 
-6. Launch the app:
+    If you want to try out a specific branch, you can change the branch using:
+    ```sh
+    git checkout <branch>
+    ```    
+
+7. Launch the app:
     ```sh
     python3 main.py
     ```
