@@ -9,7 +9,7 @@ When you're system uses an older version of udev you might have to manually add 
     2. Restart your system: `reboot`
 
 ## 2. App stops if main window gets closed / Widgets freeze
-This can happen if you're under Ubuntu because it might doesn't allow StreamController to run in the background.
+This can happen if you're under Ubuntu because it might not allow StreamController to run in the background.
 
 ??? info "Solution"
     1. Open your system settings
