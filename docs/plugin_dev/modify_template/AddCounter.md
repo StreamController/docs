@@ -21,12 +21,11 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 ```
-That's it, at least for now. You just created a basic action without any functionality. However this would not be shown it the ui yet.
+
+That's it, at least for now. You just created a basic action without any functionality. However, this would not be shown it the ui yet.
 
 ### 4. Register the action
 All actions of a plugin have to be registered in the plugin's [plugin base](../bases/PluginBase_py.md), here in [main.py](../plugin_template/main_py.md).  
@@ -118,28 +117,22 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 ```
 #### 1. The first thing we need to do is to add a counter variable:
 ```python title="counter.py (partial)" hl_lines="7"
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 ```
 #### 2. Now we need to increase the counter if the action key gets pressed:
 ```python title="counter.py (partial)" hl_lines="9 10"
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -149,10 +142,8 @@ class Counter(ActionBase):
 #### 3. Update the label on the key if the counter changes:
 ```python title="counter.py (partial)"  hl_lines="11"
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -163,10 +154,8 @@ class Counter(ActionBase):
 #### 4. Show the initial counter on load up:
 ```python title="counter.py (partial)"  hl_lines="9-10"
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -187,10 +176,8 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 

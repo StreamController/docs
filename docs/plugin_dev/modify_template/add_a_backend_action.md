@@ -159,10 +159,8 @@ import os
 from loguru import logger as log #(1)!
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py")
         self.launch_backend(backend_path=backend_path, open_in_terminal=True)
