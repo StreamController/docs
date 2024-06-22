@@ -34,17 +34,14 @@ pip install -r requirements.txt
 ```
 ## 6. Change the data path
 
-[StreamController](https://github.com/Core447/StreamController) normally stores data in the `~/.streamcontroller` directory. For development however it is useful to change the path to a directory inside the cloned repository. I recommend using creating a `data` directory in the root of the repository.
+[StreamController](https://github.com/Core447/StreamController) normally stores data in the `.var/app/com.core447.StreamController/data` directory. However, for development it is useful to change the path to a directory inside the cloned repository. I recommend using creating a `data` directory in the root of the repository.
 
 Create the directory:
 ```sh
 mkdir -p data
 ```
 
-Set the value of `DATA_PATH` to `data` using:
-```sh
-nano globals.py
-```
+You can then use the the `--data` argument to override the data path on launch. For example: `--data data`. Depending on your IDE you can also add this to your project configuration.
 
 !!! note
     If you have installed [StreamController](https://github.com/Core447/StreamController) for your personal use as a Flatpak, this will not affect the data path of your Flatpak.
