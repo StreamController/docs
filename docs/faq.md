@@ -6,11 +6,11 @@ StreamController is the Linux alternative to the Windows/Mac Elgato Stream Deck 
 
 ### Do plugins for the Elgato Software work in StreamController?
 <!-- bot: elgato-plugins -->
-No, they currently don't work with StreamController, and we are not developing this feature at the moment. However, this **may** come in the future.
+Plugins for the official Elgato Stream Deck software do not work in StreamController, and we are not developing this feature at the moment. However, this **may** come in the future.
 
 ### What does "official" stand for in the plugins?
 <!-- bot: official-badge -->
-This means the plugin was created by the maintainer and lead dev, [Core447](https://github.com/Core447).
+The official badge indicates an asset was created by the maintainer and lead dev, [Core447](https://github.com/Core447). 
 
 ### Devices
 <!-- bot: devices -->
