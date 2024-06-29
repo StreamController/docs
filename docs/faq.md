@@ -20,8 +20,7 @@ Currently, the following devices are supported:
 - Stream Deck Original V2
 - Stream Deck Mini
 - Stream Deck XL
-
-Support for the Stream Deck Plus is coming soon!
+- Stream Deck Plus
 
 ## Problems
 
