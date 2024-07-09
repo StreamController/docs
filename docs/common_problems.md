@@ -1,5 +1,5 @@
 ## 1. No decks found
-When you're system uses an older version of udev you might have to manually add some udev rules to your system.
+When your system uses an older version of udev you might have to manually add some udev rules to your system.
 
 ??? info "Solution"
     ## 1. Conflicting apps
