@@ -1,15 +1,16 @@
-When non of the Listed problems here solve your problem create an issue on Github or join the Discord to get help.
+If none of the listed problems resolve your issue, please create an issue on [GitHub](https://github.com/StreamController/StreamController) or join our [Discord](https://discord.gg/MSyHM8TN3u) for help.
 
-To give you the help that is needed we would need the log or CLI output from StreamController
+To provide the necessary help, we need the log or CLI output from StreamController. Perform the following steps to get the CLI output:
 
-- To get the output of the CLI run:
+1. Stop running instances of StreamController using the option in the hamburger menu
+
+2. Run the following command to start the app:
     ```sh
     flatpak run com.core447.StreamController
     ```
-- Afterward copy **EVERYTHING** that is in the CLI
+3. Afterward copy everything that is in the CLI. You may want to remove your personal user name from it. To do this use an editor with search and replace functionality like [gedit](https://flathub.org/apps/org.gnome.gedit).
 
-Most of the time we can help just by getting this information, but sometimes we need to reproduce the Bug.
-For that it would be best if you provide a list of steps to reproduce the behaviour.
+Most of the time this information is sufficient, but sometimes we need to reproduce the issue. In such cases, please provide a list of steps to reproduce the behaviour.
 An example could look like this:
 ```
 1. Start StreamController
