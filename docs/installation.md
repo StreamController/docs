@@ -46,6 +46,11 @@
     python3 main.py
     ```
 
+##Unofficial packages
+The following packages are functional but **unofficial** and maintained by our community:
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/streamcontroller.svg)](https://repology.org/project/streamcontroller/versions)
+
 ---
 
 # Help
