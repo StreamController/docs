@@ -16,7 +16,7 @@
     ```
 3. Create a [virtual environment](https://docs.python.org/3/library/venv.html):
     ```sh
-    python -m venv .venv
+    python3 -m venv .venv
     ```
 4. Activate the virtual environment:
     ```sh
@@ -33,7 +33,10 @@
         ```
         xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
         ```
-    
+        On Ubuntu Linux (tested on 24.04.1 LTS) you may need to install the following system packages using the distribution specific package manager:
+        ```
+        gir1.2-xdpgtk4-1.0 libgirepository1.0-dev libportal-gtk4-1 libportal-gtk4-dev
+        ```
 6. Optional: Switch branches
 
     If you want to try out a specific branch, you can change the branch using:
