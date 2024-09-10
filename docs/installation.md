@@ -5,43 +5,50 @@
 : <a href='https://flathub.org/apps/details/com.core447.StreamController'><img width='200px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ##GitHub
+1. System Dependencies
 
-1. Clone StreamController from [GitHub](https://github.com/Core447/StreamController) by typing:
-    ```sh
-    git clone https://github.com/Core447/StreamController
-    ```
-2. Enter the `StreamController` directory:
-    ```sh
-    cd StreamController
-    ```
-3. Create a [virtual environment](https://docs.python.org/3/library/venv.html):
-    ```sh
-    python -m venv .venv
-    ```
-4. Activate the virtual environment:
-    ```sh
-    source .venv/bin/activate
-    ```
-5. Install [pip](https://pypi.org/project/pip/) requirements:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-    !!! note
-
+    Please follow the guide that matches your distro the most:
+    ??? info "Arch Linux"
         On Arch Linux (and possibly other distros) you may need to install the following system packages using the distribution specific package manager:
         ```
         xdg-desktop-portal xdg-desktop-portal-gtk libportal libportal-gtk4
         ```
-    
-6. Optional: Switch branches
+
+    ??? info "Ubuntu Linux"
+        On Ubuntu Linux (tested on 24.04.1 LTS) you may need to install the following system packages using the distribution specific package manager:
+        ```
+        gir1.2-xdpgtk4-1.0 libgirepository1.0-dev libportal-gtk4-1 libportal-gtk4-dev
+        ```
+
+2. Clone StreamController from [GitHub](https://github.com/Core447/StreamController) by typing:
+    ```sh
+    git clone https://github.com/Core447/StreamController
+    ```
+3. Enter the `StreamController` directory:
+    ```sh
+    cd StreamController
+    ```
+4. Create a [virtual environment](https://docs.python.org/3/library/venv.html):
+    ```sh
+    python3 -m venv .venv
+    ```
+5. Activate the virtual environment:
+    ```sh
+    source .venv/bin/activate
+    ```
+6. Install [pip](https://pypi.org/project/pip/) requirements:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+7. Optional: Switch branches
 
     If you want to try out a specific branch, you can change the branch using:
     ```sh
     git checkout <branch>
     ```    
 
-7. Launch the app:
+8. Launch the app:
     ```sh
     python3 main.py
     ```
