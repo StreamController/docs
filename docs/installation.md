@@ -17,7 +17,7 @@
     ??? info "Ubuntu Linux"
         On Ubuntu Linux (tested on 24.04.1 LTS) you may need to install the following system packages using the distribution specific package manager:
         ```
-        gir1.2-xdpgtk4-1.0 libgirepository1.0-dev libportal-gtk4-1 libportal-gtk4-dev
+        gir1.2-xdpgtk4-1.0 libgirepository1.0-dev libportal-gtk4-1 libportal-gtk4-dev build-essential libdbus-glib-1-dev
         ```
 
 2. Clone StreamController from [GitHub](https://github.com/Core447/StreamController) by typing:
