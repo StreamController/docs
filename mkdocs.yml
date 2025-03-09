@@ -24,6 +24,7 @@ nav:
         # - __install__.py: plugin_dev/plugin_template/__install___py.md
         # - requirements.txt: plugin_dev/plugin_template/requirements_txt.md
         - manifest.json: plugin_dev/plugin_template/manifest_json.md
+        - about.json: plugin_dev/plugin_template/about_json.md
         - attribution.json: plugin_dev/plugin_template/attribution_json.md
       - 5. Modify The Template:
         - Overview:  plugin_dev/modify_template/overview.md

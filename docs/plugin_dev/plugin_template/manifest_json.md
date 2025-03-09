@@ -1,67 +1,74 @@
+# Manifest.json
+
 The [manifest.json](manifest_json.md) file contains information about the plugin.
 
-
-Per default the file looks like this:
+## Required Keys
 ```json title="manifest.json"
 {
+  "name": "",
   "version": "",
-  "thumbnail": "",
-  "id": "",
-  "name": "", 
   "app-version": "",
-  "author": "",
+  "id": "",
   "github": ""
 }
 ```
 
-As you can see there are seven keys you can set.
-Those fields are mandatory and need to be included in every Plugin
+|Name| Description                                                                                                                                                 |
+|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|name| The name of you'r Plugin. This will be used everywhere, where the Plugin Name will be displayed                                                             |
+|vesrion| The version of the Plugin                                                                                                                                   |
+|app-version| The current app version that the Plugin uses                                                                                                                |
+|id| The unique id of your plugin in reverse domain name notation. Because Python has problems if the name contains dots, you must replace them with underscores. |
+|github| The link to the Plugin's github repository                                                                                                                  |
 
 
-|Name| Description                                                                                                                                                                                                                |
-|---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|version| The version of your plugin. This has currently no effect at all.                                                                                                                                                           |
-|thumbnail| The path to the thumbnail you want to show in the store. This is really important.                                                                                                                                         |
-|id| The unique id of your plugin in [reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). Because Python has problems if the name contains dots, you must replace them with underscores. |
-|name| The name of your plugin. This will only be shown in the store.                                                                                                                                                             |
-|app-version| The current app version the Plugin uses|
-|author| The creator of the Plugin|
-|github| The link to the Plugin repository|
-
-
-The next 4 keys are optional and dont need to be included in the manifest. Adding them to the manifest would look like this:
-
+## Optional Keys
 ```json title="manifest.json"
 {
-  "app-version": "",
-  "descriptions": {
-    "en_US": ""
-  },
-  "short-descriptions": {
-    "en_US": ""
-  },
-  "tags": ["","",""],
-  "minimum-app-version": ""
+  "minimum-app-version": "",
+  "thumbnail": "",
+  "descriptions": {},
+  "short-descriptions": {},
+  "tags": []
 }
 ```
 
-|Name| Description                                                                                                                                                                                                                |
-|---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|descriptions| Contains all the Descriptions that can be shown in the Store by using the Locales|
-|short-descriptions| Contains all the Descriptions that can be shown in the Preview in the Store by using the Locales|
-|tags| Can be used to Filter for Plugins|
-|minimum-app-version| Specifies a minimum app version the User needs to be running on for the Plugin to function correctly|
+| Name                | Description                    |
+|---------------------|--------------------------------|
+| minimum-app-version | The minimum app version the Plugin runs under |
+| thumbnail           | The path to the thumbnail file |
+| descriptions        | Containing all descriptions that can be shown in the store
+| short-descriptions  | Containing all short descriptions that can be shown in the Plugin Preview in the Store
+| tags                | Used for filtering Plugins based on provided tags|
 
-The last two keys are optional and dont need to be in the manifest, they are used for backwards compatibility but are not needed with 1.5.0
-
-```json title="manifest.json"
-{
-  "description": "",
-  "short-description": ""
-}
-```
+### Deprecated Optional Keys
 
 |Name| Description                                                                                                                                                                                                                |
 |---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |description| Used for the description in the store, Deprecated since 1.5.0|
 |short-description| Used for the description in the preview, Deprecated since 1.5.0|
+
+## Example Manifest File
+```json title="manifest.json"
+{
+  "name": "Plugin Template",
+  "version": "1.0.0",
+  "app-version": "1.5.0-beta.6",
+  "minimum-app-version": "1.5.0",
+  "id": "com_core447_PluginTemplate",
+  "github": "https://github.com/StreamController/PluginTemplate",
+  "thumbnail": "store/thumbnail.png",
+  "descriptions": {
+    "en_US": "A Template Manifest file that is very important for the Plugin to load",
+    "de_DE": "Die Template manifest datei, welche sehr wichtig ist damit das Plugin laden kann"
+  },
+  "short-descriptions": {
+    "en_US": "A Tempalte Manifest file",
+    "de_DE": "Die Template Manifest Datei"
+  },
+  "tags": [
+    "Demo",
+    "Useless"
+  ]
+}
+```
