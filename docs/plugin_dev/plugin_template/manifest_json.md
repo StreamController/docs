@@ -2,53 +2,6 @@
 
 The [manifest.json](manifest_json.md) file contains information about the plugin.
 
-## Required Keys
-```json title="manifest.json"
-{
-  "name": "",
-  "version": "",
-  "app-version": "",
-  "id": "",
-  "github": ""
-}
-```
-
-|Name| Description                                                                                                                                                 |
-|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|name| The name of you'r Plugin. This will be used everywhere, where the Plugin Name will be displayed                                                             |
-|vesrion| The version of the Plugin                                                                                                                                   |
-|app-version| The current app version that the Plugin uses                                                                                                                |
-|id| The unique id of your plugin in reverse domain name notation. Because Python has problems if the name contains dots, you must replace them with underscores. |
-|github| The link to the Plugin's github repository                                                                                                                  |
-
-
-## Optional Keys
-```json title="manifest.json"
-{
-  "minimum-app-version": "",
-  "thumbnail": "",
-  "descriptions": {},
-  "short-descriptions": {},
-  "tags": []
-}
-```
-
-| Name                | Description                    |
-|---------------------|--------------------------------|
-| minimum-app-version | The minimum app version the Plugin runs under |
-| thumbnail           | The path to the thumbnail file |
-| descriptions        | Containing all descriptions that can be shown in the store
-| short-descriptions  | Containing all short descriptions that can be shown in the Plugin Preview in the Store
-| tags                | Used for filtering Plugins based on provided tags|
-
-### Deprecated Optional Keys
-
-|Name| Description                                                                                                                                                                                                                |
-|---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|description| Used for the description in the store, Deprecated since 1.5.0|
-|short-description| Used for the description in the preview, Deprecated since 1.5.0|
-
-## Example Manifest File
 ```json title="manifest.json"
 {
   "name": "Plugin Template",
@@ -72,3 +25,16 @@ The [manifest.json](manifest_json.md) file contains information about the plugin
   ]
 }
 ```
+
+|Name| Description                                                                                                                                                 |
+|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|name| The name of you'r Plugin. This will be used everywhere, where the Plugin Name will be displayed                                                             |
+|vesrion| The version of the Plugin                                                                                                                                   |
+|app-version| The current app version that the Plugin uses                                                                                                                |
+|minimum-app-version"|The minumum app version required by the plugin|
+|id| The unique id of your plugin in reverse domain name notation. Because Python has problems if the name contains dots, you must replace them with underscores. |
+|github| The link to the Plugin's github repository                                                                                                                  |
+|thumbnail|The relative path inside the repository to the thumbnail of the plugin|
+|descriptions|Localized long descriptions of the plugin|
+|short-descriptions|Localized short descriptions of the plugin. Shown in the plugin cards in the store|
+|tags|List of tags of the plugin. Not shown in any way atm.|

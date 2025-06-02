@@ -20,14 +20,14 @@
 | Name          | Description                                                                                                     |
 |---------------|-----------------------------------------------------------------------------------------------------------------|
 | author        | Author of the Plugin                                                                                            |
-| release-notes | Containing information where the release note file is and what version the release notes are on                 
-| path          | The path to the release notes                                                                                   |
-| version       | The version of the release notes                                                                                |
-| credits       | Containing information about different sections that the Developer wants to credit                              |
-| comments      | Containing comments that the developer wants to share. Those will be translated, so the language keys are needed |
-| copyright     | Copyright of the Plugin                                                                                         |
+| release-notes | Containing information where the release note file is and what version the release notes are on (optional)                
+| path          | The path to the release notes (optional)                                                                                  |
+| version       | The version of the release notes (optional)                                                                               |
+| credits       | Containing information about different sections that the Developer wants to credit (optional)                             |
+| comments      | Containing comments that the developer wants to share. Those will be translated, so the language keys are needed (optional) |
+| copyright     | Copyright of the Plugin (optional)                                                                                         |
 | support       | General Support Website                                                                                         |
-|acknowledgements| Sections that contain acknowledgements to people                                                                |
+|acknowledgements| Sections that contain acknowledgements to people (optional)                                                                |
 
 ## Example About File
 ```json title="about.json"
