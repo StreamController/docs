@@ -11,6 +11,9 @@
 - Wallpaper pack support
 - Multi deck support
 - Background images & videos
+- Automatic page switching based on the active window
+- Auto-lock feature that locks the Stream Deck when the system is locked
+- Option to configure deck rotation
 - Nice GTK4 interface
 - Active maintenance
 

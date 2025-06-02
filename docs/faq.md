@@ -21,6 +21,7 @@ Currently, the following devices are supported:
 - Stream Deck Mini
 - Stream Deck XL
 - Stream Deck Plus
+- Stream Deck Neo (only the normal buttons)
 
 ## Problems
 
@@ -42,4 +43,4 @@ You can open an issue on [Github](https://github.com/StreamController/StreamCont
 
 ### How can I create my own plugin?
 <!-- bot: plugin-dev -->
-Firstly, check if the plugin you want to create doesn't exist or is not being developed. If something already exists, you may be able to work with the developer of that plugin to make it better. If it doesn't exist, the Plugin Template and the [Wiki](https://streamcontroller.github.io/docs) are a great place to start.
+Firstly, check if the plugin you want to create doesn't exist or is not being developed. If something already exists, you may be able to work with the developer of that plugin to make it better. If it doesn't exist, the [Plugin Template](https://github.com/StreamController/PluginTemplate) and the [Wiki](https://streamcontroller.github.io/docs) are a great place to start.

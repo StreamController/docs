@@ -36,9 +36,9 @@ pip install -r requirements.txt
 
 [StreamController](https://github.com/Core447/StreamController) normally stores data in the `.var/app/com.core447.StreamController/data` directory. However, for development it is useful to change the path to a directory inside the cloned repository. I recommend using creating a `data` directory in the root of the repository.
 
-Create the directory:
+Create the data directory:
 ```sh
-mkdir -p data
+mkdir -p data/plugins
 ```
 
 You can then use the the `--data` argument to override the data path on launch. For example: `--data data`. Depending on your IDE you can also add this to your project configuration.
@@ -56,7 +56,7 @@ cd data/plugins
 
 Head over to [GitHub](https://github.com/Core447/PluginTemplate) and click on the green `Use this template` button. Follow the instructions.
 
-The next step is to clone the newly created repository:
+The next step is to clone the newly created repository where `https://github.com/username/plugin-template` is the url to your plugin:
 ```sh
 git clone https://github.com/username/plugin-template
 ```
