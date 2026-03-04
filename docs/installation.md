@@ -20,6 +20,12 @@
         gir1.2-xdpgtk4-1.0 libgirepository1.0-dev libportal-gtk4-1 libportal-gtk4-dev build-essential libdbus-glib-1-dev
         ```
 
+    ??? info "Fedora"
+        Please run the following command to install all needed dependencies:
+        ```
+        sudo dnf install -y gcc gcc-c++ kernel-headers python3-devel gobject-introspection-devel glib2-devel cairo-devel cairo-gobject-devel dbus-devel libffi-devel libjpeg-turbo-devel zlib-devel libtiff-devel freetype-devel lcms2-devel libwebp-devel openjpeg2-devel libunwind-devel lz4-devel bzip2-devel elfutils-debuginfod-client-devel portaudio-devel
+        ```
+
 2. Clone StreamController from [GitHub](https://github.com/Core447/StreamController) by typing:
     ```sh
     git clone https://github.com/Core447/StreamController
