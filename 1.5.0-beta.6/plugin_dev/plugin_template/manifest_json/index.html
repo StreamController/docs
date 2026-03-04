@@ -12,7 +12,7 @@
         <link rel="prev" href="../SimpleAction_py/">
       
       
-        <link rel="next" href="../attribution_json/">
+        <link rel="next" href="../about_json/">
       
       
       <link rel="icon" href="../../../assets/logo_small.png">
@@ -79,6 +79,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#manifestjson" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -823,6 +828,8 @@
       
         
       
+        
+      
     
     
     
@@ -929,6 +936,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -940,6 +949,27 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    about.json
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1842,6 +1872,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1872,22 +1904,30 @@
   
 
 
-  <h1>manifest.json</h1>
-
+<h1 id="manifestjson">Manifest.json<a class="headerlink" href="#manifestjson" title="Permanent link">&para;</a></h1>
 <p>The <a href="./">manifest.json</a> file contains information about the plugin.</p>
-<p>Per default the file looks like this:
 <div class="language-json highlight"><span class="filename">manifest.json</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;app-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;github&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
-</span></code></pre></div></p>
-<p>As you can see there are seven keys you can set.
-Those fields are mandatory and need to be included in every Plugin</p>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plugin Template&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;app-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.5.0-beta.6&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;minimum-app-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.5.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com_core447_PluginTemplate&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;github&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/StreamController/PluginTemplate&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;store/thumbnail.png&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;descriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;en_US&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A Template Manifest file that is very important for the Plugin to load&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;de_DE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Die Template manifest datei, welche sehr wichtig ist damit das Plugin laden kann&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">&quot;short-descriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;en_US&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A Tempalte Manifest file&quot;</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">&quot;de_DE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Die Template Manifest Datei&quot;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="s2">&quot;Demo&quot;</span><span class="p">,</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="s2">&quot;Useless&quot;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
+</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1897,95 +1937,44 @@ Those fields are mandatory and need to be included in every Plugin</p>
 </thead>
 <tbody>
 <tr>
-<td>version</td>
-<td>The version of your plugin. This has currently no effect at all.</td>
-</tr>
-<tr>
-<td>thumbnail</td>
-<td>The path to the thumbnail you want to show in the store. This is really important.</td>
-</tr>
-<tr>
-<td>id</td>
-<td>The unique id of your plugin in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation">reverse domain name notation</a>. Because Python has problems if the name contains dots, you must replace them with underscores.</td>
-</tr>
-<tr>
 <td>name</td>
-<td>The name of your plugin. This will only be shown in the store.</td>
+<td>The name of you'r Plugin. This will be used everywhere, where the Plugin Name will be displayed</td>
+</tr>
+<tr>
+<td>vesrion</td>
+<td>The version of the Plugin</td>
 </tr>
 <tr>
 <td>app-version</td>
-<td>The current app version the Plugin uses</td>
+<td>The current app version that the Plugin uses</td>
 </tr>
 <tr>
-<td>author</td>
-<td>The creator of the Plugin</td>
+<td>minimum-app-version"</td>
+<td>The minumum app version required by the plugin</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The unique id of your plugin in reverse domain name notation. Because Python has problems if the name contains dots, you must replace them with underscores.</td>
 </tr>
 <tr>
 <td>github</td>
-<td>The link to the Plugin repository</td>
+<td>The link to the Plugin's github repository</td>
 </tr>
-</tbody>
-</table>
-<p>The next 4 keys are optional and dont need to be included in the manifest. Adding them to the manifest would look like this:</p>
-<div class="language-json highlight"><span class="filename">manifest.json</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;app-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;descriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;en_US&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;short-descriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;en_US&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">],</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;minimum-app-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
-</span></code></pre></div>
-<table>
-<thead>
 <tr>
-<th>Name</th>
-<th>Description</th>
+<td>thumbnail</td>
+<td>The relative path inside the repository to the thumbnail of the plugin</td>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>descriptions</td>
-<td>Contains all the Descriptions that can be shown in the Store by using the Locales</td>
+<td>Localized long descriptions of the plugin</td>
 </tr>
 <tr>
 <td>short-descriptions</td>
-<td>Contains all the Descriptions that can be shown in the Preview in the Store by using the Locales</td>
+<td>Localized short descriptions of the plugin. Shown in the plugin cards in the store</td>
 </tr>
 <tr>
 <td>tags</td>
-<td>Can be used to Filter for Plugins</td>
-</tr>
-<tr>
-<td>minimum-app-version</td>
-<td>Specifies a minimum app version the User needs to be running on for the Plugin to function correctly</td>
-</tr>
-</tbody>
-</table>
-<p>The last two keys are optional and dont need to be in the manifest, they are used for backwards compatibility but are not needed with 1.5.0</p>
-<div class="language-json highlight"><span class="filename">manifest.json</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;short-description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>description</td>
-<td>Used for the description in the store, Deprecated since 1.5.0</td>
-</tr>
-<tr>
-<td>short-description</td>
-<td>Used for the description in the preview, Deprecated since 1.5.0</td>
+<td>List of tags of the plugin. Not shown in any way atm.</td>
 </tr>
 </tbody>
 </table>
@@ -2041,13 +2030,13 @@ Those fields are mandatory and need to be included in every Plugin</p>
         
         
           
-          <a href="../attribution_json/" class="md-footer__link md-footer__link--next" aria-label="Next: attribution.json">
+          <a href="../about_json/" class="md-footer__link md-footer__link--next" aria-label="Next: about.json">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                attribution.json
+                about.json
               </div>
             </div>
             <div class="md-footer__button md-icon">

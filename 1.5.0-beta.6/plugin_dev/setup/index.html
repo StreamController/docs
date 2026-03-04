@@ -943,6 +943,8 @@
       
         
       
+        
+      
     
     
     
@@ -1048,6 +1050,27 @@
   
   <span class="md-ellipsis">
     manifest.json
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin_template/about_json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    about.json
   </span>
   
 
@@ -2102,8 +2125,8 @@ Just make sure that all requested changes outside of your plugin are generic one
 </span></code></pre></div>
 <h2 id="6-change-the-data-path">6. Change the data path<a class="headerlink" href="#6-change-the-data-path" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/Core447/StreamController">StreamController</a> normally stores data in the <code>.var/app/com.core447.StreamController/data</code> directory. However, for development it is useful to change the path to a directory inside the cloned repository. I recommend using creating a <code>data</code> directory in the root of the repository.</p>
-<p>Create the directory:
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>data
+<p>Create the data directory:
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>data/plugins
 </span></code></pre></div></p>
 <p>You can then use the the <code>--data</code> argument to override the data path on launch. For example: <code>--data data</code>. Depending on your IDE you can also add this to your project configuration.</p>
 <div class="admonition note">
@@ -2115,7 +2138,7 @@ Just make sure that all requested changes outside of your plugin are generic one
 </span></code></pre></div>
 <h2 id="7-create-a-plugin-repository-by-using-the-plugin-template">7. Create a plugin repository by using the <a href="https://github.com/Core447/PluginTemplate">Plugin Template</a>:<a class="headerlink" href="#7-create-a-plugin-repository-by-using-the-plugin-template" title="Permanent link">&para;</a></h2>
 <p>Head over to <a href="https://github.com/Core447/PluginTemplate">GitHub</a> and click on the green <code>Use this template</code> button. Follow the instructions.</p>
-<p>The next step is to clone the newly created repository:
+<p>The next step is to clone the newly created repository where <code>https://github.com/username/plugin-template</code> is the url to your plugin:
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/plugin-template
 </span></code></pre></div>
 This will create a new directory called <code>plugin-template</code> in the plugins directory with a bunch of files. But no worry, I will explain each of them in the next section.</p>
