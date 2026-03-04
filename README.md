@@ -28,3 +28,10 @@
     ```
 5. Make changes, and preview them on [http://localhost:8000](http://localhost:8000)
 6. Once you are happy, commit, push and open pull request
+
+--- 
+
+To publish a new version run:
+```
+run mike deploy --push --update-aliase VERSION latest
+```
