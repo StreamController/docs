@@ -1,4 +1,4 @@
-Signals are called when special actions are performed in the ui, allowing the plugin to respond to these actions. For example, should your plugin have some kind of page selection in the [config area](../bases/ActionBase_py.md#get_config_rows) your plugin needs to get informed if a page gets renamed. That's exactly what signals are for.
+Signals are called when special actions are performed in the ui, allowing the plugin to respond to these actions. For example, should your plugin have some kind of page selection in the [config area](../bases/ActionCore_py.md#get_config_rows) your plugin needs to get informed if a page gets renamed. That's exactly what signals are for.
 
 ## Available signals
 
@@ -61,7 +61,7 @@ Signals are called when special actions are performed in the ui, allowing the pl
 from src.Signals import Signals
 ```
 2. Connect to the signal  
-This is done by the [`connect`](../bases/ActionBase_py.md#connect) method of the [`ActionBase`](../bases/ActionBase_py.md):
+This is done by the [`connect`](../bases/ActionCore_py.md#connect) method of [ActionCore](../bases/ActionCore_py.md):
 ```python
 self.connect(signal=Signals.PageRename, callback=self.on_page_rename)
 ```
@@ -69,4 +69,4 @@ self.connect(signal=Signals.PageRename, callback=self.on_page_rename)
 Now every time a page gets renamed the `on_page_rename` method will be called.
 
 ## Not enough?
-Should you need a signal that is currently not availble feel free to open a [issue](https://github.com/Core447/StreamController/issues) or work on an own [pull request](https://github.com/Core447/StreamController/pulls).
+Should you need a signal that is currently not availble feel free to open a [issue](https://github.com/StreamController/StreamController/issues) or work on an own [pull request](https://github.com/StreamController/StreamController/pulls).

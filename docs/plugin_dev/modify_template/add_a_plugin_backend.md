@@ -40,21 +40,27 @@ backend = Backend()
 !!! note
     As you can see there is no difference in the backend code between a plugin and an action backend.
 
-### 4. Remove [backend launch](../bases/ActionBase_py.md#launch_backend) from the [counter action](AddCounter.md)
+### 4. Remove backend launch from the counter action
 To do this remove the highlighted lines:
-```python title="counter.py" hl_lines="16-17"
+```python title="counter.py" hl_lines="19-20"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
 import os
 from loguru import logger as log 
 
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
         backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py")
         self.launch_backend(backend_path=backend_path, open_in_terminal=True)
@@ -83,10 +89,14 @@ class Counter(ActionBase):
 
 ### 5. Launch the backend
 Now we can launch the backend from within the plugin:
-```python title="main.py" hl_lines="13-15"
+```python title="main.py" hl_lines="7 15-18"
 # Import StreamController modules
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+from src.backend.PluginManager.ActionInputSupport import ActionInputSupport
+from src.backend.DeckManagement.InputIdentifier import Input
+
+import os
 
 # Import actions
 from .actions.SimpleAction.SimpleAction import SimpleAction
@@ -102,45 +112,60 @@ class PluginTemplate(PluginBase):
 
         ## Register actions
         self.simple_action_holder = ActionHolder(
-            plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
-            action_name = "Simple Action",
+            plugin_base=self,
+            action_core=SimpleAction,
+            action_id_suffix="SimpleAction",
+            action_name="Simple Action",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNSUPPORTED,
+                Input.Touchscreen: ActionInputSupport.UNSUPPORTED
+            }
         )
         self.add_action_holder(self.simple_action_holder)
 
         self.counter_action_holder = ActionHolder(
-            plugin_base = self,
-            action_base = Counter,
-            action_id = "dev_core447_Template::Counter", # Change this to your own plugin id
-            action_name = "Counter",
+            plugin_base=self,
+            action_core=Counter,
+            action_id_suffix="Counter",
+            action_name="Counter",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNSUPPORTED,
+                Input.Touchscreen: ActionInputSupport.UNSUPPORTED
+            }
         )
         self.add_action_holder(self.counter_action_holder)
 
         # Register plugin
         self.register(
-            plugin_name = "Template",
-            github_repo = "https://github.com/StreamController/PluginTemplate",
-            plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
+            plugin_name="Template",
+            github_repo="https://github.com/StreamController/PluginTemplate",
+            plugin_version="1.0.0",
+            app_version="1.5.0-beta.9"
         )
 ```
 
 ### 6. Use the backend
 Now we can modify `counter.py` to use the new plugin backend:
-```python title="counter.py" hl_lines="18 28-29"
+```python title="counter.py" hl_lines="23 27-28"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
-import os
 from loguru import logger as log 
 
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
     def on_ready(self):
         try:

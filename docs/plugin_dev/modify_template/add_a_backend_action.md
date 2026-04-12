@@ -36,7 +36,7 @@ backend = Backend() #(2)!
 1. Import the [BackendBase](../bases/BackendBase_py.md)
 2. Create an instance of the class
 
-The backend will automatically connect to your action. This is possible because [launch_backend](../bases/ActionBase_py.md#launch_backend) starts `backend.py` with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port as an argument.
+The backend will automatically connect to your action. This is possible because [launch_backend](../bases/ActionCore_py.md#launch_backend) starts `backend.py` with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port as an argument.
 
 ### 4. Add counter methods to the backend
 Now we can add methods to retrive the current number and increment it.
@@ -63,16 +63,20 @@ Now we can remove the old counter code from [Counter](AddCounter.md) because we 
 This results into:
 ```python title="counter.py"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
-class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+class Counter(ActionCore):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
     def on_ready(self):
         pass
@@ -82,21 +86,25 @@ class Counter(ActionBase):
 ```
 
 ### 6. Launch the backend from the action
-The next step is to launch the backend from the action. To do this, we will use the [launch_backend](../bases/ActionBase_py.md#launch_backend) method of the [ActionBase](../bases/ActionBase_py.md). This method will start the backend with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port of the action as an argument.
-```python title="counter.py" hl_lines="7 15-16"
+The next step is to launch the backend from the action. To do this, we will use the [launch_backend](../bases/ActionCore_py.md#launch_backend) method of [ActionCore](../bases/ActionCore_py.md). This method will start the backend with the [rpyc](https://rpyc.readthedocs.io/en/latest/) port of the action as an argument.
+```python title="counter.py" hl_lines="5 18-19"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
 import os
 
-class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+class Counter(ActionCore):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
         backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py") #(1)!
         self.launch_backend(backend_path=backend_path, open_in_terminal=True) #(2)!
@@ -121,20 +129,24 @@ If you encounter any problems feel free to open an issue on the [StreamControlle
 
 ### 8. Use the backend
 Now that we have a backend, we can use it methods to manage the counter state.
-```python title="counter.py" hl_lines="18-23"
+```python title="counter.py" hl_lines="22-25"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
 import os
 
-class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+class Counter(ActionCore):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
         backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py")
         self.launch_backend(backend_path=backend_path, open_in_terminal=True)
@@ -147,20 +159,26 @@ class Counter(ActionBase):
         self.set_center_label(str(self.backend.get_count()))
 ```
 ### 9. Add error handling
-With a new component in our plugin than might break or crash, it is always a good idea to inform the user about any errors that might occur. We can do this by using the [show_error](../bases/ActionBase_py.md#show_error) method of the [ActionBase](../bases/ActionBase_py.md).
-```python title="counter.py" hl_lines="8 20-27 30-38"
+With a new component in our plugin than might break or crash, it is always a good idea to inform the user about any errors that might occur. We can do this by using the [show_error](../bases/ActionCore_py.md#show_error) method of [ActionCore](../bases/ActionCore_py.md).
+```python title="counter.py" hl_lines="6 24-31 34-41"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
 import os
 from loguru import logger as log #(1)!
 
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        self.add_event_assigner(EventAssigner(
+            id="key-down",
+            ui_label="Key Down",
+            default_event=Input.Key.Events.DOWN,
+            callback=self.on_key_down
+        ))
 
         backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py")
         self.launch_backend(backend_path=backend_path, open_in_terminal=True)
