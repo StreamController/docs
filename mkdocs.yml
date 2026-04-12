@@ -12,7 +12,9 @@ nav:
       - 1. The Idea: plugin_dev/idea.md
       - 2. Setting Up Your Environment: plugin_dev/setup.md
       - 3. Introduction To Bases:
-        - ActionBase.py: plugin_dev/bases/ActionBase_py.md
+        - ActionCore.py: plugin_dev/bases/ActionCore_py.md
+        - Event System: plugin_dev/bases/EventSystem.md
+        - GenerativeUI: plugin_dev/bases/GenerativeUI.md
         - BackendBase.py: plugin_dev/bases/BackendBase_py.md
         - PluginBase.py: plugin_dev/bases/PluginBase_py.md
       - 4. The Plugin Template:
