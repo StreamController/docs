@@ -1,88 +1,88 @@
-The [main.py](main_py.md) is the main file of your plugin and will be executed when the plugin is loaded.
-Therefore this is the place where you can add your actions to your plugin.
+# Register Your Action
 
+You wrote an action — but how does StreamController know it exists? That's the job of **`main.py`**, your plugin's entry point. Every action gets **registered** here so it shows up in the action picker.
 
-Per default the file looks like this:  
+Here's the template's `main.py`:
+
 ```python title="main.py"
-# Import StreamController modules
-from src.backend.PluginManager.PluginBase import PluginBase #(1)!
-from src.backend.PluginManager.ActionHolder import ActionHolder #(2)!
+from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionHolder import ActionHolder
+from src.backend.PluginManager.ActionInputSupport import ActionInputSupport
+from src.backend.DeckManagement.InputIdentifier import Input
 
-# Import actions
-from .actions.SimpleAction.SimpleAction import SimpleAction #(3)!
+from .actions.SimpleAction.SimpleAction import SimpleAction
+
 
 class PluginTemplate(PluginBase):
     def __init__(self):
         super().__init__()
 
-        ## Register actions
-        self.simple_action_holder = ActionHolder( #(4)!
+        self.simple_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
+            action_core = SimpleAction,
+            action_id_suffix = "SimpleAction",
             action_name = "Simple Action",
+            action_support = {
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.SUPPORTED,
+                Input.Touchscreen: ActionInputSupport.UNSUPPORTED,
+            }
         )
-        self.add_action_holder(self.simple_action_holder) #(5)!
+        self.add_action_holder(self.simple_action_holder)
 
-        # Register plugin
         self.register(
             plugin_name = "Template",
             github_repo = "https://github.com/StreamController/PluginTemplate",
             plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
-        ) #(5)!
-```
-
-1. Import the [PluginBase](../bases/PluginBase_py.md) class which is the base for all plugins.
-2. Import the `ActionHolder` class which holds [ActionBases] until creation.
-3. Import the [SimpleAction]() which is a sample action with no backend.
-4. Create a new [ActionHolder]() class for the [SimpleAction] action.
-5. Add the [ActionHolder]() to the plugin.
-6. Register the plugin.
-
-
-## Let's go over the code:
-
-### Import StreamController modules
-```python
-from src.backend.PluginManager.PluginBase import PluginBase
-```
-imports the [PluginBase]() which is the base class for all plugins.
-
-```python
-from src.backend.PluginManager.ActionHolder import ActionHolder
-```
-imports the [ActionHolder]() which holds [ActionBases] until creation.
-
-### Import actions
-```python
-from .actions.SimpleAction.SimpleAction import SimpleAction
-```
-imports the [SimpleAction](SimpleAction_py.md).
-This is the sample action with no backend.
-
-### The plugin class
-```python
-self.simple_action_holder = ActionHolder(
-            plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
-            action_name = "Simple Action",
+            app_version = "1.5.0-beta.14"
         )
 ```
-creates an [ActionHolder]() for the [SimpleAction] action.
+
+Let's read it top to bottom.
+
+## Your plugin is a class
 
 ```python
+class PluginTemplate(PluginBase):
+    def __init__(self):
+        super().__init__()
+```
+
+Your plugin extends **`PluginBase`**. Everything happens in `__init__`: you describe your actions, then register the plugin.
+
+## Wrap each action in an `ActionHolder`
+
+```python
+self.simple_action_holder = ActionHolder(
+    plugin_base = self,
+    action_core = SimpleAction,
+    action_id_suffix = "SimpleAction",
+    action_name = "Simple Action",
+    action_support = { ... }
+)
 self.add_action_holder(self.simple_action_holder)
 ```
-adds the [ActionHolder]() to the plugin.
+
+An **`ActionHolder`** is a little description of your action that the app can read *before* it actually creates the action:
+
+- `action_core` — your action class.
+- `action_name` — the label shown in the action picker.
+- `action_id_suffix` — combined with your plugin id into a unique id (`<plugin_id>::SimpleAction`).
+- `action_support` — which input types your action works on. Here it's usable on keys and dials, but not the touchscreen.
+
+`add_action_holder(...)` hands it to the plugin. For a second action, you'd create a second holder and add it too — exactly what we'll do in the [Counter step](../modify_template/AddCounter.md).
+
+## Register the plugin
 
 ```python
 self.register(
-            plugin_name = "Template",
-            github_repo = "https://github.com/StreamController/PluginTemplate",
-            plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
-        )
+    plugin_name = "Template",
+    github_repo = "https://github.com/StreamController/PluginTemplate",
+    plugin_version = "1.0.0",
+    app_version = "1.5.0-beta.14"
+)
 ```
-registers the plugin. See [register](../bases/PluginBase_py.md#register).
+
+The final `register(...)` call switches your plugin on. Fill in your own name, repository and version here (we'll polish these in [Prepare to Publish](manifest_json.md)).
+
+Next: let's make the action actually *do* something when pressed — [React to Input](../modify_template/input_events.md).

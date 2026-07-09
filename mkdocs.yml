@@ -7,46 +7,44 @@ nav:
     - FAQ: faq.md
   - Plugin Development:
     - Introduction: plugin_dev/intro.md
-    - Create Your Own:
-      - Getting Started: plugin_dev/getting_started.md
+    - Key Concepts: plugin_dev/key_concepts.md
+    - Build Your First Plugin:
+      - What We'll Build: plugin_dev/getting_started.md
       - 1. The Idea: plugin_dev/idea.md
-      - 2. Setting Up Your Environment: plugin_dev/setup.md
-      - 3. Introduction To Bases:
-        - ActionBase.py: plugin_dev/bases/ActionBase_py.md
-        - BackendBase.py: plugin_dev/bases/BackendBase_py.md
-        - PluginBase.py: plugin_dev/bases/PluginBase_py.md
-      - 4. The Plugin Template:
-        - Overview: plugin_dev/plugin_template/overview.md
-        - main.py: plugin_dev/plugin_template/main_py.md
-        - SimpleAction.py: plugin_dev/plugin_template/SimpleAction_py.md
-        # - BackendAction.py: plugin_dev/plugin_template/BackendAction_py.md
-        # - backend.py: plugin_dev/plugin_template/backend_py.md
-        # - __install__.py: plugin_dev/plugin_template/__install___py.md
-        # - requirements.txt: plugin_dev/plugin_template/requirements_txt.md
+      - 2. Set Up Your Environment: plugin_dev/setup.md
+      - 3. Get the Template Running: plugin_dev/plugin_template/overview.md
+      - 4. Draw an Icon: plugin_dev/plugin_template/SimpleAction_py.md
+      - 5. Register Your Action: plugin_dev/plugin_template/main_py.md
+      - 6. React to Input: plugin_dev/modify_template/input_events.md
+      - 7. Add a Setting: plugin_dev/modify_template/config/generative_ui.md
+      - 8. Count & Display State: plugin_dev/modify_template/AddCounter.md
+      - 9. Icons & Colors: plugin_dev/modify_template/assets.md
+      - 10. Localization: plugin_dev/modify_template/localization.md
+      - 11. Add a Backend:
+        - Action Backend: plugin_dev/modify_template/add_a_backend_action.md
+        - Plugin Backend: plugin_dev/modify_template/add_a_plugin_backend.md
+        - Requirements: plugin_dev/modify_template/add_requirements.md
+      - 12. Prepare to Publish:
         - manifest.json: plugin_dev/plugin_template/manifest_json.md
         - about.json: plugin_dev/plugin_template/about_json.md
         - attribution.json: plugin_dev/plugin_template/attribution_json.md
-      - 5. Modify The Template:
-        - Overview:  plugin_dev/modify_template/overview.md
-        - Add A Counter Action: plugin_dev/modify_template/AddCounter.md
-        - Add Requirements: plugin_dev/modify_template/add_requirements.md
-        - Add A Backend Action: plugin_dev/modify_template/add_a_backend_action.md
-        - Add A Plugin Backend: plugin_dev/modify_template/add_a_plugin_backend.md
-        - Add Config Options:
-          - Intro To Gtk: plugin_dev/modify_template/config/gtk_intro.md
-          - Stubs: plugin_dev/modify_template/config/stubs.md
-          - Add Config Rows: plugin_dev/modify_template/config/add_config_rows.md
-        # - Add A Backend To The Plugin: plugin_dev/modify_template/add_backend_to_plugin.md
-        - Localization: plugin_dev/modify_template/localization.md
-      - 6. Submitting:
-        - Manifest: plugin_dev/submitting/manifest.md
-        - Attribution: plugin_dev/submitting/attribution.md
-        - Submitting: plugin_dev/submitting/submitting.md
-        - Terms and Conditions: plugin_dev/submitting/terms.md
-    - Advanced Concepts:
-        - DeckController: plugin_dev/advanced_concepts/DeckController.md
-        - Page Caching: plugin_dev/advanced_concepts/PageCaching.md
-        - Signals: plugin_dev/advanced_concepts/Signals.md
+    - Submitting:
+      - Manifest: plugin_dev/submitting/manifest.md
+      - Attribution: plugin_dev/submitting/attribution.md
+      - Submitting: plugin_dev/submitting/submitting.md
+      - Terms and Conditions: plugin_dev/submitting/terms.md
+    - Reference:
+      - ActionCore: plugin_dev/bases/ActionCore_py.md
+      - PluginBase: plugin_dev/bases/PluginBase_py.md
+      - BackendBase: plugin_dev/bases/BackendBase_py.md
+      - Plugin Events & Signals: plugin_dev/modify_template/plugin_events.md
+      - Manual Config Rows:
+        - Intro to GTK: plugin_dev/modify_template/config/gtk_intro.md
+        - Example: plugin_dev/modify_template/config/add_config_rows.md
+        - Stubs: plugin_dev/modify_template/config/stubs.md
+      - DeckController: plugin_dev/advanced_concepts/DeckController.md
+      - Page Caching: plugin_dev/advanced_concepts/PageCaching.md
+      - ActionBase (legacy): plugin_dev/bases/ActionBase_py.md
   - Blog:
     - blog/index.md
   - Privacy:

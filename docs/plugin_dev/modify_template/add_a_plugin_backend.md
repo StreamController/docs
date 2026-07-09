@@ -2,6 +2,9 @@ The [last section](add_a_backend_action.md) was all about adding a backend to an
 
 To learn more about how the communication works, check out the [last section](add_a_backend_action.md).
 
+!!! info "About the examples on this page"
+    The `Counter` examples below extend the legacy [`ActionBase`](../bases/ActionBase_py.md) and use `on_key_down` for brevity. On [`ActionCore`](../bases/ActionCore_py.md) you would handle the press with an [event assigner](input_events.md) instead — the backend usage is identical.
+
 ## Add a backend to our plugin
 In this example we'll go over how to add a basic backend to our plugin, by moving the action backend of the [last section](add_a_backend_action.md) to the plugin itself.
 
@@ -40,7 +43,7 @@ backend = Backend()
 !!! note
     As you can see there is no difference in the backend code between a plugin and an action backend.
 
-### 4. Remove [backend launch](../bases/ActionBase_py.md#launch_backend) from the [counter action](AddCounter.md)
+### 4. Remove [backend launch](../bases/ActionCore_py.md#launch_backend) from the [counter action](AddCounter.md)
 To do this remove the highlighted lines:
 ```python title="counter.py" hl_lines="16-17"
 # Import StreamController modules
@@ -83,10 +86,14 @@ class Counter(ActionBase):
 
 ### 5. Launch the backend
 Now we can launch the backend from within the plugin:
-```python title="main.py" hl_lines="13-15"
+```python title="main.py" hl_lines="18-19"
 # Import StreamController modules
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+from src.backend.PluginManager.ActionInputSupport import ActionInputSupport
+from src.backend.DeckManagement.InputIdentifier import Input
+
+import os
 
 # Import actions
 from .actions.SimpleAction.SimpleAction import SimpleAction
@@ -97,23 +104,25 @@ class PluginTemplate(PluginBase):
         super().__init__()
 
         ## Launch backend
-        backend_path = os.path.join(self.PATH, "backend", "backend.py") 
-        self.launch_backend(backend_path=backend_path, open_in_terminal=True) 
+        backend_path = os.path.join(self.PATH, "backend", "backend.py")
+        self.launch_backend(backend_path=backend_path, open_in_terminal=True)
 
         ## Register actions
         self.simple_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
+            action_core = SimpleAction,
+            action_id_suffix = "SimpleAction",
             action_name = "Simple Action",
+            action_support = { Input.Key: ActionInputSupport.SUPPORTED }
         )
         self.add_action_holder(self.simple_action_holder)
 
         self.counter_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = Counter,
-            action_id = "dev_core447_Template::Counter", # Change this to your own plugin id
+            action_core = Counter,
+            action_id_suffix = "Counter",
             action_name = "Counter",
+            action_support = { Input.Key: ActionInputSupport.SUPPORTED }
         )
         self.add_action_holder(self.counter_action_holder)
 
@@ -122,7 +131,7 @@ class PluginTemplate(PluginBase):
             plugin_name = "Template",
             github_repo = "https://github.com/StreamController/PluginTemplate",
             plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
+            app_version = "1.5.0-beta.14"
         )
 ```
 

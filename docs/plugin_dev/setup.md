@@ -1,6 +1,6 @@
 After you have come up with an [idea](idea.md), all you have to do is put it into practice. 
 <br/><br/>
-To develop [StreamController](https://github.com/Core447/StreamController) plugins you need the source code of [StreamController](https://github.com/Core447/StreamController) itself.  
+To develop [StreamController](https://github.com/StreamController/StreamController) plugins you need the source code of [StreamController](https://github.com/StreamController/StreamController) itself.  
 This allows you to deeply integrate your plugin into the application.
 
 !!! note
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 ## 6. Change the data path
 
-[StreamController](https://github.com/Core447/StreamController) normally stores data in the `.var/app/com.core447.StreamController/data` directory. However, for development it is useful to change the path to a directory inside the cloned repository. I recommend using creating a `data` directory in the root of the repository.
+[StreamController](https://github.com/StreamController/StreamController) normally stores data in the `.var/app/com.core447.StreamController/data` directory. However, for development it is useful to change the path to a directory inside the cloned repository. I recommend using creating a `data` directory in the root of the repository.
 
 Create the data directory:
 ```sh
@@ -44,7 +44,7 @@ mkdir -p data/plugins
 You can then use the the `--data` argument to override the data path on launch. For example: `--data data`. Depending on your IDE you can also add this to your project configuration.
 
 !!! note
-    If you have installed [StreamController](https://github.com/Core447/StreamController) for your personal use as a Flatpak, this will not affect the data path of your Flatpak.
+    If you have installed [StreamController](https://github.com/StreamController/StreamController) for your personal use as a Flatpak, this will not affect the data path of your Flatpak.
 
 
 ## 6 Enter the plugins directory:
@@ -52,9 +52,9 @@ You can then use the the `--data` argument to override the data path on launch. 
 ```sh
 cd data/plugins
 ```
-## 7. Create a plugin repository by using the [Plugin Template](https://github.com/Core447/PluginTemplate):
+## 7. Create a plugin repository by using the [Plugin Template](https://github.com/StreamController/PluginTemplate):
 
-Head over to [GitHub](https://github.com/Core447/PluginTemplate) and click on the green `Use this template` button. Follow the instructions.
+Head over to [GitHub](https://github.com/StreamController/PluginTemplate) and click on the green `Use this template` button. Follow the instructions.
 
 The next step is to clone the newly created repository where `https://github.com/username/plugin-template` is the url to your plugin:
 ```sh

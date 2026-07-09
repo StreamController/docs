@@ -9,4 +9,4 @@ However, it's important to be aware of its existence to circumvent potential iss
     Despite this, it's a common pitfall. Why? Because when a user navigates away from a page and then returns, your action's state might still be in the cache. Consequently, your plugin may falsely assume the correct image is displayed when, in fact, it is not.
 
 : **Solution:**
-    : To address this, simply reset the `current_state` variable within the [`on_ready`](../bases/ActionBase_py.md#on_ready) method. The `on_ready` method is invoked each time a page is loaded, allowing you to reset the `current_state` variable.
+    : To address this, simply reset the `current_state` variable within the [`on_ready`](../bases/ActionCore_py.md#on_ready) method. The `on_ready` method is invoked each time a page is loaded, allowing you to reset the `current_state` variable.

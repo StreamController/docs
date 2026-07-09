@@ -1,78 +1,52 @@
+# Count & Display State
+
+Our `SimpleAction` reacts to presses but forgets everything between them. Let's build a **second action** that remembers something: a counter that goes up each time you press it and shows the number on the key.
+
+This introduces two ideas: keeping **state** on your action, and drawing **text** with `set_label`. It also gives you practice adding a second action to a plugin.
+
 ### 1. Add a new directory
-Every action should be located in it's dedicated subdirectory of `actions`.
+Every action should live in its own subdirectory of `actions`.
 ```shell
 mkdir /path_to_plugin/actions/counter
 ```
-This will create a new folder `counter` in the `actions` directory. Feel free to change the name or path as long as it's in the plugin's dir.
+This creates a new folder `counter` in the `actions` directory. Feel free to change the name or path as long as it's inside the plugin's dir.
 ### 2. Create a new file for the action
 ```shell
 touch /path_to_plugin/actions/counter/counter.py
 ```
-This creates an empty file `counter.py` in the new folder.
-In the next steps we'll add the content to the file.
+This creates an empty file `counter.py`. In the next steps we'll fill it.
 ### 3. Programming the new action
-Now let's add the actual action to the `counter.py` file.
+Let's add a basic action to `counter.py`:
 
 ```python title="counter.py"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
 
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 ```
 
-That's it, at least for now. You just created a basic action without any functionality. However, this would not be shown it the ui yet.
+That's a valid action already — it just doesn't do anything yet, and it isn't registered, so it won't show up in the UI.
 
 ### 4. Register the action
-All actions of a plugin have to be registered in the plugin's [plugin base](../bases/PluginBase_py.md), here in [main.py](../plugin_template/main_py.md).  
-`main.py` currently looks like this:
-```python title="main.py"
-# Import StreamController modules
-from src.backend.PluginManager.PluginBase import PluginBase
-from src.backend.PluginManager.ActionHolder import ActionHolder
-
-# Import actions
-from .actions.SimpleAction.SimpleAction import SimpleAction
-
-class PluginTemplate(PluginBase):
-    def __init__(self):
-        super().__init__()
-
-        ## Register actions
-        self.simple_action_holder = ActionHolder(
-            plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
-            action_name = "Simple Action",
-        )
-        self.add_action_holder(self.simple_action_holder)
-
-        # Register plugin
-        self.register(
-            plugin_name = "Template",
-            github_repo = "https://github.com/StreamController/PluginTemplate",
-            plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
-        )
-```
-The good news is that you just have to add a couple of lines to make your new action available.  
-The first step is to import the newly created action. To do so you can just add the following line below the import of `SimpleAction`:
+All actions have to be registered in the plugin's [plugin base](../bases/PluginBase_py.md), here in [main.py](../plugin_template/main_py.md).
+First, import the new action below the import of `SimpleAction`:
 ```python
 from .actions.counter.counter import Counter
 ```
-The only thing left to do is to register the action by creating an [ActionHolder]() and adding it to the plugin:
-```python title="main.py" hl_lines="22-28"
+Then create an [`ActionHolder`](../plugin_template/main_py.md#wrap-each-action-in-an-actionholder) for it and add it to the plugin:
+```python title="main.py" hl_lines="8 25-35"
 # Import StreamController modules
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+from src.backend.PluginManager.ActionInputSupport import ActionInputSupport
+from src.backend.DeckManagement.InputIdentifier import Input
 
 # Import actions
 from .actions.SimpleAction.SimpleAction import SimpleAction
 from .actions.counter.counter import Counter
+
 
 class PluginTemplate(PluginBase):
     def __init__(self):
@@ -81,17 +55,27 @@ class PluginTemplate(PluginBase):
         ## Register actions
         self.simple_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_core447_Template::SimpleAction", # Change this to your own plugin id
+            action_core = SimpleAction,
+            action_id_suffix = "SimpleAction",
             action_name = "Simple Action",
+            action_support = {
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.SUPPORTED,
+                Input.Touchscreen: ActionInputSupport.UNSUPPORTED,
+            }
         )
         self.add_action_holder(self.simple_action_holder)
 
         self.counter_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = Counter,
-            action_id = "dev_core447_Template::Counter", # Change this to your own plugin id
+            action_core = Counter,
+            action_id_suffix = "Counter",
             action_name = "Counter",
+            action_support = {
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.SUPPORTED,
+                Input.Touchscreen: ActionInputSupport.UNSUPPORTED,
+            }
         )
         self.add_action_holder(self.counter_action_holder)
 
@@ -100,91 +84,82 @@ class PluginTemplate(PluginBase):
             plugin_name = "Template",
             github_repo = "https://github.com/StreamController/PluginTemplate",
             plugin_version = "1.0.0",
-            app_version = "1.1.1-alpha"
+            app_version = "1.5.0-beta.14"
         )
 ```
 !!! note
-    The `action_id` must be unique and in the following format: {reverse-domain with underscores}::{action_name}
+    The full `action_id` (formed as `<plugin_id>::<action_id_suffix>`) must be unique within your plugin.
+
 ### 5. Do something!!!
-What is the point of an action that does nothing? None at all. But we're going to change that now.  
-Let's change the action to cound the presses and show the number on the key.  
-For that we have to modify `counter.py`:
-```python title="counter.py"
+An action that does nothing is pointless — let's make it count presses and show the number on the input.
+
+#### 1. Add a counter variable and an event assigner
+Actions react to input by registering an [`EventAssigner`](input_events.md). We bind our handler to the key and dial "down" events so the counter works on both keys and dials:
+```python title="counter.py" hl_lines="2 3 9 11-16"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
-class Counter(ActionBase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-```
-#### 1. The first thing we need to do is to add a counter variable:
-```python title="counter.py (partial)" hl_lines="7"
-class Counter(ActionBase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.counter: int = 0
-```
-#### 2. Now we need to increase the counter if the action key gets pressed:
-```python title="counter.py (partial)" hl_lines="9 10"
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
-    def on_key_down(self):
-        self.counter += 1
+        self.add_event_assigner(EventAssigner(
+            id="increment",
+            ui_label="Increment",
+            default_events=[Input.Key.Events.DOWN, Input.Dial.Events.DOWN],
+            callback=self.on_increment
+        ))
 ```
-#### 3. Update the label on the key if the counter changes:
-```python title="counter.py (partial)"  hl_lines="11"
-class Counter(ActionBase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
-        self.counter: int = 0
+#### 2. Increment the counter and update the label
+```python title="counter.py (partial)" hl_lines="3-5"
+        ...
 
-    def on_key_down(self):
+    def on_increment(self, data):
         self.counter += 1
         self.set_center_label(str(self.counter))
 ```
-#### 4. Show the initial counter on load up:
-```python title="counter.py (partial)"  hl_lines="9-10"
-class Counter(ActionBase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
-        self.counter: int = 0
+#### 3. Show the initial counter on load
+```python title="counter.py (partial)" hl_lines="3-4"
+        ...
 
     def on_ready(self):
         self.set_center_label(str(self.counter))
-
-    def on_key_down(self):
-        self.counter += 1
-        self.set_center_label(str(self.counter))
 ```
-#### 5. The result
+
+#### 4. The result
 The final `counter.py` looks like this:
 ```python title="counter.py"
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
-class Counter(ActionBase):
+class Counter(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
+        self.add_event_assigner(EventAssigner(
+            id="increment",
+            ui_label="Increment",
+            default_events=[Input.Key.Events.DOWN, Input.Dial.Events.DOWN],
+            callback=self.on_increment
+        ))
+
     def on_ready(self):
         self.set_center_label(str(self.counter))
 
-    def on_key_down(self):
+    def on_increment(self, data):
         self.counter += 1
         self.set_center_label(str(self.counter))
 ```
+
+!!! tip
+    Because we registered the handler as an event assigner with a `ui_label`, the user can remap what triggers the increment (for example to a long press or a dial turn) right from the action's settings. See [Handling Input & Events](input_events.md).

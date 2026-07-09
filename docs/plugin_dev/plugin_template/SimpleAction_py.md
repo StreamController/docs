@@ -1,41 +1,63 @@
-```python title="SimpleAction.py"
-# Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase #(1)!
-from src.backend.DeckManagement.DeckController import DeckController #(2)!
-from src.backend.PageManagement.Page import Page #(3)!
-from src.backend.PluginManager.PluginBase import PluginBase #(4)!
+# Draw an Icon
 
-# Import python modules
-import os
+Let's open the example action and understand how it draws that icon. Here's the whole file — it's short:
 
-# Import gtk modules - used for the config rows
-import gi
-gi.require_version("Gtk", "4.0") #(5)!
-gi.require_version("Adw", "1") #(6)!
-from gi.repository import Gtk, Adw #(7)!
+```python title="actions/SimpleAction/SimpleAction.py"
+from src.backend.PluginManager.ActionCore import ActionCore
+from src.backend.PluginManager.EventAssigner import EventAssigner
+from src.backend.DeckManagement.InputIdentifier import Input
 
-class SimpleAction(ActionBase):
+
+class SimpleAction(ActionCore):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
+        # (we'll look at this in the next step)
+        self.add_event_assigner(EventAssigner(
+            id="simple_action_pressed",
+            ui_label="Pressed",
+            default_events=[Input.Key.Events.DOWN, Input.Dial.Events.DOWN],
+            callback=self.on_pressed
+        ))
+
     def on_ready(self) -> None:
-        icon_path = os.path.join(self.plugin_base.PATH, "assets", "info.png")
-        self.set_media(media_path=icon_path, size=0.75) #(8)!
-        
-    def on_key_down(self) -> None:
-        print("Key down") #(9)!
-    
-    def on_key_up(self) -> None:
-        print("Key up") #(10)!
+        self.set_media(media_path=self.get_asset_path("info.png"), size=0.75)
+
+    def on_pressed(self, data) -> None:
+        print("Pressed")
 ```
 
-1. Import the [ActionBase](../bases/ActionBase_py.md) class
-2. Import the [DeckController](../advanced_concepts/DeckController.md) class - just used for typing
-3. Import the Page class - just used for typing
-4. Import the [PluginBase](../bases/PluginBase_py.md) class - just used for typing
-5. Set the [GTK](https://www.gtk.org) version to [4.0](https://docs.gtk.org/gtk4/)
-6. Set the [Adw](https://www.gtk.org) version to [1](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/)
-7. Import [GTK](https://www.gtk.org) and [Adw](https://www.gtk.org)
-8. Set an icon for the action
-9. Print "Key down" if the key is pressed
-10. Print "Key up" if the key is released
+We'll cover the press (the `EventAssigner` and `on_pressed`) in the [next step](../modify_template/input_events.md). For now, focus on the drawing.
+
+## An action is a class
+
+```python
+class SimpleAction(ActionCore):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+```
+
+Every action extends **`ActionCore`**. You don't need to know what arguments it takes — just pass them straight through with `*args, **kwargs`.
+
+## Draw in `on_ready`
+
+```python
+def on_ready(self) -> None:
+    self.set_media(media_path=self.get_asset_path("info.png"), size=0.75)
+```
+
+`on_ready` runs once the deck is ready to display things. **This is where you set your initial image.**
+
+- `get_asset_path("info.png")` gives the full path to a file in your plugin's `assets/` folder.
+- `set_media(...)` puts it on the input. `size=0.75` makes it fill 75% of the key.
+
+!!! info "Why not the constructor?"
+    The deck isn't ready to draw when your action is first created, so setting the image in `__init__` wouldn't work. Always do your first draw in `on_ready`.
+
+## Try it
+
+Swap `info.png` for another image you drop into `assets/`, restart StreamController, and re-add the action. Your image appears on the key.
+
+`set_media` also handles **GIFs and videos** — see [`set_media` in the reference](../bases/ActionCore_py.md#set_media). To put **text** on a key, you'd use `set_label`, which we'll reach for in the next steps.
+
+Next, let's see how the app knew about this action in the first place: [registering it](main_py.md).

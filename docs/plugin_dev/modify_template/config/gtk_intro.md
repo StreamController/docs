@@ -1,3 +1,6 @@
+!!! info "Prefer Generative UI"
+    This page describes building config rows **by hand** with GTK/libadwaita. For most cases the [Generative UI](generative_ui.md) system is easier and handles saving/loading for you. Reach for manual rows only when you need a widget or layout Generative UI doesn't cover.
+
 StreamController allows plugins to inject [GTK](https://www.gtk.org) widgets into the action configuration area for configuration of the actions.
 
 ## [GTK](https://www.gtk.org)
@@ -23,8 +26,8 @@ Good resources to get started with [GTK](https://www.gtk.org) in python:
 The configuration area is splitted into two parts:
 : #### Custom config rows (marked blue)
 Here plugins can add [Adw.PreferencesRow](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.PreferencesRow.html) widgets.  
-See [`get_config_rows`](../../bases/ActionBase_py.md#get_config_rows) for more information about the implementation.
+See [`get_config_rows`](../../bases/ActionCore_py.md#get_config_rows) for more information about the implementation.
 
 : #### Custom config area (marked green)
 Here plugins can add any [Gtk.Widgets](https://docs.gtk.org/gtk4/class.Widget.html) widgets allowing more options for customization but also requiring more work.  
-See [`get_custom_config_area`](../../bases/ActionBase_py.md#get_custom_config_area) for more information about the implementation.
+See [`get_custom_config_area`](../../bases/ActionCore_py.md#get_custom_config_area) for more information about the implementation.

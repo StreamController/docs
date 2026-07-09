@@ -6,7 +6,7 @@ The [manifest.json](manifest_json.md) file contains information about the plugin
 {
   "name": "Plugin Template",
   "version": "1.0.0",
-  "app-version": "1.5.0-beta.6",
+  "app-version": "1.5.0-beta.14",
   "minimum-app-version": "1.5.0",
   "id": "com_core447_PluginTemplate",
   "github": "https://github.com/StreamController/PluginTemplate",

@@ -1,3 +1,6 @@
+!!! info "Prefer Generative UI"
+    This tutorial builds a config row **manually**, wiring up saving and loading yourself. The [Generative UI](generative_ui.md) system does all of this for you and is the recommended approach — read this page only if you need the low-level control. The examples below use the legacy [`ActionBase`](../../bases/ActionBase_py.md); on [`ActionCore`](../../bases/ActionCore_py.md) the same `get_config_rows` override works identically.
+
 This example will go over how to add a config row to the [Counter action](../AddCounter.md).
 
 We will use the [Adw.SpinRow](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.SpinRow.html) to control the increment of the counter.
@@ -15,10 +18,8 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -31,7 +32,7 @@ class Counter(ActionBase):
 ```
 
 ## 2. Add the row
-You can add config rows by overwiding the [`get_config_rows`](../../bases/ActionBase_py.md#get_config_rows) method.
+You can add config rows by overwiding the [`get_config_rows`](../../bases/ActionCore_py.md#get_config_rows) method.
 ```python title="counter.py" hl_lines="7-11 28-31"
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
@@ -46,10 +47,8 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw #(1)!
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -93,10 +92,8 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
@@ -138,9 +135,9 @@ To store the value we have to connect to it's `changed` signal:
 ```
 
 1. Connect the `changed` signal
-2. Get the settings via [`get_settings()`](../../bases/ActionBase_py.md#get_settings)
+2. Get the settings via [`get_settings()`](../../bases/ActionCore_py.md#get_settings)
 3. Set the value of the spinner
-4. Set the new settings via [`set_settings()`](../../bases/ActionBase_py.md#set_settings)
+4. Set the new settings via [`set_settings()`](../../bases/ActionCore_py.md#set_settings)
 
 ## 6. Restore the value after reload
 If you leave the action area and re-enter it, the value will be reset to 1. To change this we have to retrive the stored value and set it to the spinner:
@@ -195,10 +192,8 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
 class Counter(ActionBase):
-    def __init__(self, action_id: str, action_name: str,
-                 deck_controller: DeckController, page: Page, coords: str, plugin_base: PluginBase):
-        super().__init__(action_id=action_id, action_name=action_name,
-            deck_controller=deck_controller, page=page, coords=coords, plugin_base=plugin_base)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.counter: int = 0
 
