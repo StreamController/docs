@@ -33,5 +33,5 @@
 
 To publish a new version run:
 ```
-run mike deploy --push --update-aliase VERSION latest
+mike deploy --push --update-aliase VERSION latest
 ```
