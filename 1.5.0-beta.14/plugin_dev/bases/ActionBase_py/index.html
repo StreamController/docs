@@ -2020,7 +2020,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title"><code>ActionBase</code> is deprecated</p>
-<p><code>ActionBase</code> has been replaced by <a href="../ActionCore_py/"><code>ActionCore</code></a>. It still works — existing plugins do <strong>not</strong> break — but new actions should extend <a href="../ActionCore_py/"><code>ActionCore</code></a> instead. <code>ActionBase</code> now emits a deprecation warning and is only a thin backward-compatibility wrapper.</p>
+<p><code>ActionBase</code> has been replaced by <a href="../ActionCore_py/"><code>ActionCore</code></a>. It still works (existing plugins do <strong>not</strong> break), but new actions should extend <a href="../ActionCore_py/"><code>ActionCore</code></a> instead. <code>ActionBase</code> now emits a deprecation warning and is only a thin backward-compatibility wrapper.</p>
 </div>
 <h2 id="what-actionbase-is-now">What <code>ActionBase</code> is now<a class="headerlink" href="#what-actionbase-is-now" title="Permanent link">&para;</a></h2>
 <p><code>ActionBase</code> subclasses <a href="../ActionCore_py/"><code>ActionCore</code></a> and adds two things purely for backward compatibility:</p>
@@ -2028,7 +2028,7 @@
 <li>It registers the classic key/dial/touchscreen <a href="../../modify_template/input_events/">event assigners</a> up front, wired to a compatibility <code>event_callback</code>.</li>
 <li>It re-adds the old <code>on_key_down()</code> / <code>on_key_up()</code> hooks, which the compatibility <code>event_callback</code> dispatches to (key <strong>down</strong> and dial <strong>down</strong> → <code>on_key_down</code>, key/dial <strong>up</strong> → <code>on_key_up</code>).</li>
 </ol>
-<p>Everything else — <code>set_media</code>, <code>set_label</code>, <code>get_settings</code>, <code>connect</code>, <code>launch_backend</code>, … — lives on <a href="../ActionCore_py/"><code>ActionCore</code></a> and is inherited unchanged. See the <a href="../ActionCore_py/"><code>ActionCore</code> reference</a> for the full method surface.</p>
+<p>Everything else (<code>set_media</code>, <code>set_label</code>, <code>get_settings</code>, <code>connect</code>, <code>launch_backend</code>, …) lives on <a href="../ActionCore_py/"><code>ActionCore</code></a> and is inherited unchanged. See the <a href="../ActionCore_py/"><code>ActionCore</code> reference</a> for the full method surface.</p>
 <h2 id="migrating-from-actionbase-to-actioncore">Migrating from <code>ActionBase</code> to <code>ActionCore</code><a class="headerlink" href="#migrating-from-actionbase-to-actioncore" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2063,7 +2063,7 @@
 <p>Registering an action still happens through an <a href="../../plugin_template/main_py/"><code>ActionHolder</code></a>. <code>ActionHolder</code> accepts both the new <code>action_core=</code> and the legacy <code>action_base=</code> keyword, so a partly-migrated plugin keeps working.</p>
 <p>Two methods were also removed/renamed on the class itself:</p>
 <ul>
-<li><code>set_default_image</code> / <code>set_default_label</code> — these never did anything (were "not implemented") and no longer exist. Set your image/label in <a href="../ActionCore_py/#on_ready"><code>on_ready</code></a> instead.</li>
+<li><code>set_default_image</code> / <code>set_default_label</code>: these never did anything (were "not implemented") and no longer exist. Set your image/label in <a href="../ActionCore_py/#on_ready"><code>on_ready</code></a> instead.</li>
 <li><code>has_label_control()</code> (returning a list) → <code>has_label_control(label_index)</code> plus <code>has_label_controls()</code> for the full list.</li>
 <li><code>set_event_assignments(dict)</code> → <code>set_event_assignment(input_event, event_assigner)</code>.</li>
 </ul>

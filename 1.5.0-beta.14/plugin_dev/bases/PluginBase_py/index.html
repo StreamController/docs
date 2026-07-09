@@ -2836,7 +2836,7 @@
 <tbody>
 <tr>
 <td>callback</td>
-<td>—</td>
+<td>required</td>
 <td>callable</td>
 <td>Called when the event triggers.</td>
 </tr>
@@ -2856,7 +2856,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Always pass <code>event_id</code> explicitly (the full <code>"plugin_id::EventName"</code> form). Note the argument order changed — <code>callback</code> now comes first.</p>
+<p>Always pass <code>event_id</code> explicitly (the full <code>"plugin_id::EventName"</code> form). Note the argument order changed; <code>callback</code> now comes first.</p>
 </div>
 </dd>
 </dl>
@@ -2891,7 +2891,7 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The settings file is now versioned (<code>{"file-version": "2.0", "settings": {…}}</code>) and older files are migrated automatically on read. Your <code>get_settings</code>/<code>set_settings</code> usage is unchanged — you still work with the plain settings dict.</p>
+<p>The settings file is now versioned (<code>{"file-version": "2.0", "settings": {…}}</code>) and older files are migrated automatically on read. Your <code>get_settings</code>/<code>set_settings</code> usage is unchanged, you still work with the plain settings dict.</p>
 </div>
 </dd>
 </dl>
@@ -2925,13 +2925,13 @@
 <tbody>
 <tr>
 <td>key</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The key actions use to look up the icon.</td>
 </tr>
 <tr>
 <td>path</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>Path to the icon file.</td>
 </tr>
@@ -3000,7 +3000,7 @@
 <tbody>
 <tr>
 <td>asset_name</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The asset file's name.</td>
 </tr>
@@ -3091,7 +3091,7 @@
 <tbody>
 <tr>
 <td>backend_path</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The path of the backend to launch.</td>
 </tr>
@@ -3140,7 +3140,7 @@
 <tbody>
 <tr>
 <td>name</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The bus name.</td>
 </tr>

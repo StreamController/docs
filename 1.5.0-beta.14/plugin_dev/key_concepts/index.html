@@ -2075,14 +2075,14 @@
 
 
 <h1 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h1>
-<p>Before writing any code, it helps to have the big picture. You only need to understand <strong>four</strong> things — everything in this guide builds on them.</p>
+<p>Before writing any code, it helps to have the big picture. You only need to understand <strong>four</strong> things. Everything in this guide builds on them.</p>
 <h2 id="1-a-plugin-adds-actions">1. A plugin adds actions<a class="headerlink" href="#1-a-plugin-adds-actions" title="Permanent link">&para;</a></h2>
-<p>A <strong>plugin</strong> is a small Python package you drop into StreamController. On its own it does nothing visible — its job is to provide one or more <strong>actions</strong>.</p>
+<p>A <strong>plugin</strong> is a small Python package you drop into StreamController. On its own it does nothing visible; its job is to provide one or more <strong>actions</strong>.</p>
 <h2 id="2-an-action-is-what-sits-on-a-button">2. An action is what sits on a button<a class="headerlink" href="#2-an-action-is-what-sits-on-a-button" title="Permanent link">&para;</a></h2>
 <p>An <strong>action</strong> is the thing a user places onto a button. It does two jobs:</p>
 <ul>
-<li><strong>Draws</strong> something — an image, an icon, some text.</li>
-<li><strong>Reacts</strong> to input — for example, when the button is pressed.</li>
+<li><strong>Draws</strong> something: an image, an icon, or some text.</li>
+<li><strong>Reacts</strong> to input, for example, when the button is pressed.</li>
 </ul>
 <p>Everything you build in this guide is an action (or a few of them).</p>
 <h2 id="3-inputs-come-in-three-types">3. Inputs come in three types<a class="headerlink" href="#3-inputs-come-in-three-types" title="Permanent link">&para;</a></h2>
@@ -2101,7 +2101,7 @@
 </tr>
 <tr>
 <td><strong>Dial</strong></td>
-<td>A rotary knob (e.g. on the Stream Deck +) — it can be turned and pressed.</td>
+<td>A rotary knob (e.g. on the Stream Deck +) that can be turned and pressed.</td>
 </tr>
 <tr>
 <td><strong>Touchscreen</strong></td>
@@ -2111,7 +2111,7 @@
 </table>
 <p>You decide which input types your action supports. Most actions start with keys and add dials later.</p>
 <h2 id="4-backends-are-optional">4. Backends are optional<a class="headerlink" href="#4-backends-are-optional" title="Permanent link">&para;</a></h2>
-<p>If your action needs heavy Python libraries, StreamController can run them in a separate <strong>backend</strong> process so they never slow down or clash with the app. You won't need this at first — we'll get to it near the end.</p>
+<p>If your action needs heavy Python libraries, StreamController can run them in a separate <strong>backend</strong> process so they never slow down or clash with the app. You won't need this at first; we'll get to it near the end.</p>
 <hr />
 <h2 id="how-youll-test">How you'll test<a class="headerlink" href="#how-youll-test" title="Permanent link">&para;</a></h2>
 <p>You don't need a physical Stream Deck. StreamController can emulate one with a <strong>FakeDeck</strong>:</p>

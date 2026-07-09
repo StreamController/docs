@@ -2059,7 +2059,7 @@
 
 
 <h1 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h1>
-<p>So far every label in our plugin is hardcoded English — the action name "Simple Action", the switch title "Show label", and so on. Let's make them translatable so users in other languages see their own.</p>
+<p>So far every label in our plugin is hardcoded English: the action name "Simple Action", the switch title "Show label", and so on. Let's make them translatable so users in other languages see their own.</p>
 <p>StreamController does the hard part: it picks the right translation for the user's language. You just provide the translations and look them up by a <strong>key</strong> instead of writing the text directly.</p>
 <h2 id="1-turn-on-the-locale-file">1. Turn on the locale file<a class="headerlink" href="#1-turn-on-the-locale-file" title="Permanent link">&para;</a></h2>
 <p>Opt into the locale system by passing <code>use_legacy_locale=False</code> when your plugin starts up:</p>
@@ -2116,7 +2116,7 @@
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Older plugins: the JSON format</p>
-<p>Before <code>locales.csv</code>, plugins used a <code>locales/</code> folder with one JSON file per language (<code>en_US.json</code>, …) and the default <code>use_legacy_locale=True</code>. You may still see this in existing plugins. It's read the same way — <code>self.locale_manager.get("key")</code> — but for new plugins prefer <code>locales.csv</code>.</p>
+<p>Before <code>locales.csv</code>, plugins used a <code>locales/</code> folder with one JSON file per language (<code>en_US.json</code>, …) and the default <code>use_legacy_locale=True</code>. You may still see this in existing plugins. It's read the same way, <code>self.locale_manager.get("key")</code>: but for new plugins prefer <code>locales.csv</code>.</p>
 </div>
 
 

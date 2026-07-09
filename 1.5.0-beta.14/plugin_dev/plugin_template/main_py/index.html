@@ -2041,7 +2041,7 @@
 
 
 <h1 id="register-your-action">Register Your Action<a class="headerlink" href="#register-your-action" title="Permanent link">&para;</a></h1>
-<p>You wrote an action — but how does StreamController know it exists? That's the job of <strong><code>main.py</code></strong>, your plugin's entry point. Every action gets <strong>registered</strong> here so it shows up in the action picker.</p>
+<p>You wrote an action, but how does StreamController know it exists? That's the job of <strong><code>main.py</code></strong>, your plugin's entry point. Every action gets <strong>registered</strong> here so it shows up in the action picker.</p>
 <p>Here's the template's <code>main.py</code>:</p>
 <div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager.PluginBase</span> <span class="kn">import</span> <span class="n">PluginBase</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager.ActionHolder</span> <span class="kn">import</span> <span class="n">ActionHolder</span>
@@ -2094,12 +2094,12 @@
 </span></code></pre></div>
 <p>An <strong><code>ActionHolder</code></strong> is a little description of your action that the app can read <em>before</em> it actually creates the action:</p>
 <ul>
-<li><code>action_core</code> — your action class.</li>
-<li><code>action_name</code> — the label shown in the action picker.</li>
-<li><code>action_id_suffix</code> — combined with your plugin id into a unique id (<code>&lt;plugin_id&gt;::SimpleAction</code>).</li>
-<li><code>action_support</code> — which input types your action works on. Here it's usable on keys and dials, but not the touchscreen.</li>
+<li><code>action_core</code>: your action class.</li>
+<li><code>action_name</code>: the label shown in the action picker.</li>
+<li><code>action_id_suffix</code>: combined with your plugin id into a unique id (<code>&lt;plugin_id&gt;::SimpleAction</code>).</li>
+<li><code>action_support</code>: which input types your action works on. Here it's usable on keys and dials, but not the touchscreen.</li>
 </ul>
-<p><code>add_action_holder(...)</code> hands it to the plugin. For a second action, you'd create a second holder and add it too — exactly what we'll do in the <a href="../../modify_template/AddCounter/">Counter step</a>.</p>
+<p><code>add_action_holder(...)</code> hands it to the plugin. For a second action, you'd create a second holder and add it too, exactly what we'll do in the <a href="../../modify_template/AddCounter/">Counter step</a>.</p>
 <h2 id="register-the-plugin">Register the plugin<a class="headerlink" href="#register-the-plugin" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">plugin_name</span> <span class="o">=</span> <span class="s2">&quot;Template&quot;</span><span class="p">,</span>
@@ -2109,7 +2109,7 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>The final <code>register(...)</code> call switches your plugin on. Fill in your own name, repository and version here (we'll polish these in <a href="../manifest_json/">Prepare to Publish</a>).</p>
-<p>Next: let's make the action actually <em>do</em> something when pressed — <a href="../../modify_template/input_events/">React to Input</a>.</p>
+<p>Next: let's make the action actually <em>do</em> something when pressed, <a href="../../modify_template/input_events/">React to Input</a>.</p>
 
 
 

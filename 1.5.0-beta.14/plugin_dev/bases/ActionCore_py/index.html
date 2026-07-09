@@ -2914,13 +2914,13 @@
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Which input am I attached to?</p>
-<p>StreamController supports three input types: <strong>keys</strong>, <strong>dials</strong> (rotary encoders, e.g. on the Stream Deck +) and <strong>touchscreens</strong>. The input your action instance is attached to is available as <code>self.input_ident</code> and is one of <a href="https://github.com/StreamController/StreamController/blob/main/src/backend/DeckManagement/InputIdentifier.py"><code>Input.Key</code></a>, <code>Input.Dial</code> or <code>Input.Touchscreen</code>. Which input types your action <em>supports</em> is declared on the <a href="../../plugin_template/main_py/"><code>ActionHolder</code></a> via <code>action_support</code> — see <a href="../../modify_template/input_events/">Handling Input &amp; Events</a>.</p>
+<p>StreamController supports three input types: <strong>keys</strong>, <strong>dials</strong> (rotary encoders, e.g. on the Stream Deck +) and <strong>touchscreens</strong>. The input your action instance is attached to is available as <code>self.input_ident</code> and is one of <a href="https://github.com/StreamController/StreamController/blob/main/src/backend/DeckManagement/InputIdentifier.py"><code>Input.Key</code></a>, <code>Input.Dial</code> or <code>Input.Touchscreen</code>. Which input types your action <em>supports</em> is declared on the <a href="../../plugin_template/main_py/"><code>ActionHolder</code></a> via <code>action_support</code>: see <a href="../../modify_template/input_events/">Handling Input &amp; Events</a>.</p>
 </div>
 <h2 id="lifecycle-hooks">Lifecycle hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
 <p>Override these in your action to run your own code. None of them need to call <code>super()</code>.</p>
 <h3 id="on_ready"><code>on_ready</code><a class="headerlink" href="#on_ready" title="Permanent link">&para;</a></h3>
 <dl>
-<dd>Called once the page is fully loaded and the decks are ready to process requests. <strong>This is the recommended place to set your initial image and labels</strong> — the constructor runs before the decks can render anything.</dd>
+<dd>Called once the page is fully loaded and the decks are ready to process requests. <strong>This is the recommended place to set your initial image and labels</strong>: the constructor runs before the decks can render anything.</dd>
 </dl>
 <h3 id="on_update"><code>on_update</code><a class="headerlink" href="#on_update" title="Permanent link">&para;</a></h3>
 <dl>
@@ -2991,7 +2991,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>event</td>
-<td>—</td>
+<td>required</td>
 <td><a href="../../modify_template/input_events/">InputEvent</a></td>
 <td>The event that occurred.</td>
 </tr>
@@ -3125,7 +3125,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>text</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The text to display.</td>
 </tr>
@@ -3188,7 +3188,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <p>Writes text in one of the three positions onto the input.</p>
 <div class="admonition info">
 <p class="admonition-title">New in the input rework</p>
-<p><code>outline_width</code>, <code>outline_color</code>, <code>font_weight</code> and <code>font_style</code> were added. The old <code>stroke_width</code> argument no longer exists — use <code>outline_width</code> instead.</p>
+<p><code>outline_width</code>, <code>outline_color</code>, <code>font_weight</code> and <code>font_style</code> were added. The old <code>stroke_width</code> argument no longer exists; use <code>outline_width</code> instead.</p>
 </div>
 </dd>
 </dl>
@@ -3237,7 +3237,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>image</td>
-<td>—</td>
+<td>required</td>
 <td><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html">PIL.Image.Image</a></td>
 <td>The overlay image.</td>
 </tr>
@@ -3264,7 +3264,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <dl>
 <dd>Override to return any <a href="https://docs.gtk.org/gtk4/class.Widget.html">Gtk.Widget</a> as a fully custom config area.</dd>
 </dl>
-<p>The Generative UI plumbing methods — <code>add_generative_ui_object</code>, <code>get_generative_ui_widgets</code>, <code>load_initial_generative_ui</code> — are documented in <a href="../../modify_template/config/generative_ui/">Adding Configuration with Generative UI</a>.</p>
+<p>The Generative UI plumbing methods (<code>add_generative_ui_object</code>, <code>get_generative_ui_widgets</code>, <code>load_initial_generative_ui</code>) are documented in <a href="../../modify_template/config/generative_ui/">Adding Configuration with Generative UI</a>.</p>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <h3 id="set_settings"><code>set_settings</code><a class="headerlink" href="#set_settings" title="Permanent link">&para;</a></h3>
 <dl>
@@ -3321,7 +3321,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>asset_name</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The asset file's name.</td>
 </tr>
@@ -3358,7 +3358,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>key</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The asset key registered by the plugin.</td>
 </tr>
@@ -3389,7 +3389,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>key</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>The translation key.</td>
 </tr>
@@ -3453,7 +3453,7 @@ All ticks on the same deck run in the same thread, and the next tick loop starts
 <tbody>
 <tr>
 <td>backend_path</td>
-<td>—</td>
+<td>required</td>
 <td>str</td>
 <td>Path of the backend to launch.</td>
 </tr>

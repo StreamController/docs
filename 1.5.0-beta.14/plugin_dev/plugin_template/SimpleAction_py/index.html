@@ -2041,7 +2041,7 @@
 
 
 <h1 id="draw-an-icon">Draw an Icon<a class="headerlink" href="#draw-an-icon" title="Permanent link">&para;</a></h1>
-<p>Let's open the example action and understand how it draws that icon. Here's the whole file — it's short:</p>
+<p>Let's open the example action and understand how it draws that icon. Here's the whole file, it's short:</p>
 <div class="language-python highlight"><span class="filename">actions/SimpleAction/SimpleAction.py</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager.ActionCore</span> <span class="kn">import</span> <span class="n">ActionCore</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager.EventAssigner</span> <span class="kn">import</span> <span class="n">EventAssigner</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">src.backend.DeckManagement.InputIdentifier</span> <span class="kn">import</span> <span class="n">Input</span>
@@ -2071,7 +2071,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </span></code></pre></div>
-<p>Every action extends <strong><code>ActionCore</code></strong>. You don't need to know what arguments it takes — just pass them straight through with <code>*args, **kwargs</code>.</p>
+<p>Every action extends <strong><code>ActionCore</code></strong>. You don't need to know what arguments it takes, just pass them straight through with <code>*args, **kwargs</code>.</p>
 <h2 id="draw-in-on_ready">Draw in <code>on_ready</code><a class="headerlink" href="#draw-in-on_ready" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">on_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">set_media</span><span class="p">(</span><span class="n">media_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_asset_path</span><span class="p">(</span><span class="s2">&quot;info.png&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
@@ -2087,7 +2087,7 @@
 </div>
 <h2 id="try-it">Try it<a class="headerlink" href="#try-it" title="Permanent link">&para;</a></h2>
 <p>Swap <code>info.png</code> for another image you drop into <code>assets/</code>, restart StreamController, and re-add the action. Your image appears on the key.</p>
-<p><code>set_media</code> also handles <strong>GIFs and videos</strong> — see <a href="../../bases/ActionCore_py/#set_media"><code>set_media</code> in the reference</a>. To put <strong>text</strong> on a key, you'd use <code>set_label</code>, which we'll reach for in the next steps.</p>
+<p><code>set_media</code> also handles <strong>GIFs and videos</strong>: see <a href="../../bases/ActionCore_py/#set_media"><code>set_media</code> in the reference</a>. To put <strong>text</strong> on a key, you'd use <code>set_label</code>, which we'll reach for in the next steps.</p>
 <p>Next, let's see how the app knew about this action in the first place: <a href="../main_py/">registering it</a>.</p>
 
 

@@ -2090,7 +2090,7 @@
 
 <h1 id="icons-colors">Icons &amp; Colors<a class="headerlink" href="#icons-colors" title="Permanent link">&para;</a></h1>
 <p>In <a href="../../plugin_template/SimpleAction_py/">Draw an Icon</a> we loaded an image straight from a file path. That works, but it means only <em>you</em> can choose the icon. If you register icons and colors as <strong>shared assets</strong> instead, users can swap them from the UI to match their own setup.</p>
-<p>Plugins register shared <strong>icons</strong> and <strong>colors</strong> under string keys. Actions look them up by key instead of hard-coding file paths or RGBA tuples, and — importantly — the user can override any registered asset from the UI. This is how a plugin offers a consistent, themeable set of visuals that users can customize.</p>
+<p>Plugins register shared <strong>icons</strong> and <strong>colors</strong> under string keys. Actions look them up by key instead of hard-coding file paths or RGBA tuples, and, importantly, the user can override any registered asset from the UI. This is how a plugin offers a consistent, themeable set of visuals that users can customize.</p>
 <h2 id="registering-assets">Registering assets<a class="headerlink" href="#registering-assets" title="Permanent link">&para;</a></h2>
 <p>Register your icons and colors on the <a href="../../bases/PluginBase_py/">plugin</a>, usually while initializing the plugin:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">PluginBase</span><span class="p">):</span>
@@ -2121,12 +2121,12 @@
 <tbody>
 <tr>
 <td>key</td>
-<td>—</td>
+<td>required</td>
 <td>The key actions use to look up the icon.</td>
 </tr>
 <tr>
 <td>path</td>
-<td>—</td>
+<td>required</td>
 <td>Path to the icon file (use <a href="../../bases/PluginBase_py/#get_asset_path"><code>get_asset_path</code></a>).</td>
 </tr>
 <tr>
@@ -2177,7 +2177,7 @@
 <p><code>get_icon</code>/<code>get_color</code> return the user-overridden asset if one exists. Pass <code>skip_override=True</code> to get the original asset your plugin registered.</p>
 <h2 id="user-overrides">User overrides<a class="headerlink" href="#user-overrides" title="Permanent link">&para;</a></h2>
 <p>Because assets are registered by key, StreamController lets the user replace them (a different icon, a different color) without touching your code. Overrides are stored per key in your plugin's <code>settings.json</code> under an <code>"assets"</code> section and are applied automatically the next time <code>get_icon</code>/<code>get_color</code> is called.</p>
-<p>If you need to react when the user changes an override — for example to redraw immediately — subscribe to the asset manager:</p>
+<p>If you need to react when the user changes an override, for example to redraw immediately, subscribe to the asset manager:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">plugin_base</span><span class="o">.</span><span class="n">asset_manager</span><span class="o">.</span><span class="n">icons</span><span class="o">.</span><span class="n">add_listener</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_icons_changed</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">on_icons_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>

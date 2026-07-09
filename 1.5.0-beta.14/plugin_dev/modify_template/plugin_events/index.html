@@ -2152,11 +2152,11 @@
 
 <p>StreamController has <strong>two</strong> distinct event systems, and it's easy to confuse them:</p>
 <ul>
-<li><strong>Plugin events</strong> (<a href="#plugin-events"><code>EventHolder</code></a>) — events <em>your</em> plugin defines and triggers, that your own actions or other plugins can subscribe to.</li>
-<li><strong>App signals</strong> (<a href="#app-signals"><code>Signal</code></a>) — events <em>the app</em> emits when something happens in the UI (a page is renamed, a plugin is installed, …).</li>
+<li><strong>Plugin events</strong> (<a href="#plugin-events"><code>EventHolder</code></a>), events <em>your</em> plugin defines and triggers, that your own actions or other plugins can subscribe to.</li>
+<li><strong>App signals</strong> (<a href="#app-signals"><code>Signal</code></a>), events <em>the app</em> emits when something happens in the UI (a page is renamed, a plugin is installed, …).</li>
 </ul>
 <h2 id="plugin-events">Plugin events<a class="headerlink" href="#plugin-events" title="Permanent link">&para;</a></h2>
-<p>A plugin event lets one part of your plugin (or another plugin entirely) notify others when something happens — for example a backend detecting that an audio device changed.</p>
+<p>A plugin event lets one part of your plugin (or another plugin entirely) notify others when something happens, for example a backend detecting that an audio device changed.</p>
 <h3 id="defining-an-event">Defining an event<a class="headerlink" href="#defining-an-event" title="Permanent link">&para;</a></h3>
 <p>Register an <a href="https://github.com/StreamController/StreamController/blob/main/src/backend/PluginManager/EventHolder.py"><code>EventHolder</code></a> on your plugin:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">src.backend.PluginManager.EventHolder</span> <span class="kn">import</span> <span class="n">EventHolder</span>
@@ -2230,7 +2230,7 @@
 <tr>
 <td><code>AppQuit</code></td>
 <td>The app is shutting down.</td>
-<td>—</td>
+<td>none</td>
 </tr>
 <tr>
 <td><code>RemoveState</code></td>

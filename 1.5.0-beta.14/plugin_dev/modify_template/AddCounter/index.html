@@ -2181,7 +2181,7 @@ This creates an empty file <code>counter.py</code>. In the next steps we'll fill
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </span></code></pre></div>
-<p>That's a valid action already — it just doesn't do anything yet, and it isn't registered, so it won't show up in the UI.</p>
+<p>That's a valid action already, it just doesn't do anything yet, and it isn't registered, so it won't show up in the UI.</p>
 <h3 id="4-register-the-action">4. Register the action<a class="headerlink" href="#4-register-the-action" title="Permanent link">&para;</a></h3>
 <p>All actions have to be registered in the plugin's <a href="../../bases/PluginBase_py/">plugin base</a>, here in <a href="../../plugin_template/main_py/">main.py</a>.
 First, import the new action below the import of <code>SimpleAction</code>:
@@ -2243,7 +2243,7 @@ Then create an <a href="../../plugin_template/main_py/#wrap-each-action-in-an-ac
 <p>The full <code>action_id</code> (formed as <code>&lt;plugin_id&gt;::&lt;action_id_suffix&gt;</code>) must be unique within your plugin.</p>
 </div>
 <h3 id="5-do-something">5. Do something!!!<a class="headerlink" href="#5-do-something" title="Permanent link">&para;</a></h3>
-<p>An action that does nothing is pointless — let's make it count presses and show the number on the input.</p>
+<p>An action that does nothing is pointless, let's make it count presses and show the number on the input.</p>
 <h4 id="1-add-a-counter-variable-and-an-event-assigner">1. Add a counter variable and an event assigner<a class="headerlink" href="#1-add-a-counter-variable-and-an-event-assigner" title="Permanent link">&para;</a></h4>
 <p>Actions react to input by registering an <a href="../input_events/"><code>EventAssigner</code></a>. We bind our handler to the key and dial "down" events so the counter works on both keys and dials:
 <div class="language-python highlight"><span class="filename">counter.py</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Import StreamController modules</span>

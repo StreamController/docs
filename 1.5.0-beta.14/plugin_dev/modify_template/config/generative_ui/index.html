@@ -2060,7 +2060,7 @@
 
 <h1 id="add-a-setting">Add a Setting<a class="headerlink" href="#add-a-setting" title="Permanent link">&para;</a></h1>
 <p>Right now the action always looks the same. Let's give the user a choice: a switch that shows or hides a label on the key.</p>
-<p>Settings are built with <strong>Generative UI</strong> rows. You create a row, tell it which setting it controls, and it builds the widget, loads the saved value, and saves changes for you — no manual load/save code.</p>
+<p>Settings are built with <strong>Generative UI</strong> rows. You create a row, tell it which setting it controls, and it builds the widget, loads the saved value, and saves changes for you, no manual load/save code.</p>
 <h2 id="add-a-switch">Add a switch<a class="headerlink" href="#add-a-switch" title="Permanent link">&para;</a></h2>
 <p>Override <code>get_config_rows</code> in your action and create a <code>SwitchRow</code>:</p>
 <div class="language-python highlight"><span class="filename">SimpleAction.py</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="hll"><span class="kn">from</span> <span class="nn">GtkHelper.GenerativeUI.SwitchRow</span> <span class="kn">import</span> <span class="n">SwitchRow</span>
@@ -2093,14 +2093,14 @@
 </span></span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="hll">    <span class="k">def</span> <span class="nf">on_show_label_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">new_value</span><span class="p">,</span> <span class="n">old_value</span><span class="p">):</span>
 </span></span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">on_ready</span><span class="p">()</span>  <span class="c1"># redraw with the new setting</span>
 </span></code></pre></div>
-<p>Add the action, open its settings, and toggle the switch — the label appears and disappears, and the choice is remembered when you reopen the settings.</p>
+<p>Add the action, open its settings, and toggle the switch: the label appears and disappears, and the choice is remembered when you reopen the settings.</p>
 <h2 id="what-just-happened">What just happened<a class="headerlink" href="#what-just-happened" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><code>SwitchRow</code></strong> is bound to <code>var_name="show_label"</code> — a key in this action's settings.</li>
+<li><strong><code>SwitchRow</code></strong> is bound to <code>var_name="show_label"</code>: a key in this action's settings.</li>
 <li>Toggling it writes <code>show_label</code> into your settings <strong>and saves it automatically</strong>.</li>
 <li><strong><code>get_generative_ui_widgets()</code></strong> collects every row you created and hands them to StreamController.</li>
 <li>Reading the value anywhere is just <code>self.get_settings().get("show_label", False)</code>.</li>
-<li><code>on_change</code> runs after the value is saved — we use it to redraw.</li>
+<li><code>on_change</code> runs after the value is saved; we use it to redraw.</li>
 </ul>
 <p>You never wrote load or save code. That's the point of Generative UI.</p>
 <h2 id="the-common-arguments">The common arguments<a class="headerlink" href="#the-common-arguments" title="Permanent link">&para;</a></h2>
@@ -2115,7 +2115,7 @@
 <tbody>
 <tr>
 <td><code>action_core</code></td>
-<td>The action the row belongs to — pass <code>self</code>.</td>
+<td>The action the row belongs to, pass <code>self</code>.</td>
 </tr>
 <tr>
 <td><code>var_name</code></td>
@@ -2127,7 +2127,7 @@
 </tr>
 <tr>
 <td><code>on_change</code></td>
-<td><code>callback(widget, new_value, old_value)</code> — runs after saving.</td>
+<td><code>callback(widget, new_value, old_value)</code>: runs after saving.</td>
 </tr>
 <tr>
 <td><code>can_reset</code></td>
@@ -2198,12 +2198,12 @@
 </tr>
 </tbody>
 </table>
-<p>They all work the same way — swap <code>SwitchRow</code> for the one you need. <code>title</code>/<code>subtitle</code> are automatically <a href="../../localization/">translated</a> if you pass a locale key.</p>
-<p>Next: let's build a second action that remembers a number — the <a href="../../AddCounter/">Counter</a>.</p>
+<p>They all work the same way; swap <code>SwitchRow</code> for the one you need. <code>title</code>/<code>subtitle</code> are automatically <a href="../../localization/">translated</a> if you pass a locale key.</p>
+<p>Next: let's build a second action that remembers a number, the <a href="../../AddCounter/">Counter</a>.</p>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Need a widget that isn't here?</p>
-<p>You can also build config rows by hand with GTK/libadwaita — see <a href="../gtk_intro/">Manual config rows</a>. Generative UI covers the common cases with far less code, so reach for the manual approach only when you need something custom.</p>
+<p>You can also build config rows by hand with GTK/libadwaita; see <a href="../gtk_intro/">Manual config rows</a>. Generative UI covers the common cases with far less code, so reach for the manual approach only when you need something custom.</p>
 </div>
 
 

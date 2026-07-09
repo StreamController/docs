@@ -2101,7 +2101,7 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">def</span> <span class="nf">on_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pressed&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<p>The interesting part is <code>default_events</code>: it's a <strong>list</strong>, so one assigner can react to several events. Here <code>on_pressed</code> fires on both a <strong>key</strong> press and a <strong>dial</strong> press — which is why the same action works on a normal button <em>and</em> on a Stream Deck + dial.</p>
+<p>The interesting part is <code>default_events</code>: it's a <strong>list</strong>, so one assigner can react to several events. Here <code>on_pressed</code> fires on both a <strong>key</strong> press and a <strong>dial</strong> press, which is why the same action works on a normal button <em>and</em> on a Stream Deck + dial.</p>
 <h2 id="the-available-events">The available events<a class="headerlink" href="#the-available-events" title="Permanent link">&para;</a></h2>
 <p>Events live on the input type they belong to:</p>
 <table>
@@ -2143,7 +2143,7 @@
 </span></code></pre></div>
 <p>(Use <code>default_event</code> for a single event, or <code>default_events=[...]</code> for several.)</p>
 <h2 id="letting-the-user-remap-events">Letting the user remap events<a class="headerlink" href="#letting-the-user-remap-events" title="Permanent link">&para;</a></h2>
-<p>Every assigner you give a <code>ui_label</code> automatically shows up in the action's settings, where the <strong>user</strong> can reassign it to a different event — for example moving "Pressed" from a short press to a long press. You get this for free; there's no UI to write.</p>
+<p>Every assigner you give a <code>ui_label</code> automatically shows up in the action's settings, where the <strong>user</strong> can reassign it to a different event, for example moving "Pressed" from a short press to a long press. You get this for free; there's no UI to write.</p>
 <h2 id="declaring-input-support">Declaring input support<a class="headerlink" href="#declaring-input-support" title="Permanent link">&para;</a></h2>
 <p>One loose end: in <a href="../../plugin_template/main_py/"><code>main.py</code></a> we told StreamController which inputs the action supports:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">action_support</span> <span class="o">=</span> <span class="p">{</span>
@@ -2153,12 +2153,12 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li><code>SUPPORTED</code> — you've tested it on this input.</li>
-<li><code>UNTESTED</code> — it might work; the UI warns the user.</li>
-<li><code>UNSUPPORTED</code> — it can't be placed on this input.</li>
+<li><code>SUPPORTED</code>: you've tested it on this input.</li>
+<li><code>UNTESTED</code>: it might work; the UI warns the user.</li>
+<li><code>UNSUPPORTED</code>: it can't be placed on this input.</li>
 </ul>
 <p>Since we just added dial-turning, <code>Input.Dial: SUPPORTED</code> is well earned.</p>
-<p>Next: let's let the user configure the action — <a href="../config/generative_ui/">add a setting</a>.</p>
+<p>Next: let's let the user configure the action, <a href="../config/generative_ui/">add a setting</a>.</p>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Coming from an older plugin?</p>
