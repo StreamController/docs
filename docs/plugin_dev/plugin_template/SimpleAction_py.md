@@ -1,6 +1,6 @@
 # Draw an Icon
 
-Let's open the example action and understand how it draws that icon. Here's the whole file — it's short:
+Let's open the example action and understand how it draws that icon. Here's the whole file, it's short:
 
 ```python title="actions/SimpleAction/SimpleAction.py"
 from src.backend.PluginManager.ActionCore import ActionCore
@@ -37,7 +37,7 @@ class SimpleAction(ActionCore):
         super().__init__(*args, **kwargs)
 ```
 
-Every action extends **`ActionCore`**. You don't need to know what arguments it takes — just pass them straight through with `*args, **kwargs`.
+Every action extends **`ActionCore`**. You don't need to know what arguments it takes, just pass them straight through with `*args, **kwargs`.
 
 ## Draw in `on_ready`
 
@@ -58,6 +58,6 @@ def on_ready(self) -> None:
 
 Swap `info.png` for another image you drop into `assets/`, restart StreamController, and re-add the action. Your image appears on the key.
 
-`set_media` also handles **GIFs and videos** — see [`set_media` in the reference](../bases/ActionCore_py.md#set_media). To put **text** on a key, you'd use `set_label`, which we'll reach for in the next steps.
+`set_media` also handles **GIFs and videos**: see [`set_media` in the reference](../bases/ActionCore_py.md#set_media). To put **text** on a key, you'd use `set_label`, which we'll reach for in the next steps.
 
 Next, let's see how the app knew about this action in the first place: [registering it](main_py.md).

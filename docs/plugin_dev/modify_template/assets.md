@@ -2,7 +2,7 @@
 
 In [Draw an Icon](../plugin_template/SimpleAction_py.md) we loaded an image straight from a file path. That works, but it means only *you* can choose the icon. If you register icons and colors as **shared assets** instead, users can swap them from the UI to match their own setup.
 
-Plugins register shared **icons** and **colors** under string keys. Actions look them up by key instead of hard-coding file paths or RGBA tuples, and — importantly — the user can override any registered asset from the UI. This is how a plugin offers a consistent, themeable set of visuals that users can customize.
+Plugins register shared **icons** and **colors** under string keys. Actions look them up by key instead of hard-coding file paths or RGBA tuples, and, importantly, the user can override any registered asset from the UI. This is how a plugin offers a consistent, themeable set of visuals that users can customize.
 
 ## Registering assets
 
@@ -30,8 +30,8 @@ class MyPlugin(PluginBase):
 
 |Argument|Default|Description|
 |---|---|---|
-|key|—|The key actions use to look up the icon.|
-|path|—|Path to the icon file (use [`get_asset_path`](../bases/PluginBase_py.md#get_asset_path)).|
+|key|required|The key actions use to look up the icon.|
+|path|required|Path to the icon file (use [`get_asset_path`](../bases/PluginBase_py.md#get_asset_path)).|
 |size|1.0|Icon size relative to the input.|
 |halign|0.0|Horizontal alignment.|
 |valign|0.0|Vertical alignment.|
@@ -62,7 +62,7 @@ class VolumeUp(ActionCore):
 
 Because assets are registered by key, StreamController lets the user replace them (a different icon, a different color) without touching your code. Overrides are stored per key in your plugin's `settings.json` under an `"assets"` section and are applied automatically the next time `get_icon`/`get_color` is called.
 
-If you need to react when the user changes an override — for example to redraw immediately — subscribe to the asset manager:
+If you need to react when the user changes an override, for example to redraw immediately, subscribe to the asset manager:
 
 ```python
 self.plugin_base.asset_manager.icons.add_listener(self.on_icons_changed)

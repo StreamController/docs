@@ -3,7 +3,7 @@ The [last section](add_a_backend_action.md) was all about adding a backend to an
 To learn more about how the communication works, check out the [last section](add_a_backend_action.md).
 
 !!! info "About the examples on this page"
-    The `Counter` examples below extend the legacy [`ActionBase`](../bases/ActionBase_py.md) and use `on_key_down` for brevity. On [`ActionCore`](../bases/ActionCore_py.md) you would handle the press with an [event assigner](input_events.md) instead — the backend usage is identical.
+    The `Counter` examples below extend the legacy [`ActionBase`](../bases/ActionBase_py.md) and use `on_key_down` for brevity. On [`ActionCore`](../bases/ActionCore_py.md) you would handle the press with an [event assigner](input_events.md) instead, the backend usage is identical.
 
 ## Add a backend to our plugin
 In this example we'll go over how to add a basic backend to our plugin, by moving the action backend of the [last section](add_a_backend_action.md) to the plugin itself.

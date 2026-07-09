@@ -1,7 +1,7 @@
 If you need to use many large libraries, you have to add a backend to your action.
 
 !!! info "About the examples on this page"
-    For brevity the `Counter` examples below extend the legacy [`ActionBase`](../bases/ActionBase_py.md) and use `on_key_down`. Backends work exactly the same on [`ActionCore`](../bases/ActionCore_py.md) — just handle the press with an [event assigner](input_events.md) instead.
+    For brevity the `Counter` examples below extend the legacy [`ActionBase`](../bases/ActionBase_py.md) and use `on_key_down`. Backends work exactly the same on [`ActionCore`](../bases/ActionCore_py.md), just handle the press with an [event assigner](input_events.md) instead.
 
 ## [Rpyc](https://rpyc.readthedocs.io/en/latest/)
 The backend of all actions is running in a completely separate [python](https://pypi.org/) process. This means no normal communication between the backend and the actual action is possible. Here comes [rpyc](https://rpyc.readthedocs.io/en/latest/) into play. It creates a communication channel between the action and the backend over the local network. If you want to know more about [rpyc](https://rpyc.readthedocs.io/en/latest/), you can read [it's documentation](https://rpyc.readthedocs.io/en/latest/).

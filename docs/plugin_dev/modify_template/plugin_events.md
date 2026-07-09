@@ -1,11 +1,11 @@
 StreamController has **two** distinct event systems, and it's easy to confuse them:
 
-- **Plugin events** ([`EventHolder`](#plugin-events)) — events *your* plugin defines and triggers, that your own actions or other plugins can subscribe to.
-- **App signals** ([`Signal`](#app-signals)) — events *the app* emits when something happens in the UI (a page is renamed, a plugin is installed, …).
+- **Plugin events** ([`EventHolder`](#plugin-events)), events *your* plugin defines and triggers, that your own actions or other plugins can subscribe to.
+- **App signals** ([`Signal`](#app-signals)), events *the app* emits when something happens in the UI (a page is renamed, a plugin is installed, …).
 
 ## Plugin events
 
-A plugin event lets one part of your plugin (or another plugin entirely) notify others when something happens — for example a backend detecting that an audio device changed.
+A plugin event lets one part of your plugin (or another plugin entirely) notify others when something happens, for example a backend detecting that an audio device changed.
 
 ### Defining an event
 
@@ -65,7 +65,7 @@ App signals fire when the user performs certain actions in the UI. A typical use
 |`PageAdd`|A page is added.|`path: str`|
 |`ChangePage`|A deck switches page.|`controller: DeckController`, `old_path: str`, `new_path: str`|
 |`PluginInstall`|A plugin is installed.|`id: str`|
-|`AppQuit`|The app is shutting down.|—|
+|`AppQuit`|The app is shutting down.|none|
 |`RemoveState`|An action state is removed.|`state: int`, `state_map: dict`|
 
 ### Connecting to a signal

@@ -1,5 +1,5 @@
 !!! info "Prefer Generative UI"
-    This tutorial builds a config row **manually**, wiring up saving and loading yourself. The [Generative UI](generative_ui.md) system does all of this for you and is the recommended approach — read this page only if you need the low-level control. The examples below use the legacy [`ActionBase`](../../bases/ActionBase_py.md); on [`ActionCore`](../../bases/ActionCore_py.md) the same `get_config_rows` override works identically.
+    This tutorial builds a config row **manually**, wiring up saving and loading yourself. The [Generative UI](generative_ui.md) system does all of this for you and is the recommended approach, read this page only if you need the low-level control. The examples below use the legacy [`ActionBase`](../../bases/ActionBase_py.md); on [`ActionCore`](../../bases/ActionCore_py.md) the same `get_config_rows` override works identically.
 
 This example will go over how to add a config row to the [Counter action](../AddCounter.md).
 

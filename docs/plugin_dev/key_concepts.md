@@ -1,17 +1,17 @@
 # Key Concepts
 
-Before writing any code, it helps to have the big picture. You only need to understand **four** things — everything in this guide builds on them.
+Before writing any code, it helps to have the big picture. You only need to understand **four** things. Everything in this guide builds on them.
 
 ## 1. A plugin adds actions
 
-A **plugin** is a small Python package you drop into StreamController. On its own it does nothing visible — its job is to provide one or more **actions**.
+A **plugin** is a small Python package you drop into StreamController. On its own it does nothing visible; its job is to provide one or more **actions**.
 
 ## 2. An action is what sits on a button
 
 An **action** is the thing a user places onto a button. It does two jobs:
 
-- **Draws** something — an image, an icon, some text.
-- **Reacts** to input — for example, when the button is pressed.
+- **Draws** something: an image, an icon, or some text.
+- **Reacts** to input, for example, when the button is pressed.
 
 Everything you build in this guide is an action (or a few of them).
 
@@ -22,14 +22,14 @@ StreamController controls more than just buttons. An action can be placed on any
 | Input | What it is |
 |---|---|
 | **Key** | A normal button on the deck. |
-| **Dial** | A rotary knob (e.g. on the Stream Deck +) — it can be turned and pressed. |
+| **Dial** | A rotary knob (e.g. on the Stream Deck +) that can be turned and pressed. |
 | **Touchscreen** | The touch strip on the Stream Deck +. |
 
 You decide which input types your action supports. Most actions start with keys and add dials later.
 
 ## 4. Backends are optional
 
-If your action needs heavy Python libraries, StreamController can run them in a separate **backend** process so they never slow down or clash with the app. You won't need this at first — we'll get to it near the end.
+If your action needs heavy Python libraries, StreamController can run them in a separate **backend** process so they never slow down or clash with the app. You won't need this at first; we'll get to it near the end.
 
 ---
 

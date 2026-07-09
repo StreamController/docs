@@ -62,12 +62,12 @@ Plugins can define their own events that other plugins (or their own actions) ca
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |callback|—|callable|Called when the event triggers.|
+    |callback|required|callable|Called when the event triggers.|
     |event_id|None|str|The full event id.|
     |event_id_suffix|None|str|A suffix that is combined with the plugin id to form the full id.|
 
     !!! warning
-        Always pass `event_id` explicitly (the full `"plugin_id::EventName"` form). Note the argument order changed — `callback` now comes first.
+        Always pass `event_id` explicitly (the full `"plugin_id::EventName"` form). Note the argument order changed; `callback` now comes first.
 
 ### `connect_to_event_directly`
 : Subscribes a callback to an event of **another** plugin, identified by `plugin_id` and `event_id`.
@@ -85,7 +85,7 @@ Plugins can define their own events that other plugins (or their own actions) ca
     |settings|dict|The settings to store.|
 
     !!! info
-        The settings file is now versioned (`{"file-version": "2.0", "settings": {…}}`) and older files are migrated automatically on read. Your `get_settings`/`set_settings` usage is unchanged — you still work with the plain settings dict.
+        The settings file is now versioned (`{"file-version": "2.0", "settings": {…}}`) and older files are migrated automatically on read. Your `get_settings`/`set_settings` usage is unchanged, you still work with the plain settings dict.
 
 ### `get_settings`
 : Returns the plugin's settings dict (empty dict if none stored yet).
@@ -105,8 +105,8 @@ Register shared icons and colors that your actions can look up and that users ca
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |key|—|str|The key actions use to look up the icon.|
-    |path|—|str|Path to the icon file.|
+    |key|required|str|The key actions use to look up the icon.|
+    |path|required|str|Path to the icon file.|
     |size|1.0|float|Icon size relative to the input.|
     |halign|0.0|float|Horizontal alignment.|
     |valign|0.0|float|Vertical alignment.|
@@ -124,7 +124,7 @@ Register shared icons and colors that your actions can look up and that users ca
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |asset_name|—|str|The asset file's name.|
+    |asset_name|required|str|The asset file's name.|
     |subdirs|None|list[str]|Optional subdirectories inside the asset folder.|
     |asset_folder|"assets"|str|Name of the folder assets live in.|
 
@@ -159,7 +159,7 @@ Register shared icons and colors that your actions can look up and that users ca
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |backend_path|—|str|The path of the backend to launch.|
+    |backend_path|required|str|The path of the backend to launch.|
     |venv_path|None|str|The path of the venv to use.|
     |open_in_terminal|False|bool|Open the backend in a terminal window (useful for debugging).|
 
@@ -179,7 +179,7 @@ Register shared icons and colors that your actions can look up and that users ca
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |name|—|str|The bus name.|
+    |name|required|str|The bus name.|
     |bus|"session"|str|`"session"` or `"system"`.|
     |description|None|str|Why the permission is needed.|
 

@@ -11,11 +11,11 @@ You'll touch these files most:
 | File | What it's for |
 |---|---|
 | `main.py` | The entry point. It registers your actions with StreamController. |
-| `actions/SimpleAction/SimpleAction.py` | An example action — the thing that sits on a button. |
+| `actions/SimpleAction/SimpleAction.py` | An example action, the thing that sits on a button. |
 | `manifest.json` | Your plugin's identity (name, id, version). |
 | `assets/` | Images your plugin ships, like the example `info.png`. |
 
-Don't worry about the rest yet — we'll meet each file when we need it.
+Don't worry about the rest yet; we'll meet each file when we need it.
 
 ## Run it
 
@@ -25,7 +25,7 @@ With StreamController running from source (see [Set Up Your Environment](../setu
 2. Click an empty key to open the action picker.
 3. Find your plugin's **Simple Action** and add it.
 
-You should see the example **info** icon appear on the key. Press the key — and watch your terminal:
+You should see the example **info** icon appear on the key. Press the key, and watch your terminal:
 
 ```
 Pressed

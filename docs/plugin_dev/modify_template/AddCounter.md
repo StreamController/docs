@@ -27,7 +27,7 @@ class Counter(ActionCore):
         super().__init__(*args, **kwargs)
 ```
 
-That's a valid action already — it just doesn't do anything yet, and it isn't registered, so it won't show up in the UI.
+That's a valid action already, it just doesn't do anything yet, and it isn't registered, so it won't show up in the UI.
 
 ### 4. Register the action
 All actions have to be registered in the plugin's [plugin base](../bases/PluginBase_py.md), here in [main.py](../plugin_template/main_py.md).
@@ -91,7 +91,7 @@ class PluginTemplate(PluginBase):
     The full `action_id` (formed as `<plugin_id>::<action_id_suffix>`) must be unique within your plugin.
 
 ### 5. Do something!!!
-An action that does nothing is pointless — let's make it count presses and show the number on the input.
+An action that does nothing is pointless, let's make it count presses and show the number on the input.
 
 #### 1. Add a counter variable and an event assigner
 Actions react to input by registering an [`EventAssigner`](input_events.md). We bind our handler to the key and dial "down" events so the counter works on both keys and dials:

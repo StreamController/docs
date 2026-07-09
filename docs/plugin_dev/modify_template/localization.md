@@ -1,6 +1,6 @@
 # Localization
 
-So far every label in our plugin is hardcoded English — the action name "Simple Action", the switch title "Show label", and so on. Let's make them translatable so users in other languages see their own.
+So far every label in our plugin is hardcoded English: the action name "Simple Action", the switch title "Show label", and so on. Let's make them translatable so users in other languages see their own.
 
 StreamController does the hard part: it picks the right translation for the user's language. You just provide the translations and look them up by a **key** instead of writing the text directly.
 
@@ -76,4 +76,4 @@ If the key exists in `locales.csv` it's translated; otherwise the text is shown 
 ---
 
 !!! info "Older plugins: the JSON format"
-    Before `locales.csv`, plugins used a `locales/` folder with one JSON file per language (`en_US.json`, …) and the default `use_legacy_locale=True`. You may still see this in existing plugins. It's read the same way — `self.locale_manager.get("key")` — but for new plugins prefer `locales.csv`.
+    Before `locales.csv`, plugins used a `locales/` folder with one JSON file per language (`en_US.json`, …) and the default `use_legacy_locale=True`. You may still see this in existing plugins. It's read the same way, `self.locale_manager.get("key")`: but for new plugins prefer `locales.csv`.

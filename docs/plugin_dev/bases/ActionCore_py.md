@@ -23,14 +23,14 @@ class MyAction(ActionCore):
 ```
 
 !!! info "Which input am I attached to?"
-    StreamController supports three input types: **keys**, **dials** (rotary encoders, e.g. on the Stream Deck +) and **touchscreens**. The input your action instance is attached to is available as `self.input_ident` and is one of [`Input.Key`](https://github.com/StreamController/StreamController/blob/main/src/backend/DeckManagement/InputIdentifier.py), `Input.Dial` or `Input.Touchscreen`. Which input types your action *supports* is declared on the [`ActionHolder`](../plugin_template/main_py.md) via `action_support` — see [Handling Input & Events](../modify_template/input_events.md).
+    StreamController supports three input types: **keys**, **dials** (rotary encoders, e.g. on the Stream Deck +) and **touchscreens**. The input your action instance is attached to is available as `self.input_ident` and is one of [`Input.Key`](https://github.com/StreamController/StreamController/blob/main/src/backend/DeckManagement/InputIdentifier.py), `Input.Dial` or `Input.Touchscreen`. Which input types your action *supports* is declared on the [`ActionHolder`](../plugin_template/main_py.md) via `action_support`: see [Handling Input & Events](../modify_template/input_events.md).
 
 ## Lifecycle hooks
 
 Override these in your action to run your own code. None of them need to call `super()`.
 
 ### `on_ready`
-: Called once the page is fully loaded and the decks are ready to process requests. **This is the recommended place to set your initial image and labels** — the constructor runs before the decks can render anything.
+: Called once the page is fully loaded and the decks are ready to process requests. **This is the recommended place to set your initial image and labels**: the constructor runs before the decks can render anything.
 
 ### `on_update`
 : Called when the app wants the action to redraw itself (image, labels, …). By default it simply calls [`on_ready`](#on_ready), so overriding `on_ready` is usually enough. Override `on_update` when you want the redraw path to differ from the initial setup.
@@ -72,7 +72,7 @@ This is covered in depth in [Handling Input & Events](../modify_template/input_e
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |event|—|[InputEvent](../modify_template/input_events.md)|The event that occurred.|
+    |event|required|[InputEvent](../modify_template/input_events.md)|The event that occurred.|
     |data|None|dict|Optional event data.|
 
     A no-op override point that is called for every event. Most actions use [`add_event_assigner`](#add_event_assigner) instead, but you may override this to receive raw events.
@@ -113,7 +113,7 @@ The available events are `Input.Key.Events` (`DOWN`, `UP`, `SHORT_UP`, `HOLD_STA
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |text|—|str|The text to display.|
+    |text|required|str|The text to display.|
     |position|"bottom"|str|One of `top`, `center` or `bottom`.|
     |color|None|list[int]|Text color.|
     |font_family|None|str|Font family.|
@@ -126,7 +126,7 @@ The available events are `Input.Key.Events` (`DOWN`, `UP`, `SHORT_UP`, `HOLD_STA
 
     Writes text in one of the three positions onto the input.
     !!! info "New in the input rework"
-        `outline_width`, `outline_color`, `font_weight` and `font_style` were added. The old `stroke_width` argument no longer exists — use `outline_width` instead.
+        `outline_width`, `outline_color`, `font_weight` and `font_style` were added. The old `stroke_width` argument no longer exists; use `outline_width` instead.
 
 ### `set_top_label` / `set_center_label` / `set_bottom_label`
 : Convenience wrappers for [`set_label`](#set_label) with `position` fixed to `top`, `center` or `bottom` respectively. They accept the same arguments as `set_label` minus `position`.
@@ -145,7 +145,7 @@ The available events are `Input.Key.Events` (`DOWN`, `UP`, `SHORT_UP`, `HOLD_STA
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |image|—|[PIL.Image.Image](https://pillow.readthedocs.io/en/stable/reference/Image.html)|The overlay image.|
+    |image|required|[PIL.Image.Image](https://pillow.readthedocs.io/en/stable/reference/Image.html)|The overlay image.|
     |duration|-1|int|How long to show the overlay, in seconds. `-1` means until hidden.|
 
     Temporarily draws an overlay on top of the input's current content.
@@ -160,7 +160,7 @@ The available events are `Input.Key.Events` (`DOWN`, `UP`, `SHORT_UP`, `HOLD_STA
 ### `get_custom_config_area`
 : Override to return any [Gtk.Widget](https://docs.gtk.org/gtk4/class.Widget.html) as a fully custom config area.
 
-The Generative UI plumbing methods — `add_generative_ui_object`, `get_generative_ui_widgets`, `load_initial_generative_ui` — are documented in [Adding Configuration with Generative UI](../modify_template/config/generative_ui.md).
+The Generative UI plumbing methods (`add_generative_ui_object`, `get_generative_ui_widgets`, `load_initial_generative_ui`) are documented in [Adding Configuration with Generative UI](../modify_template/config/generative_ui.md).
 
 ## Settings
 
@@ -195,7 +195,7 @@ The Generative UI plumbing methods — `add_generative_ui_object`, `get_generati
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |asset_name|—|str|The asset file's name.|
+    |asset_name|required|str|The asset file's name.|
     |subdirs|None|list[str]|Optional subdirectories inside the asset folder.|
     |asset_folder|"assets"|str|Name of the folder assets live in.|
 
@@ -206,7 +206,7 @@ The Generative UI plumbing methods — `add_generative_ui_object`, `get_generati
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |key|—|str|The asset key registered by the plugin.|
+    |key|required|str|The asset key registered by the plugin.|
     |skip_override|False|bool|Ignore any user override and return the original asset.|
 
     Retrieve a shared [icon or color](../modify_template/assets.md) registered by your plugin via `add_icon`/`add_color`. Users can override these per key. See [Icons, Colors & Assets](../modify_template/assets.md).
@@ -216,7 +216,7 @@ The Generative UI plumbing methods — `add_generative_ui_object`, `get_generati
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |key|—|str|The translation key.|
+    |key|required|str|The translation key.|
     |fallback|None|str|Value returned if the key is missing.|
 
     Returns a localized string. See [Localization](../modify_template/localization.md).
@@ -240,7 +240,7 @@ The Generative UI plumbing methods — `add_generative_ui_object`, `get_generati
 
     |Argument|Default|Type|Description|
     |---|---|---|---|
-    |backend_path|—|str|Path of the backend to launch.|
+    |backend_path|required|str|Path of the backend to launch.|
     |venv_path|None|str|Path of the virtual environment to use.|
     |open_in_terminal|False|bool|Launch the backend in a terminal window (useful for debugging).|
 

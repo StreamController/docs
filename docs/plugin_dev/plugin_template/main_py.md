@@ -1,6 +1,6 @@
 # Register Your Action
 
-You wrote an action — but how does StreamController know it exists? That's the job of **`main.py`**, your plugin's entry point. Every action gets **registered** here so it shows up in the action picker.
+You wrote an action, but how does StreamController know it exists? That's the job of **`main.py`**, your plugin's entry point. Every action gets **registered** here so it shows up in the action picker.
 
 Here's the template's `main.py`:
 
@@ -65,12 +65,12 @@ self.add_action_holder(self.simple_action_holder)
 
 An **`ActionHolder`** is a little description of your action that the app can read *before* it actually creates the action:
 
-- `action_core` — your action class.
-- `action_name` — the label shown in the action picker.
-- `action_id_suffix` — combined with your plugin id into a unique id (`<plugin_id>::SimpleAction`).
-- `action_support` — which input types your action works on. Here it's usable on keys and dials, but not the touchscreen.
+- `action_core`: your action class.
+- `action_name`: the label shown in the action picker.
+- `action_id_suffix`: combined with your plugin id into a unique id (`<plugin_id>::SimpleAction`).
+- `action_support`: which input types your action works on. Here it's usable on keys and dials, but not the touchscreen.
 
-`add_action_holder(...)` hands it to the plugin. For a second action, you'd create a second holder and add it too — exactly what we'll do in the [Counter step](../modify_template/AddCounter.md).
+`add_action_holder(...)` hands it to the plugin. For a second action, you'd create a second holder and add it too, exactly what we'll do in the [Counter step](../modify_template/AddCounter.md).
 
 ## Register the plugin
 
@@ -85,4 +85,4 @@ self.register(
 
 The final `register(...)` call switches your plugin on. Fill in your own name, repository and version here (we'll polish these in [Prepare to Publish](manifest_json.md)).
 
-Next: let's make the action actually *do* something when pressed — [React to Input](../modify_template/input_events.md).
+Next: let's make the action actually *do* something when pressed, [React to Input](../modify_template/input_events.md).

@@ -32,7 +32,7 @@ def on_pressed(self, data):
     print("Pressed")
 ```
 
-The interesting part is `default_events`: it's a **list**, so one assigner can react to several events. Here `on_pressed` fires on both a **key** press and a **dial** press — which is why the same action works on a normal button *and* on a Stream Deck + dial.
+The interesting part is `default_events`: it's a **list**, so one assigner can react to several events. Here `on_pressed` fires on both a **key** press and a **dial** press, which is why the same action works on a normal button *and* on a Stream Deck + dial.
 
 ## The available events
 
@@ -67,7 +67,7 @@ self.add_event_assigner(EventAssigner(
 
 ## Letting the user remap events
 
-Every assigner you give a `ui_label` automatically shows up in the action's settings, where the **user** can reassign it to a different event — for example moving "Pressed" from a short press to a long press. You get this for free; there's no UI to write.
+Every assigner you give a `ui_label` automatically shows up in the action's settings, where the **user** can reassign it to a different event, for example moving "Pressed" from a short press to a long press. You get this for free; there's no UI to write.
 
 ## Declaring input support
 
@@ -81,13 +81,13 @@ action_support = {
 }
 ```
 
-- `SUPPORTED` — you've tested it on this input.
-- `UNTESTED` — it might work; the UI warns the user.
-- `UNSUPPORTED` — it can't be placed on this input.
+- `SUPPORTED`: you've tested it on this input.
+- `UNTESTED`: it might work; the UI warns the user.
+- `UNSUPPORTED`: it can't be placed on this input.
 
 Since we just added dial-turning, `Input.Dial: SUPPORTED` is well earned.
 
-Next: let's let the user configure the action — [add a setting](config/generative_ui.md).
+Next: let's let the user configure the action, [add a setting](config/generative_ui.md).
 
 ---
 
